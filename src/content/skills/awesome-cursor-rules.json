@@ -1,0 +1,10 @@
+{
+  "name": "Awesome Cursor Rules",
+  "tagline": "Curated .cursorrules files for every framework and language.",
+  "url": "https://github.com/PatrickJS/awesome-cursorrules",
+  "github": "PatrickJS/awesome-cursorrules",
+  "author": "PatrickJS",
+  "tags": ["cursor", "rules", "awesome"],
+  "kind": "cursor-rule",
+  "addedAt": "2026-04-28"
+}

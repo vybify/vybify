@@ -1,0 +1,11 @@
+{
+  "name": "Cursor Directory",
+  "tagline": "The largest curated directory of Cursor rules and MCP integrations.",
+  "url": "https://cursor.directory",
+  "github": "pontusab/cursor.directory",
+  "author": "Pontus Abrahamsson",
+  "tags": ["cursor", "rules", "directory"],
+  "kind": "cursor-rule",
+  "featured": true,
+  "addedAt": "2026-04-28"
+}

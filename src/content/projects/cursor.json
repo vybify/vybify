@@ -1,0 +1,10 @@
+{
+  "name": "Cursor",
+  "tagline": "The AI code editor — agents, autocomplete, and chat in one IDE.",
+  "url": "https://cursor.com",
+  "author": "Anysphere",
+  "tags": ["editor", "ide", "agent"],
+  "builtWith": ["Claude", "GPT"],
+  "featured": true,
+  "addedAt": "2026-04-28"
+}

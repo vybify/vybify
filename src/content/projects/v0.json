@@ -1,0 +1,9 @@
+{
+  "name": "v0",
+  "tagline": "Generate UI components and full pages from a prompt.",
+  "url": "https://v0.dev",
+  "author": "Vercel",
+  "tags": ["ui", "react", "components"],
+  "builtWith": ["Vercel", "GPT"],
+  "addedAt": "2026-04-28"
+}

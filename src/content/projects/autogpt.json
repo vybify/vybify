@@ -1,0 +1,10 @@
+{
+  "name": "AutoGPT",
+  "tagline": "Build, deploy, and run autonomous AI agents — the original GPT-4 agent platform.",
+  "url": "https://agpt.co",
+  "github": "Significant-Gravitas/AutoGPT",
+  "author": "Significant Gravitas",
+  "tags": ["agent", "autonomous", "platform"],
+  "builtWith": ["GPT"],
+  "addedAt": "2026-04-28"
+}

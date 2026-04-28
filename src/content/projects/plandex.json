@@ -1,0 +1,10 @@
+{
+  "name": "Plandex",
+  "tagline": "Terminal-based AI dev tool for tackling large, multi-file tasks with confidence.",
+  "url": "https://plandex.ai",
+  "github": "plandex-ai/plandex",
+  "author": "Plandex AI",
+  "tags": ["cli", "agent", "planning"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Claude Code Router",
+  "tagline": "Use Claude Code as the brain but route requests to any model — DeepSeek, Gemini, Ollama.",
+  "url": "https://github.com/musistudio/claude-code-router",
+  "github": "musistudio/claude-code-router",
+  "author": "musistudio",
+  "tags": ["claude-code", "routing", "multi-model"],
+  "kind": "claude-code-skill",
+  "install": "npm install -g @musistudio/claude-code-router",
+  "addedAt": "2026-04-28"
+}

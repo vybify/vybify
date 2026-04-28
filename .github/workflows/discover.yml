@@ -1,0 +1,44 @@
+name: Discover new entries
+
+on:
+  schedule:
+    # 13:00 UTC every Monday
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run discovery
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/discover.mjs
+
+      - name: Open PR with candidates
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: 'Weekly discovery candidates'
+          body: |
+            New candidates surfaced from GitHub topic search.
+
+            Each file is a draft entry. To accept one:
+            1. Edit the tagline if needed
+            2. Move the file from `src/content/candidates/projects/` to `src/content/projects/`
+               (or skills/ → skills/)
+            3. Merge
+
+            To reject: just delete the file.
+          branch: discovery/weekly
+          delete-branch: true
+          commit-message: 'discover: weekly candidates'
+          add-paths: src/content/candidates/**

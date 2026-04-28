@@ -1,0 +1,10 @@
+{
+  "name": "Agent Rules",
+  "tagline": "Steipete's collection of project rules and prompts for Cursor, Claude Code, and Windsurf.",
+  "url": "https://github.com/steipete/agent-rules",
+  "github": "steipete/agent-rules",
+  "author": "Peter Steinberger",
+  "tags": ["rules", "cursor", "claude-code"],
+  "kind": "cursor-rule",
+  "addedAt": "2026-04-28"
+}

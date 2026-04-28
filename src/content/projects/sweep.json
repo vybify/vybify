@@ -1,0 +1,10 @@
+{
+  "name": "Sweep",
+  "tagline": "AI junior developer that turns GitHub issues into pull requests automatically.",
+  "url": "https://sweep.dev",
+  "github": "sweepai/sweep",
+  "author": "Sweep AI",
+  "tags": ["github", "agent", "pr"],
+  "builtWith": ["GPT"],
+  "addedAt": "2026-04-28"
+}

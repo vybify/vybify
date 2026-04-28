@@ -1,0 +1,11 @@
+{
+  "name": "Vercel AI SDK",
+  "tagline": "TypeScript toolkit for building AI-powered apps — streaming, tool use, structured outputs.",
+  "url": "https://sdk.vercel.ai",
+  "github": "vercel/ai",
+  "author": "Vercel",
+  "tags": ["typescript", "framework", "library"],
+  "kind": "other",
+  "install": "npm install ai",
+  "addedAt": "2026-04-28"
+}

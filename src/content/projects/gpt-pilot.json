@@ -1,0 +1,10 @@
+{
+  "name": "GPT Pilot",
+  "tagline": "Dev tool that writes scalable apps from scratch while a developer oversees the work.",
+  "url": "https://www.pythagora.ai",
+  "github": "Pythagora-io/gpt-pilot",
+  "author": "Pythagora",
+  "tags": ["agent", "scaffolding", "autonomous"],
+  "builtWith": ["GPT"],
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Claudia",
+  "tagline": "Beautiful desktop GUI for managing Claude Code projects, sessions, agents, and usage.",
+  "url": "https://claudiacode.com",
+  "github": "getAsterisk/claudia",
+  "author": "Asterisk",
+  "tags": ["claude-code", "gui", "desktop"],
+  "builtWith": ["Claude"],
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Refact.ai",
+  "tagline": "Open-source AI coding agent with autocomplete, chat, and refactoring built in.",
+  "url": "https://refact.ai",
+  "github": "smallcloudai/refact",
+  "author": "Small Magellanic Cloud AI",
+  "tags": ["agent", "open-source", "self-hosted"],
+  "builtWith": ["open models"],
+  "addedAt": "2026-04-28"
+}

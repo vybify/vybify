@@ -1,0 +1,10 @@
+{
+  "name": "mem0",
+  "tagline": "Persistent, personalized memory layer for AI agents — works as an MCP server.",
+  "url": "https://mem0.ai",
+  "github": "mem0ai/mem0",
+  "author": "Mem0",
+  "tags": ["memory", "mcp", "personalization"],
+  "kind": "mcp-server",
+  "addedAt": "2026-04-28"
+}

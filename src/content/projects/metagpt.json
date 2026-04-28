@@ -1,0 +1,10 @@
+{
+  "name": "MetaGPT",
+  "tagline": "Multi-agent framework that simulates a software company — PM, architect, engineer, QA.",
+  "url": "https://www.deepwisdom.ai",
+  "github": "geekan/MetaGPT",
+  "author": "DeepWisdom",
+  "tags": ["multi-agent", "framework", "research"],
+  "builtWith": ["GPT"],
+  "addedAt": "2026-04-28"
+}

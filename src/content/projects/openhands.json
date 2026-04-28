@@ -1,0 +1,10 @@
+{
+  "name": "OpenHands",
+  "tagline": "An open platform for AI software developers as autonomous agents.",
+  "url": "https://github.com/All-Hands-AI/OpenHands",
+  "github": "All-Hands-AI/OpenHands",
+  "author": "All Hands AI",
+  "tags": ["agent", "autonomous", "open-source"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

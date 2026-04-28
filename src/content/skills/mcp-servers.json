@@ -1,0 +1,11 @@
+{
+  "name": "Official MCP Servers",
+  "tagline": "Reference implementations of Model Context Protocol servers — filesystem, github, postgres, more.",
+  "url": "https://github.com/modelcontextprotocol/servers",
+  "github": "modelcontextprotocol/servers",
+  "author": "Anthropic",
+  "tags": ["mcp", "reference", "server"],
+  "kind": "mcp-server",
+  "featured": true,
+  "addedAt": "2026-04-28"
+}

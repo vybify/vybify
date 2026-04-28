@@ -1,0 +1,10 @@
+{
+  "name": "Awesome MCP Servers",
+  "tagline": "The community-maintained index of every MCP server worth knowing about.",
+  "url": "https://github.com/punkpeye/awesome-mcp-servers",
+  "github": "punkpeye/awesome-mcp-servers",
+  "author": "punkpeye",
+  "tags": ["mcp", "awesome", "directory"],
+  "kind": "mcp-server",
+  "addedAt": "2026-04-28"
+}

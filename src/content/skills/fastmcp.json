@@ -1,0 +1,11 @@
+{
+  "name": "FastMCP",
+  "tagline": "The fast, Pythonic way to build MCP servers and clients.",
+  "url": "https://gofastmcp.com",
+  "github": "jlowin/fastmcp",
+  "author": "Jeremiah Lowin",
+  "tags": ["mcp", "python", "framework"],
+  "kind": "mcp-server",
+  "install": "pip install fastmcp",
+  "addedAt": "2026-04-28"
+}

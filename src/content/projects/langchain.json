@@ -1,0 +1,10 @@
+{
+  "name": "LangChain",
+  "tagline": "The most-used framework for building applications with large language models.",
+  "url": "https://www.langchain.com",
+  "github": "langchain-ai/langchain",
+  "author": "LangChain",
+  "tags": ["framework", "library", "llm"],
+  "builtWith": ["any LLM"],
+  "addedAt": "2026-04-28"
+}

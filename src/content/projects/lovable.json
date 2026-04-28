@@ -1,0 +1,10 @@
+{
+  "name": "Lovable",
+  "tagline": "Build apps and websites by chatting with AI.",
+  "url": "https://lovable.dev",
+  "author": "Lovable",
+  "tags": ["webapp", "agent", "no-code"],
+  "builtWith": ["GPT", "Claude"],
+  "featured": true,
+  "addedAt": "2026-04-28"
+}

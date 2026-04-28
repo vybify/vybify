@@ -1,0 +1,10 @@
+{
+  "name": "CrewAI",
+  "tagline": "Framework for orchestrating role-playing autonomous agents that collaborate on tasks.",
+  "url": "https://crewai.com",
+  "github": "crewAIInc/crewAI",
+  "author": "crewAI Inc",
+  "tags": ["agent", "framework", "multi-agent"],
+  "builtWith": ["GPT", "Claude"],
+  "addedAt": "2026-04-28"
+}

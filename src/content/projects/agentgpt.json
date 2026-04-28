@@ -1,0 +1,10 @@
+{
+  "name": "AgentGPT",
+  "tagline": "Configure and deploy autonomous AI agents in your browser.",
+  "url": "https://agentgpt.reworkd.ai",
+  "github": "reworkd/AgentGPT",
+  "author": "Reworkd",
+  "tags": ["agent", "browser", "autonomous"],
+  "builtWith": ["GPT"],
+  "addedAt": "2026-04-28"
+}

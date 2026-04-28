@@ -1,0 +1,10 @@
+{
+  "name": "Cline",
+  "tagline": "Autonomous coding agent inside your IDE — plans, edits, runs, and iterates with your approval.",
+  "url": "https://cline.bot",
+  "github": "cline/cline",
+  "author": "Cline",
+  "tags": ["vscode", "agent", "autonomous"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

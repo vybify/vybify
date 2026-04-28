@@ -1,0 +1,10 @@
+{
+  "name": "Tabby",
+  "tagline": "Self-hosted AI coding assistant — open-source alternative to GitHub Copilot.",
+  "url": "https://tabby.tabbyml.com",
+  "github": "TabbyML/tabby",
+  "author": "TabbyML",
+  "tags": ["self-hosted", "autocomplete", "open-source"],
+  "builtWith": ["open models"],
+  "addedAt": "2026-04-28"
+}

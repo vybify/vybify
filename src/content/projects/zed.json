@@ -1,0 +1,10 @@
+{
+  "name": "Zed",
+  "tagline": "High-performance multiplayer code editor with AI agents and assistant baked in.",
+  "url": "https://zed.dev",
+  "github": "zed-industries/zed",
+  "author": "Zed Industries",
+  "tags": ["editor", "ide", "rust"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

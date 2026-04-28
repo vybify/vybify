@@ -1,0 +1,19 @@
+name: Refresh stars
+
+on:
+  schedule:
+    # 07:00 UTC daily (~midnight Pacific)
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify rebuild
+        run: |
+          if [ -z "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
+            echo "NETLIFY_BUILD_HOOK secret not set — configure it in repo settings."
+            exit 1
+          fi
+          curl -fsS -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}"

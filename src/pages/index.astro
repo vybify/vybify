@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { withStars } from '../lib/github';
+
+const projects = await withStars(await getCollection('projects'));
+const skills = await withStars(await getCollection('skills'));
+
+const byStars = (a: { stars: number | null }, b: { stars: number | null }) =>
+  (b.stars ?? -1) - (a.stars ?? -1);
+
+const topProjects = [...projects].sort(byStars).slice(0, 6);
+const topSkills = [...skills].sort(byStars).slice(0, 6);
+
+const totalStars = [...projects, ...skills].reduce((sum, e) => sum + (e.stars ?? 0), 0);
+---
+
+<Layout>
+  <section class="mb-16">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+      Discover what's been
+      <span class="text-[var(--color-accent)]">vibe-coded</span>.
+    </h1>
+    <p class="text-lg text-[var(--color-fg-muted)] max-w-2xl mb-6">
+      A living directory of projects and skills built with AI coding tools.
+      Ranked by GitHub stars, refreshed daily.
+    </p>
+    <div class="flex flex-wrap gap-6 text-sm text-[var(--color-fg-muted)] font-mono">
+      <span><strong class="text-[var(--color-fg)]">{projects.length}</strong> projects</span>
+      <span><strong class="text-[var(--color-fg)]">{skills.length}</strong> skills</span>
+      <span><strong class="text-[var(--color-fg)]">{totalStars.toLocaleString()}</strong> ⭐ tracked</span>
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <div class="flex items-baseline justify-between mb-6">
+      <h2 class="text-2xl font-semibold">Top projects</h2>
+      <a href="/projects" class="text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition">
+        See all →
+      </a>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      {topProjects.map((entry, i) => (
+        <Card
+          rank={i + 1}
+          name={entry.data.name}
+          tagline={entry.data.tagline}
+          url={entry.data.url}
+          github={entry.data.github}
+          author={entry.data.author}
+          tags={entry.data.tags}
+          stars={entry.stars}
+          featured={entry.data.featured}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="flex items-baseline justify-between mb-6">
+      <h2 class="text-2xl font-semibold">Top skills</h2>
+      <a href="/skills" class="text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition">
+        See all →
+      </a>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      {topSkills.map((entry, i) => (
+        <Card
+          rank={i + 1}
+          name={entry.data.name}
+          tagline={entry.data.tagline}
+          url={entry.data.url}
+          github={entry.data.github}
+          author={entry.data.author}
+          tags={entry.data.tags}
+          stars={entry.stars}
+          badge={entry.data.kind === 'mcp-server' ? 'MCP' :
+                 entry.data.kind === 'claude-code-skill' ? 'Skill' :
+                 entry.data.kind === 'cursor-rule' ? 'Cursor' : undefined}
+          featured={entry.data.featured}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

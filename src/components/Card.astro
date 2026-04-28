@@ -1,0 +1,79 @@
+---
+import { formatStars } from '../lib/github';
+
+interface Props {
+  rank?: number;
+  name: string;
+  tagline: string;
+  url: string;
+  github?: string;
+  author?: string;
+  tags: string[];
+  stars: number | null;
+  badge?: string;
+  featured?: boolean;
+}
+
+const { rank, name, tagline, url, github, author, tags, stars, badge, featured } = Astro.props;
+---
+
+<article
+  class:list={[
+    'group relative rounded-xl border p-5 transition',
+    'bg-[var(--color-surface)] border-[var(--color-border)]',
+    'hover:border-[var(--color-accent)]/60 hover:bg-[var(--color-surface-2)]',
+    featured ? 'ring-1 ring-[var(--color-accent)]/40' : '',
+  ]}
+>
+  <div class="flex items-start justify-between gap-3 mb-2">
+    <div class="flex items-center gap-3 min-w-0">
+      {rank !== undefined && (
+        <span class="font-mono text-xs text-[var(--color-fg-muted)] tabular-nums w-6 shrink-0">
+          {String(rank).padStart(2, '0')}
+        </span>
+      )}
+      <h3 class="text-lg font-semibold truncate">
+        <a href={url} target="_blank" rel="noopener" class="hover:text-[var(--color-accent)] transition">
+          {name}
+        </a>
+      </h3>
+      {badge && (
+        <span class="text-[10px] uppercase tracking-widest px-1.5 py-0.5 rounded bg-[var(--color-accent-2)]/10 text-[var(--color-accent-2)] border border-[var(--color-accent-2)]/30 shrink-0">
+          {badge}
+        </span>
+      )}
+    </div>
+    <div class="flex items-center gap-1 text-sm text-[var(--color-fg-muted)] shrink-0 font-mono">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1L12 2z" />
+      </svg>
+      <span>{formatStars(stars)}</span>
+    </div>
+  </div>
+
+  <p class="text-sm text-[var(--color-fg-muted)] mb-4 line-clamp-2">{tagline}</p>
+
+  <div class="flex flex-wrap items-center gap-2 text-xs">
+    {tags.slice(0, 4).map((tag) => (
+      <a
+        href={`/tag/${encodeURIComponent(tag.toLowerCase())}`}
+        class="px-2 py-0.5 rounded-full bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]/50 transition"
+      >
+        {tag}
+      </a>
+    ))}
+    {author && (
+      <span class="ml-auto text-[var(--color-fg-muted)]">by {author}</span>
+    )}
+  </div>
+
+  {github && (
+    <a
+      href={`https://github.com/${github}`}
+      target="_blank"
+      rel="noopener"
+      class="absolute inset-0 sr-only"
+      aria-label={`${name} on GitHub`}
+    >GitHub</a>
+  )}
+</article>

@@ -1,0 +1,10 @@
+{
+  "name": "Devika",
+  "tagline": "Agentic AI software engineer — open-source alternative to Devin.",
+  "url": "https://github.com/stitionai/devika",
+  "github": "stitionai/devika",
+  "author": "Stition AI",
+  "tags": ["agent", "autonomous", "open-source"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

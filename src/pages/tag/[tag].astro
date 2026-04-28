@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import { withStars } from '../../lib/github';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  const skills = await getCollection('skills');
+  const tags = new Set<string>();
+  for (const e of [...projects, ...skills]) {
+    for (const t of e.data.tags) tags.add(t.toLowerCase());
+  }
+  return [...tags].map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+const projects = await withStars(await getCollection('projects'));
+const skills = await withStars(await getCollection('skills'));
+
+const matches = [...projects, ...skills]
+  .filter((e) => e.data.tags.map((t) => t.toLowerCase()).includes(tag!))
+  .sort((a, b) => (b.stars ?? -1) - (a.stars ?? -1));
+---
+
+<Layout title={`#${tag} · vybify`}>
+  <section class="mb-10">
+    <a href="/" class="text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition">← All</a>
+    <h1 class="text-4xl font-bold tracking-tight mt-3 mb-2">
+      <span class="text-[var(--color-accent)]">#</span>{tag}
+    </h1>
+    <p class="text-[var(--color-fg-muted)]">
+      {matches.length} {matches.length === 1 ? 'entry' : 'entries'} tagged.
+    </p>
+  </section>
+
+  <div class="grid md:grid-cols-2 gap-4">
+    {matches.map((entry, i) => (
+      <Card
+        rank={i + 1}
+        name={entry.data.name}
+        tagline={entry.data.tagline}
+        url={entry.data.url}
+        github={entry.data.github}
+        author={entry.data.author}
+        tags={entry.data.tags}
+        stars={entry.stars}
+        featured={entry.data.featured}
+      />
+    ))}
+  </div>
+</Layout>

@@ -1,0 +1,10 @@
+{
+  "name": "Playwright MCP",
+  "tagline": "Give your agent a real browser — navigate, click, screenshot, and scrape.",
+  "url": "https://github.com/microsoft/playwright-mcp",
+  "github": "microsoft/playwright-mcp",
+  "author": "Microsoft",
+  "tags": ["mcp", "browser", "automation"],
+  "kind": "mcp-server",
+  "addedAt": "2026-04-28"
+}

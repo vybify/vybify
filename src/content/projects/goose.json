@@ -1,0 +1,10 @@
+{
+  "name": "Goose",
+  "tagline": "Block's open-source on-machine AI agent — automates engineering tasks via MCP.",
+  "url": "https://block.github.io/goose",
+  "github": "block/goose",
+  "author": "Block",
+  "tags": ["agent", "mcp", "local"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Aider",
+  "tagline": "AI pair programming in your terminal — edits your repo, commits, and more.",
+  "url": "https://aider.chat",
+  "github": "Aider-AI/aider",
+  "author": "Paul Gauthier",
+  "tags": ["cli", "agent", "git"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

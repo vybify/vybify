@@ -1,0 +1,10 @@
+{
+  "name": "screenshot-to-code",
+  "tagline": "Drop in a screenshot and convert it to clean HTML/Tailwind/React/Vue.",
+  "url": "https://screenshottocode.com",
+  "github": "abi/screenshot-to-code",
+  "author": "abi",
+  "tags": ["ui", "vision", "html", "tailwind"],
+  "builtWith": ["GPT-4o", "Claude"],
+  "addedAt": "2026-04-28"
+}

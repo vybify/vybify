@@ -1,0 +1,10 @@
+{
+  "name": "Smol Developer",
+  "tagline": "Your own personal junior developer that scaffolds an entire codebase from a prompt.",
+  "url": "https://github.com/smol-ai/developer",
+  "github": "smol-ai/developer",
+  "author": "smol-ai",
+  "tags": ["agent", "scaffolding", "open-source"],
+  "builtWith": ["Claude"],
+  "addedAt": "2026-04-28"
+}

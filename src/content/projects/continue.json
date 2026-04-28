@@ -1,0 +1,10 @@
+{
+  "name": "Continue",
+  "tagline": "Open-source AI code assistant for VS Code and JetBrains — bring any model.",
+  "url": "https://continue.dev",
+  "github": "continuedev/continue",
+  "author": "Continue",
+  "tags": ["vscode", "jetbrains", "open-source"],
+  "builtWith": ["any LLM"],
+  "addedAt": "2026-04-28"
+}

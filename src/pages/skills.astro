@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { withStars } from '../lib/github';
+
+const skills = await withStars(await getCollection('skills'));
+skills.sort((a, b) => (b.stars ?? -1) - (a.stars ?? -1));
+
+const kindLabel = {
+  'claude-code-skill': 'Skill',
+  'mcp-server': 'MCP',
+  'cursor-rule': 'Cursor',
+  'custom-gpt': 'GPT',
+  other: undefined,
+} as const;
+---
+
+<Layout title="Skills · vybify">
+  <section class="mb-10">
+    <h1 class="text-4xl font-bold tracking-tight mb-2">All skills</h1>
+    <p class="text-[var(--color-fg-muted)]">
+      {skills.length} skills, MCP servers, and rule packs — ranked by GitHub stars.
+    </p>
+  </section>
+
+  <div class="grid md:grid-cols-2 gap-4">
+    {skills.map((entry, i) => (
+      <Card
+        rank={i + 1}
+        name={entry.data.name}
+        tagline={entry.data.tagline}
+        url={entry.data.url}
+        github={entry.data.github}
+        author={entry.data.author}
+        tags={entry.data.tags}
+        stars={entry.stars}
+        badge={kindLabel[entry.data.kind]}
+        featured={entry.data.featured}
+      />
+    ))}
+  </div>
+</Layout>

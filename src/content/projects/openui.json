@@ -1,0 +1,10 @@
+{
+  "name": "OpenUI",
+  "tagline": "Describe a UI and watch it render live in your browser.",
+  "url": "https://openui.fly.dev",
+  "github": "wandb/openui",
+  "author": "Weights & Biases",
+  "tags": ["ui", "open-source", "playground"],
+  "builtWith": ["GPT", "Claude"],
+  "addedAt": "2026-04-28"
+}

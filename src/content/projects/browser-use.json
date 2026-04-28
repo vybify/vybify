@@ -1,0 +1,10 @@
+{
+  "name": "browser-use",
+  "tagline": "Make websites accessible to AI agents — give your agent a real browser.",
+  "url": "https://browser-use.com",
+  "github": "browser-use/browser-use",
+  "author": "Browser Use",
+  "tags": ["agent", "browser", "automation"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

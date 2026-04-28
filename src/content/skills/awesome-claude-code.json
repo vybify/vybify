@@ -1,0 +1,10 @@
+{
+  "name": "Awesome Claude Code",
+  "tagline": "Curated list of slash commands, CLAUDE.md files, MCPs, and workflows for Claude Code.",
+  "url": "https://github.com/hesreallyhim/awesome-claude-code",
+  "github": "hesreallyhim/awesome-claude-code",
+  "author": "hesreallyhim",
+  "tags": ["claude-code", "awesome", "directory"],
+  "kind": "claude-code-skill",
+  "addedAt": "2026-04-28"
+}

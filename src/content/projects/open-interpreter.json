@@ -1,0 +1,10 @@
+{
+  "name": "Open Interpreter",
+  "tagline": "Natural-language interface to your computer — runs code locally to do anything you ask.",
+  "url": "https://www.openinterpreter.com",
+  "github": "OpenInterpreter/open-interpreter",
+  "author": "Open Interpreter",
+  "tags": ["agent", "cli", "local"],
+  "builtWith": ["GPT", "Claude"],
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "GSD (Get Shit Done)",
+  "tagline": "Phase-based planning, execution, and verification skills for Claude Code.",
+  "url": "https://get-shit-done.dev",
+  "author": "Psilly Goose",
+  "tags": ["claude-code", "planning", "workflow"],
+  "kind": "claude-code-skill",
+  "install": "claude plugins install jakebrowngold/get-shit-done",
+  "addedAt": "2026-04-28"
+}

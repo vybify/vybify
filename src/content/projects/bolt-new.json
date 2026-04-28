@@ -1,0 +1,11 @@
+{
+  "name": "bolt.new",
+  "tagline": "Prompt, run, edit, and deploy full-stack web apps in the browser.",
+  "url": "https://bolt.new",
+  "github": "stackblitz/bolt.new",
+  "author": "StackBlitz",
+  "tags": ["webapp", "agent", "deploy", "in-browser"],
+  "builtWith": ["WebContainers", "Claude"],
+  "featured": true,
+  "addedAt": "2026-04-28"
+}

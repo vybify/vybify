@@ -1,0 +1,10 @@
+{
+  "name": "SWE-agent",
+  "tagline": "Princeton's autonomous agent that fixes bugs and lands PRs on real GitHub repos.",
+  "url": "https://swe-agent.com",
+  "github": "SWE-agent/SWE-agent",
+  "author": "Princeton NLP",
+  "tags": ["agent", "research", "github"],
+  "builtWith": ["GPT", "Claude"],
+  "addedAt": "2026-04-28"
+}

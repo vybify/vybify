@@ -1,0 +1,10 @@
+{
+  "name": "SuperClaude",
+  "tagline": "Framework that adds slash commands, personas, and workflows to Claude Code.",
+  "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
+  "github": "SuperClaude-Org/SuperClaude_Framework",
+  "author": "SuperClaude",
+  "tags": ["claude-code", "framework", "workflow"],
+  "kind": "claude-code-skill",
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Submit · vybify" description="Submit a vibe-coded project or skill to vybify.">
+  <section class="max-w-2xl">
+    <h1 class="text-4xl font-bold tracking-tight mb-3">Submit a project or skill</h1>
+    <p class="text-[var(--color-fg-muted)] mb-8">
+      Built something with AI tools? Made a skill, MCP server, or Cursor rule pack worth sharing?
+      Drop the details below and we'll review it for the directory.
+    </p>
+
+    <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 mb-8">
+      <h2 class="text-lg font-semibold mb-3">Fastest path</h2>
+      <p class="text-sm text-[var(--color-fg-muted)] mb-4">
+        Email <a href="mailto:hello@vybify.com?subject=Submission" class="text-[var(--color-accent)] hover:underline">hello@vybify.com</a>
+        with:
+      </p>
+      <ul class="text-sm space-y-2 list-disc list-inside text-[var(--color-fg-muted)]">
+        <li>Name + one-line tagline</li>
+        <li>Live URL (or repo if it's a skill)</li>
+        <li>GitHub repo (for star ranking — optional but recommended)</li>
+        <li>3–5 tags</li>
+        <li>What it was built with (Claude Code, Cursor, v0, etc.)</li>
+      </ul>
+    </div>
+
+    <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+      <h2 class="text-lg font-semibold mb-3">Or open a PR</h2>
+      <p class="text-sm text-[var(--color-fg-muted)] mb-3">
+        Add a JSON file under <code class="px-1.5 py-0.5 rounded bg-[var(--color-bg)] border border-[var(--color-border)] font-mono text-xs">src/content/projects/</code>
+        or <code class="px-1.5 py-0.5 rounded bg-[var(--color-bg)] border border-[var(--color-border)] font-mono text-xs">src/content/skills/</code> on the
+        <a href="#" class="text-[var(--color-accent)] hover:underline">vybify repo</a>.
+      </p>
+      <pre class="text-xs font-mono bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-4 overflow-x-auto"><code>{`{
+  "name": "Your project",
+  "tagline": "One short sentence.",
+  "url": "https://example.com",
+  "github": "owner/repo",
+  "author": "You",
+  "tags": ["ai", "indie"],
+  "builtWith": ["Claude Code"],
+  "addedAt": "2026-04-28"
+}`}</code></pre>
+    </div>
+  </section>
+</Layout>

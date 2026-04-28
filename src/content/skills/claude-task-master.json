@@ -1,0 +1,11 @@
+{
+  "name": "Claude Task Master",
+  "tagline": "AI-powered task management that ingests a PRD and breaks it into structured work for Claude Code.",
+  "url": "https://github.com/eyaltoledano/claude-task-master",
+  "github": "eyaltoledano/claude-task-master",
+  "author": "Eyal Toledano",
+  "tags": ["claude-code", "planning", "workflow"],
+  "kind": "claude-code-skill",
+  "install": "npm install -g task-master-ai",
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'vybify — discover vibe-coded projects & skills',
+  description = 'A curated directory of projects and skills built with AI coding tools.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.site?.href ?? 'https://vybify.com'} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="font-sans">
+    <header class="border-b border-[var(--color-border)]/60 backdrop-blur sticky top-0 z-10 bg-[var(--color-bg)]/70">
+      <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="text-xl font-bold tracking-tight">
+            <span class="text-[var(--color-accent)]">vy</span>bify
+          </span>
+          <span class="text-xs uppercase tracking-widest text-[var(--color-fg-muted)] group-hover:text-[var(--color-accent-2)] transition">
+            beta
+          </span>
+        </a>
+        <nav class="flex items-center gap-6 text-sm">
+          <a href="/" class="hover:text-[var(--color-accent)] transition">All</a>
+          <a href="/projects" class="hover:text-[var(--color-accent)] transition">Projects</a>
+          <a href="/skills" class="hover:text-[var(--color-accent)] transition">Skills</a>
+          <a
+            href="/submit"
+            class="px-3 py-1.5 rounded-md bg-[var(--color-accent)] text-[#0a0a0f] font-medium hover:opacity-90 transition"
+          >
+            Submit
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-6 py-12">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[var(--color-border)]/60 mt-24">
+      <div class="mx-auto max-w-6xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[var(--color-fg-muted)]">
+        <p>vybify — built in the vibe.</p>
+        <p>
+          <a href="/submit" class="hover:text-[var(--color-accent)]">Submit</a>
+          <span class="mx-2">·</span>
+          <a href="https://github.com" class="hover:text-[var(--color-accent)]">GitHub</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

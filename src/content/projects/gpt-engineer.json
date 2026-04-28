@@ -1,0 +1,10 @@
+{
+  "name": "gpt-engineer",
+  "tagline": "Specify a product in natural language and watch the AI generate the entire codebase.",
+  "url": "https://gptengineer.app",
+  "github": "AntonOsika/gpt-engineer",
+  "author": "Anton Osika",
+  "tags": ["agent", "scaffolding", "open-source"],
+  "builtWith": ["GPT"],
+  "addedAt": "2026-04-28"
+}

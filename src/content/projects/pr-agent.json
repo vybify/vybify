@@ -1,0 +1,10 @@
+{
+  "name": "PR-Agent",
+  "tagline": "AI-powered code review, PR analysis, and suggestions on every pull request.",
+  "url": "https://qodo.ai",
+  "github": "qodo-ai/pr-agent",
+  "author": "Qodo",
+  "tags": ["github", "review", "pr"],
+  "builtWith": ["GPT", "Claude"],
+  "addedAt": "2026-04-28"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Cody",
+  "tagline": "Sourcegraph's AI coding assistant that knows your entire codebase.",
+  "url": "https://sourcegraph.com/cody",
+  "github": "sourcegraph/cody-public-snapshot",
+  "author": "Sourcegraph",
+  "tags": ["ide", "context", "search"],
+  "builtWith": ["Claude", "GPT"],
+  "addedAt": "2026-04-28"
+}

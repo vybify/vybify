@@ -1,0 +1,11 @@
+{
+  "name": "Claude Code",
+  "tagline": "Anthropic's official agentic coding tool — runs in your terminal and edits your repo.",
+  "url": "https://claude.com/claude-code",
+  "github": "anthropics/claude-code",
+  "author": "Anthropic",
+  "tags": ["cli", "agent", "claude"],
+  "builtWith": ["Claude"],
+  "featured": true,
+  "addedAt": "2026-04-28"
+}
