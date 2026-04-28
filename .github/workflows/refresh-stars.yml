@@ -10,10 +10,10 @@ jobs:
   redeploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Netlify rebuild
+      - name: Trigger Cloudflare Pages rebuild
         run: |
-          if [ -z "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
-            echo "NETLIFY_BUILD_HOOK secret not set — configure it in repo settings."
+          if [ -z "${{ secrets.DEPLOY_HOOK_URL }}" ]; then
+            echo "DEPLOY_HOOK_URL secret not set — add the Cloudflare Pages deploy hook in repo settings."
             exit 1
           fi
-          curl -fsS -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          curl -fsS -X POST "${{ secrets.DEPLOY_HOOK_URL }}"
