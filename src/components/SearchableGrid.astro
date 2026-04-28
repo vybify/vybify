@@ -1,0 +1,320 @@
+---
+import { getCollection } from 'astro:content';
+import Card from './Card.astro';
+import { withStars } from '../lib/github';
+
+interface Props {
+  type?: 'all' | 'project' | 'skill';
+  showHeader?: boolean;
+}
+
+const { type = 'all', showHeader = true } = Astro.props;
+
+const projectsRaw = await withStars(await getCollection('projects'));
+const skillsRaw = await withStars(await getCollection('skills'));
+
+const kindBadge: Record<string, string | undefined> = {
+  'mcp-server': 'MCP',
+  'claude-code-skill': 'Skill',
+  'cursor-rule': 'Cursor',
+  'custom-gpt': 'GPT',
+  other: undefined,
+};
+
+type EntryRow = {
+  _type: 'project' | 'skill';
+  _id: string;
+  data: any;
+  stars: number | null;
+  delta7d: number | null;
+  badge?: string;
+};
+
+const projects: EntryRow[] = projectsRaw.map((e) => ({
+  _type: 'project',
+  _id: `p-${e.id}`,
+  data: e.data,
+  stars: e.stars,
+  delta7d: e.delta7d,
+}));
+
+const skills: EntryRow[] = skillsRaw.map((e) => ({
+  _type: 'skill',
+  _id: `s-${e.id}`,
+  data: e.data,
+  stars: e.stars,
+  delta7d: e.delta7d,
+  badge: kindBadge[e.data.kind],
+}));
+
+let entries: EntryRow[] = [];
+if (type === 'all' || type === 'project') entries.push(...projects);
+if (type === 'all' || type === 'skill') entries.push(...skills);
+
+// Default sort: stars desc
+entries.sort((a, b) => (b.stars ?? -1) - (a.stars ?? -1));
+
+// Tag frequency for the chip row
+const tagCounts: Record<string, number> = {};
+for (const e of entries) {
+  for (const t of e.data.tags ?? []) {
+    const key = t.toLowerCase();
+    tagCounts[key] = (tagCounts[key] ?? 0) + 1;
+  }
+}
+const topTags = Object.entries(tagCounts)
+  .sort((a, b) => b[1] - a[1])
+  .map(([t]) => t)
+  .slice(0, 18);
+
+// Search index payload
+const searchIndex = entries.map((e) => ({
+  i: e._id,
+  n: e.data.name,
+  t: e.data.tagline,
+  tags: (e.data.tags ?? []).map((x: string) => x.toLowerCase()),
+  bw: e.data.builtWith ?? [],
+  author: e.data.author ?? '',
+}));
+---
+
+<section class="vyb-search" data-default-type={type}>
+  {showHeader && (
+    <div class="mb-6">
+      <div class="relative">
+        <svg
+          class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-fg-muted)]"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <input
+          id="vyb-q"
+          type="search"
+          placeholder="Search projects, skills, tags…"
+          autocomplete="off"
+          class="w-full pl-10 pr-4 py-3 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] focus:border-[var(--color-accent)]/60 focus:outline-none text-base placeholder:text-[var(--color-fg-muted)] transition"
+        />
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 mt-4">
+        <div
+          class="vyb-type inline-flex rounded-lg border border-[var(--color-border)] overflow-hidden text-sm"
+          role="tablist"
+        >
+          <button data-type="all" class="px-3 py-1.5 hover:bg-[var(--color-surface)] transition">All</button>
+          <button data-type="project" class="px-3 py-1.5 hover:bg-[var(--color-surface)] transition border-l border-[var(--color-border)]">Projects</button>
+          <button data-type="skill" class="px-3 py-1.5 hover:bg-[var(--color-surface)] transition border-l border-[var(--color-border)]">Skills</button>
+        </div>
+
+        <div
+          class="vyb-sort inline-flex rounded-lg border border-[var(--color-border)] overflow-hidden text-sm"
+          role="tablist"
+        >
+          <button data-sort="stars" class="px-3 py-1.5 hover:bg-[var(--color-surface)] transition">Stars</button>
+          <button data-sort="rising" class="px-3 py-1.5 hover:bg-[var(--color-surface)] transition border-l border-[var(--color-border)]">Rising</button>
+          <button data-sort="recent" class="px-3 py-1.5 hover:bg-[var(--color-surface)] transition border-l border-[var(--color-border)]">Recent</button>
+          <button data-sort="alpha" class="px-3 py-1.5 hover:bg-[var(--color-surface)] transition border-l border-[var(--color-border)]">A–Z</button>
+        </div>
+
+        <span id="vyb-count" class="ml-auto text-sm text-[var(--color-fg-muted)] font-mono">
+          {entries.length}
+        </span>
+      </div>
+
+      <div class="vyb-tags flex flex-wrap gap-2 mt-4">
+        {topTags.map((t) => (
+          <button
+            data-tag={t}
+            class="px-2.5 py-1 rounded-full text-xs border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:border-[var(--color-accent)]/60 hover:text-[var(--color-accent)] transition"
+          >
+            #{t}
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div id="vyb-grid" class="grid md:grid-cols-2 gap-4">
+    {entries.map((e) => (
+      <div
+        class="vyb-card"
+        data-id={e._id}
+        data-type={e._type}
+        data-stars={e.stars ?? -1}
+        data-delta={e.delta7d ?? 0}
+        data-added={e.data.addedAt}
+        data-name={e.data.name.toLowerCase()}
+        data-tags={(e.data.tags ?? []).map((t: string) => t.toLowerCase()).join('|')}
+      >
+        <Card
+          name={e.data.name}
+          tagline={e.data.tagline}
+          url={e.data.url}
+          github={e.data.github}
+          author={e.data.author}
+          tags={e.data.tags ?? []}
+          stars={e.stars}
+          delta7d={e.delta7d}
+          badge={e.badge}
+          featured={e.data.featured}
+        />
+      </div>
+    ))}
+  </div>
+
+  <p id="vyb-empty" class="hidden text-center text-[var(--color-fg-muted)] py-12">
+    No matches. Try a different search or clear filters.
+  </p>
+</section>
+
+<script type="application/json" id="vyb-data" set:html={JSON.stringify(searchIndex)} />
+
+<script>
+  import Fuse from 'fuse.js';
+
+  const root = document.querySelector('.vyb-search') as HTMLElement | null;
+  const dataNode = document.getElementById('vyb-data');
+  if (!root || !dataNode) {
+    // No-op if the component didn't render
+  } else {
+    const data = JSON.parse(dataNode.textContent || '[]');
+    const fuse = new Fuse(data, {
+      keys: [
+        { name: 'n', weight: 2 },
+        { name: 't', weight: 1 },
+        { name: 'tags', weight: 1.5 },
+        { name: 'bw', weight: 1 },
+        { name: 'author', weight: 0.5 },
+      ],
+      threshold: 0.4,
+      ignoreLocation: true,
+      minMatchCharLength: 2,
+    });
+
+    const grid = document.getElementById('vyb-grid')!;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.vyb-card'));
+    const countEl = document.getElementById('vyb-count')!;
+    const emptyEl = document.getElementById('vyb-empty')!;
+
+    let activeType: 'all' | 'project' | 'skill' =
+      (root.dataset.defaultType as any) || 'all';
+    const activeTags = new Set<string>();
+    let activeSort: 'stars' | 'rising' | 'recent' | 'alpha' = 'stars';
+    let activeQuery = '';
+
+    function setActive(group: string, value: string) {
+      root.querySelectorAll<HTMLElement>(`.${group} button`).forEach((btn) => {
+        const v = (btn.dataset[group.replace('vyb-', '')] || '') as string;
+        const isActive = v === value;
+        btn.dataset.active = isActive ? 'true' : 'false';
+        btn.classList.toggle('bg-[var(--color-accent)]', isActive);
+        btn.classList.toggle('text-[#0a0a0f]', isActive);
+        btn.classList.toggle('font-medium', isActive);
+      });
+    }
+
+    function applySort() {
+      const visible = cards.filter((c) => !c.hidden);
+      visible.sort((a, b) => {
+        const sa = +a.dataset.stars!, sb = +b.dataset.stars!;
+        const da = +a.dataset.delta!, db = +b.dataset.delta!;
+        const aa = a.dataset.added!, ab = b.dataset.added!;
+        const na = a.dataset.name!, nb = b.dataset.name!;
+        switch (activeSort) {
+          case 'stars': return sb - sa;
+          case 'rising': return db - da || sb - sa;
+          case 'recent': return ab.localeCompare(aa) || sb - sa;
+          case 'alpha': return na.localeCompare(nb);
+        }
+      });
+      visible.forEach((c) => grid.appendChild(c));
+    }
+
+    function applyFilter() {
+      let allowed: Set<string> | null = null;
+      if (activeQuery.trim().length >= 2) {
+        const matches = fuse.search(activeQuery.trim());
+        allowed = new Set(matches.map((m: any) => m.item.i));
+      }
+
+      let count = 0;
+      for (const card of cards) {
+        const id = card.dataset.id!;
+        const t = card.dataset.type!;
+        const tags = (card.dataset.tags || '').split('|').filter(Boolean);
+
+        let visible = allowed === null ? true : allowed.has(id);
+        if (activeType !== 'all' && t !== activeType) visible = false;
+        if (activeTags.size > 0) {
+          for (const wanted of activeTags) {
+            if (!tags.includes(wanted)) {
+              visible = false;
+              break;
+            }
+          }
+        }
+
+        card.hidden = !visible;
+        if (visible) count++;
+      }
+
+      countEl.textContent = String(count);
+      emptyEl.classList.toggle('hidden', count > 0);
+      applySort();
+    }
+
+    // Search input
+    const input = document.getElementById('vyb-q') as HTMLInputElement | null;
+    input?.addEventListener('input', (e) => {
+      activeQuery = (e.target as HTMLInputElement).value;
+      applyFilter();
+    });
+
+    // Type pills
+    root.querySelectorAll<HTMLButtonElement>('.vyb-type button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        activeType = btn.dataset.type as any;
+        setActive('vyb-type', activeType);
+        applyFilter();
+      });
+    });
+
+    // Sort pills
+    root.querySelectorAll<HTMLButtonElement>('.vyb-sort button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        activeSort = btn.dataset.sort as any;
+        setActive('vyb-sort', activeSort);
+        applyFilter();
+      });
+    });
+
+    // Tag chips
+    root.querySelectorAll<HTMLButtonElement>('.vyb-tags button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const t = btn.dataset.tag!;
+        if (activeTags.has(t)) {
+          activeTags.delete(t);
+          btn.classList.remove('bg-[var(--color-accent)]/15', 'text-[var(--color-accent)]', 'border-[var(--color-accent)]/60');
+        } else {
+          activeTags.add(t);
+          btn.classList.add('bg-[var(--color-accent)]/15', 'text-[var(--color-accent)]', 'border-[var(--color-accent)]/60');
+        }
+        applyFilter();
+      });
+    });
+
+    // Initial active state
+    setActive('vyb-type', activeType);
+    setActive('vyb-sort', activeSort);
+  }
+</script>

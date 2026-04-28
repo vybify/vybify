@@ -1,5 +1,5 @@
 ---
-import { formatStars } from '../lib/github';
+import { formatStars, formatDelta } from '../lib/github';
 
 interface Props {
   rank?: number;
@@ -10,11 +10,13 @@ interface Props {
   author?: string;
   tags: string[];
   stars: number | null;
+  delta7d?: number | null;
   badge?: string;
   featured?: boolean;
 }
 
-const { rank, name, tagline, url, github, author, tags, stars, badge, featured } = Astro.props;
+const { rank, name, tagline, url, github, author, tags, stars, delta7d, badge, featured } = Astro.props;
+const deltaLabel = formatDelta(delta7d ?? null);
 ---
 
 <article
@@ -48,6 +50,9 @@ const { rank, name, tagline, url, github, author, tags, stars, badge, featured }
         <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1L12 2z" />
       </svg>
       <span>{formatStars(stars)}</span>
+      {deltaLabel && (
+        <span class="ml-1 text-[var(--color-accent-2)]">{deltaLabel}</span>
+      )}
     </div>
   </div>
 
