@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
+import CopyableCommand from '../../components/CopyableCommand.astro';
 import { withStars, formatStars, formatDelta } from '../../lib/github';
 
 export async function getStaticPaths() {
@@ -59,14 +60,20 @@ const kindLabel: Record<string, string> = {
       </div>
 
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">{data.name}</h1>
-      <p class="text-xl text-[var(--color-fg-muted)] leading-relaxed">{data.tagline}</p>
+      <p class="text-xl text-[var(--color-fg-muted)] leading-relaxed mb-8">{data.tagline}</p>
 
-      <div class="flex flex-wrap gap-3 mt-6">
+      {data.install && (
+        <div class="mb-6">
+          <CopyableCommand command={data.install} label="Install" />
+        </div>
+      )}
+
+      <div class="flex flex-wrap gap-3">
         <a
           href={data.url}
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-accent)] text-[#0a0a0f] font-medium hover:opacity-90 transition"
+          class={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition ${data.install ? 'bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/60' : 'bg-[var(--color-accent)] text-[#0a0a0f] hover:opacity-90'}`}
         >
           Open {data.name}
           <span aria-hidden="true">↗</span>
@@ -86,13 +93,6 @@ const kindLabel: Record<string, string> = {
         )}
       </div>
     </header>
-
-    {data.install && (
-      <section class="mb-10">
-        <div class="text-xs uppercase tracking-widest text-[var(--color-fg-muted)] mb-3">Install</div>
-        <pre class="rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] p-4 overflow-x-auto"><code class="font-mono text-sm">{data.install}</code></pre>
-      </section>
-    )}
 
     <section class="grid sm:grid-cols-2 gap-4 mb-10">
       <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
