@@ -80,53 +80,52 @@ const searchIndex = entries.map((e) => ({
 
 <section class="vyb-search" data-default-type={type}>
   {showHeader && (
-    <div class="mb-2">
-      <div class="relative pb-3 border-b-2 border-[var(--color-fg)]">
+    <div class="mb-6">
+      <div class="relative">
+        <svg
+          class="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-fg-faint)]"
+          width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
         <input
           id="vyb-q"
           type="search"
-          placeholder="Search the field guide…"
+          placeholder="Search projects, skills, tools, tags…"
           autocomplete="off"
-          class="w-full bg-transparent border-0 focus:outline-none text-2xl md:text-3xl placeholder:text-[var(--color-fg-faint)] py-2 pr-10"
+          class="w-full pl-11 pr-12 py-3 bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl placeholder:text-[var(--color-fg-faint)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)] text-base transition"
         />
-        <kbd class="hidden md:inline absolute right-0 top-1/2 -translate-y-1/2 font-mono text-xs px-2 py-1 border border-[var(--color-border)] text-[var(--color-fg-muted)] rounded">
+        <kbd class="hidden md:inline-flex absolute right-3 top-1/2 -translate-y-1/2 font-mono text-[11px] px-1.5 py-0.5 border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-fg-muted)] rounded">
           /
         </kbd>
       </div>
 
-      <div class="flex flex-wrap items-baseline gap-x-6 gap-y-3 mt-5">
-        <div class="vyb-type flex items-baseline gap-3" role="tablist">
-          <span class="label">Show</span>
-          <button data-type="all" class="vyb-pill text-base hover:text-[var(--color-accent)] transition">All</button>
-          <span class="text-[var(--color-fg-faint)]" aria-hidden="true">·</span>
-          <button data-type="project" class="vyb-pill text-base hover:text-[var(--color-accent)] transition">Projects</button>
-          <span class="text-[var(--color-fg-faint)]" aria-hidden="true">·</span>
-          <button data-type="skill" class="vyb-pill text-base hover:text-[var(--color-accent)] transition">Skills</button>
+      <div class="flex flex-wrap items-center gap-2 mt-4">
+        <div class="vyb-type inline-flex p-0.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg" role="tablist">
+          <button data-type="all" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">All</button>
+          <button data-type="project" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Projects</button>
+          <button data-type="skill" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Skills</button>
         </div>
 
-        <div class="vyb-sort flex items-baseline gap-3" role="tablist">
-          <span class="label">Sort</span>
-          <button data-sort="stars" class="vyb-pill text-base hover:text-[var(--color-accent)] transition">Stars</button>
-          <span class="text-[var(--color-fg-faint)]" aria-hidden="true">·</span>
-          <button data-sort="rising" class="vyb-pill text-base hover:text-[var(--color-accent)] transition">Rising</button>
-          <span class="text-[var(--color-fg-faint)]" aria-hidden="true">·</span>
-          <button data-sort="recent" class="vyb-pill text-base hover:text-[var(--color-accent)] transition">Recent</button>
-          <span class="text-[var(--color-fg-faint)]" aria-hidden="true">·</span>
-          <button data-sort="alpha" class="vyb-pill text-base hover:text-[var(--color-accent)] transition">A–Z</button>
+        <div class="vyb-sort inline-flex p-0.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg" role="tablist">
+          <button data-sort="stars" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Stars</button>
+          <button data-sort="rising" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Rising</button>
+          <button data-sort="recent" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Recent</button>
+          <button data-sort="alpha" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">A–Z</button>
         </div>
 
-        <span class="ml-auto label tnum">
-          <span id="vyb-count">{entries.length}</span> entries
+        <span class="ml-auto text-sm text-[var(--color-fg-muted)] tnum">
+          <span id="vyb-count">{entries.length}</span> results
         </span>
       </div>
 
       {topTags.length > 0 && (
-        <div class="vyb-tags flex flex-wrap gap-x-3 gap-y-1 mt-4 text-sm">
-          <span class="label self-baseline mr-1">Topics</span>
+        <div class="vyb-tags flex flex-wrap gap-1.5 mt-4">
           {topTags.map((t) => (
             <button
               data-tag={t}
-              class="text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition"
+              class="px-2.5 py-1 rounded-full text-xs bg-[var(--color-card)] border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent-soft)] transition"
             >
               #{t}
             </button>
@@ -136,7 +135,7 @@ const searchIndex = entries.map((e) => ({
     </div>
   )}
 
-  <div id="vyb-grid" class="mt-6 border-t-2 border-[var(--color-fg)]">
+  <div id="vyb-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-3">
     {entries.map((e) => {
       const detailHref = `/${e._type === 'project' ? 'projects' : 'skills'}/${e._id.slice(2)}`;
       return (
@@ -168,8 +167,8 @@ const searchIndex = entries.map((e) => ({
     })}
   </div>
 
-  <p id="vyb-empty" class="hidden text-center text-[var(--color-fg-muted)] py-16 text-lg">
-    No matches in this issue. Try a different search.
+  <p id="vyb-empty" class="hidden text-center text-[var(--color-fg-muted)] py-16">
+    No matches. Try a different search.
   </p>
 </section>
 
@@ -213,10 +212,13 @@ const searchIndex = entries.map((e) => ({
         const v = (btn.dataset[group.replace('vyb-', '')] || '') as string;
         const isActive = v === value;
         btn.dataset.active = isActive ? 'true' : 'false';
-        btn.classList.toggle('text-[var(--color-accent)]', isActive);
-        btn.classList.toggle('font-medium', isActive);
-        btn.classList.toggle('underline', isActive);
-        btn.classList.toggle('underline-offset-4', isActive);
+        if (isActive) {
+          btn.classList.add('bg-[var(--color-bg)]', 'text-[var(--color-fg)]', 'font-medium');
+          btn.classList.remove('text-[var(--color-fg-muted)]');
+        } else {
+          btn.classList.remove('bg-[var(--color-bg)]', 'text-[var(--color-fg)]', 'font-medium');
+          btn.classList.add('text-[var(--color-fg-muted)]');
+        }
       });
     }
 
@@ -301,10 +303,12 @@ const searchIndex = entries.map((e) => ({
         const t = btn.dataset.tag!;
         if (activeTags.has(t)) {
           activeTags.delete(t);
-          btn.classList.remove('text-[var(--color-accent)]', 'underline', 'underline-offset-4');
+          btn.classList.remove('bg-[var(--color-accent-soft)]', 'text-[var(--color-accent)]', 'border-[var(--color-accent)]/40');
+          btn.classList.add('bg-[var(--color-card)]', 'text-[var(--color-fg-muted)]', 'border-[var(--color-border)]');
         } else {
           activeTags.add(t);
-          btn.classList.add('text-[var(--color-accent)]', 'underline', 'underline-offset-4');
+          btn.classList.add('bg-[var(--color-accent-soft)]', 'text-[var(--color-accent)]', 'border-[var(--color-accent)]/40');
+          btn.classList.remove('bg-[var(--color-card)]', 'text-[var(--color-fg-muted)]', 'border-[var(--color-border)]');
         }
         applyFilter();
       });

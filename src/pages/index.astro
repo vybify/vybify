@@ -8,34 +8,14 @@ const skills = await getCollection('skills');
 ---
 
 <Layout>
-  <section class="grid md:grid-cols-12 gap-8 mb-16 pb-10 border-b border-[var(--color-border)]">
-    <div class="md:col-span-8">
-      <p class="eyebrow mb-4">The lede</p>
-      <h1 class="display text-5xl md:text-7xl mb-6 leading-[0.95]">
-        A field guide to the things people are <span class="text-[var(--color-accent)]">vibe-coding</span> with AI.
-      </h1>
-      <p class="lede text-xl md:text-2xl text-[var(--color-fg-soft)] max-w-2xl">
-        Projects, skills, and small tools — collected, ranked, and updated daily.
-      </p>
-    </div>
-
-    <aside class="md:col-span-4 md:border-l md:pl-8 border-[var(--color-border)] flex flex-col justify-end">
-      <p class="label mb-3">In this issue</p>
-      <dl class="space-y-2 text-base">
-        <div class="flex items-baseline justify-between border-b border-[var(--color-rule)] pb-2">
-          <dt>Projects</dt>
-          <dd class="font-mono tnum">{projects.length}</dd>
-        </div>
-        <div class="flex items-baseline justify-between border-b border-[var(--color-rule)] pb-2">
-          <dt>Skills &amp; tools</dt>
-          <dd class="font-mono tnum">{skills.length}</dd>
-        </div>
-        <div class="flex items-baseline justify-between">
-          <dt>Refreshed</dt>
-          <dd class="font-mono tnum text-[var(--color-fg-muted)]">daily</dd>
-        </div>
-      </dl>
-    </aside>
+  <section class="mb-6">
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-fg)] mb-1">
+      Discover what's been vibe-coded.
+    </h1>
+    <p class="text-[var(--color-fg-muted)]">
+      <span class="tnum font-medium text-[var(--color-fg)]">{projects.length}</span> projects ·
+      <span class="tnum font-medium text-[var(--color-fg)]">{skills.length}</span> skills · refreshed daily.
+    </p>
   </section>
 
   <SearchableGrid type="all" />

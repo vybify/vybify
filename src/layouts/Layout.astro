@@ -7,17 +7,14 @@ interface Props {
 }
 
 const {
-  title = 'Vybify — A field guide to the vibe-coded',
-  description = 'A curated directory of projects and skills built with AI coding tools.',
+  title = 'vybify — discover vibe-coded projects & skills',
+  description = 'A directory of projects and skills built with AI coding tools.',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://vybify.com').href;
 
-const issueDate = new Date().toLocaleDateString('en-US', {
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric',
-});
+const path = Astro.url.pathname;
+const isActive = (p: string) => path === p || path.startsWith(p + '/');
 ---
 
 <!doctype html>
@@ -32,56 +29,65 @@ const issueDate = new Date().toLocaleDateString('en-US', {
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <link rel="canonical" href={canonical} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <header class="border-b-2 border-[var(--color-fg)]">
-      <div class="mx-auto max-w-6xl px-6 pt-8 pb-3">
-        <div class="flex items-baseline justify-between gap-4">
-          <p class="eyebrow">№ 01 · {issueDate}</p>
-          <p class="eyebrow hidden sm:block">A directory of vibe-coded work</p>
-        </div>
-      </div>
-      <div class="mx-auto max-w-6xl px-6 pb-6">
-        <div class="flex items-end justify-between gap-6 flex-wrap">
-          <a href="/" class="inline-flex items-baseline gap-3 group">
-            <span class="display text-6xl md:text-7xl tracking-tight leading-none">
-              Vybify
-            </span>
-            <span class="text-base text-[var(--color-fg-muted)] hidden md:inline">
-              The field guide
-            </span>
+    <header class="bg-[var(--color-card)] border-b border-[var(--color-border)] sticky top-0 z-30">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-2 text-[17px] font-semibold tracking-tight text-[var(--color-fg)] hover:text-[var(--color-accent)] transition">
+          <span class="inline-block w-6 h-6 rounded-md bg-[var(--color-accent)] text-white text-xs font-bold leading-6 text-center">v</span>
+          vybify
+        </a>
+
+        <nav class="flex items-center gap-1 text-sm">
+          <a
+            href="/"
+            class:list={[
+              'px-3 py-1.5 rounded-md transition',
+              path === '/' ? 'bg-[var(--color-accent-soft)] text-[var(--color-accent)] font-medium' : 'text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)]',
+            ]}
+          >
+            All
           </a>
-          <nav class="flex items-baseline gap-6 text-base">
-            <a href="/" class="hover:text-[var(--color-accent)] transition border-b border-transparent hover:border-[var(--color-accent)]">All</a>
-            <a href="/projects" class="hover:text-[var(--color-accent)] transition border-b border-transparent hover:border-[var(--color-accent)]">Projects</a>
-            <a href="/skills" class="hover:text-[var(--color-accent)] transition border-b border-transparent hover:border-[var(--color-accent)]">Skills</a>
-            <a href="/submit" class="text-[var(--color-accent)] font-medium hover:underline">
-              Submit&nbsp;→
-            </a>
-          </nav>
-        </div>
+          <a
+            href="/projects"
+            class:list={[
+              'px-3 py-1.5 rounded-md transition',
+              isActive('/projects') ? 'bg-[var(--color-accent-soft)] text-[var(--color-accent)] font-medium' : 'text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)]',
+            ]}
+          >
+            Projects
+          </a>
+          <a
+            href="/skills"
+            class:list={[
+              'px-3 py-1.5 rounded-md transition',
+              isActive('/skills') ? 'bg-[var(--color-accent-soft)] text-[var(--color-accent)] font-medium' : 'text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)]',
+            ]}
+          >
+            Skills
+          </a>
+          <a
+            href="/submit"
+            class="ml-2 px-3 py-1.5 rounded-md bg-[var(--color-accent)] text-white text-sm font-medium hover:bg-[var(--color-accent-hover)] transition"
+          >
+            Submit
+          </a>
+        </nav>
       </div>
     </header>
 
-    <main class="mx-auto max-w-6xl px-6 py-12">
+    <main class="mx-auto max-w-6xl px-4 sm:px-6 py-8">
       <slot />
     </main>
 
-    <footer class="mt-32 border-t-2 border-[var(--color-fg)]">
-      <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-baseline justify-between gap-3">
-        <p class="display text-2xl">Vybify</p>
-        <div class="eyebrow flex gap-4">
-          <a href="/submit" class="hover:text-[var(--color-accent)] transition">Submit a piece</a>
-          <span aria-hidden="true">·</span>
-          <a href="https://github.com/jakemellman/vybify" class="hover:text-[var(--color-accent)] transition">Colophon</a>
-        </div>
+    <footer class="mt-24 border-t border-[var(--color-border)] bg-[var(--color-card)]">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[var(--color-fg-muted)]">
+        <p>vybify · Refreshed daily from GitHub.</p>
+        <nav class="flex items-center gap-4">
+          <a href="/submit" class="hover:text-[var(--color-fg)] transition">Submit</a>
+          <a href="https://github.com/jakemellman/vybify" class="hover:text-[var(--color-fg)] transition">GitHub</a>
+        </nav>
       </div>
     </footer>
   </body>

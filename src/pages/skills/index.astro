@@ -3,15 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import SearchableGrid from '../../components/SearchableGrid.astro';
 ---
 
-<Layout title="Skills · Vybify">
-  <section class="mb-10 pb-8 border-b border-[var(--color-border)]">
-    <p class="eyebrow mb-3">Section · Skills</p>
-    <h1 class="display text-5xl md:text-6xl leading-tight mb-3">
-      Skills, MCP servers &amp; rule packs.
-    </h1>
-    <p class="lede max-w-2xl">
-      The things you bolt onto Claude Code, Cursor, and friends.
-    </p>
+<Layout title="Skills · vybify">
+  <section class="mb-6">
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-fg)] mb-1">Skills</h1>
+    <p class="text-[var(--color-fg-muted)]">Skills, MCP servers, and rule packs — ranked by GitHub stars.</p>
   </section>
 
   <SearchableGrid type="skill" />

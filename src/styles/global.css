@@ -1,127 +1,67 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Newsreader", "Iowan Old Style", "Hoefler Text", Georgia, serif;
-  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
 
-  /* Newsprint-inspired warm palette */
-  --color-bg: #f4efe3;
-  --color-paper: #faf6ec;
-  --color-surface: #ede5d2;
-  --color-surface-2: #e3d9bf;
-  --color-border: #c9bfa6;
-  --color-rule: #1a17120f;
+  --color-bg: #f5f6f8;
+  --color-card: #ffffff;
+  --color-card-hover: #fafbfc;
+  --color-border: #e3e6eb;
+  --color-border-strong: #cdd2da;
 
-  --color-fg: #1a1712;
-  --color-fg-soft: #2e2a22;
-  --color-fg-muted: #6b6151;
-  --color-fg-faint: #8a8270;
+  --color-fg: #1a1d23;
+  --color-fg-soft: #2e3540;
+  --color-fg-muted: #5f6877;
+  --color-fg-faint: #8b94a3;
 
-  /* Editorial vermillion + sepia + ink-blue */
-  --color-accent: #c5310f;
-  --color-accent-soft: #e1480f;
-  --color-accent-2: #2c4d4a;
-  --color-sepia: #876d4a;
+  --color-accent: #1f6fff;
+  --color-accent-hover: #1559d6;
+  --color-accent-soft: #e7eefe;
+  --color-positive: #18a558;
 }
 
 html {
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-sans);
-  font-feature-settings: "kern" 1, "liga" 1;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.5;
   min-height: 100dvh;
-  position: relative;
-}
-
-/* Subtle paper grain so the cream isn't sterile */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.06;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch' seed='5'/><feColorMatrix values='0 0 0 0 0.1  0 0 0 0 0.09  0 0 0 0 0.07  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
-
-main, header, footer {
-  position: relative;
-  z-index: 1;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-paper);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
 }
 
-/* Editorial display utilities */
-.display {
-  font-family: var(--font-display);
-  font-variation-settings: "opsz" 60;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
-}
-
-.display-italic {
-  font-family: var(--font-display);
-  font-variation-settings: "opsz" 36;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.005em;
-  line-height: 1.2;
-}
-
-.lede {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: var(--color-fg-soft);
-}
-
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-fg-muted);
-}
-
-.label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-fg-muted);
-}
-
-.rule {
-  border: 0;
-  border-top: 1px solid var(--color-border);
-  margin: 0;
-}
-
-.rule-thick {
-  border: 0;
-  border-top: 2px solid var(--color-fg);
-  margin: 0;
-}
-
-/* Tabular number display */
 .tnum {
   font-variant-numeric: tabular-nums;
 }
 
-input[type="search"],
-input[type="text"] {
+input[type="search"] {
   font-family: var(--font-sans);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button {
+  font-family: var(--font-sans);
+}
+
+/* Utility: subtle muted label */
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
 }

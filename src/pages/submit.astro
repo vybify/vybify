@@ -2,47 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Submit · Vybify" description="Submit a vibe-coded project or skill to Vybify.">
-  <a href="/" class="eyebrow inline-flex items-center gap-2 mb-12 hover:text-[var(--color-accent)] transition">
-    <span aria-hidden="true">←</span> Back to the index
+<Layout title="Submit · vybify" description="Submit a vibe-coded project or skill to vybify.">
+  <a href="/" class="inline-flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition mb-6">
+    <span aria-hidden="true">←</span> Back
   </a>
 
-  <section class="grid md:grid-cols-12 gap-x-8 gap-y-10">
-    <header class="md:col-span-12 pb-8 border-b-2 border-[var(--color-fg)]">
-      <p class="eyebrow mb-3">From the editors</p>
-      <h1 class="display text-5xl md:text-7xl leading-[0.95]">
-        Submit a piece.
-      </h1>
-      <p class="lede text-xl md:text-2xl mt-4 max-w-2xl">
-        Built something with AI tools? Made a skill, MCP server, or rule pack worth sharing? Send it in.
-      </p>
-    </header>
+  <section class="max-w-3xl">
+    <h1 class="text-2xl sm:text-3xl font-semibold mb-2">Submit a project or skill</h1>
+    <p class="text-[var(--color-fg-muted)] mb-8 text-lg">
+      Built something with AI tools? Made a skill, MCP server, or rule pack worth sharing?
+    </p>
 
-    <div class="md:col-span-7">
-      <p class="label mb-3">By email</p>
-      <h2 class="display text-3xl mb-3">The fastest way</h2>
-      <p class="mb-4 leading-relaxed">
-        Email <a href="mailto:hello@vybify.com?subject=Submission" class="text-[var(--color-accent)] hover:underline italic">hello@vybify.com</a> with:
-      </p>
-      <ul class="space-y-1.5 list-none pl-0">
-        <li class="border-b border-[var(--color-rule)] pb-1.5">— Name + a one-line tagline</li>
-        <li class="border-b border-[var(--color-rule)] pb-1.5">— Live URL (or repo if it's a skill)</li>
-        <li class="border-b border-[var(--color-rule)] pb-1.5">— GitHub repo (for star ranking — recommended)</li>
-        <li class="border-b border-[var(--color-rule)] pb-1.5">— Three to five tags</li>
-        <li>— What you built it with (Claude Code, Cursor, v0, etc.)</li>
-      </ul>
-    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-5">
+        <h2 class="text-base font-semibold mb-2">By email</h2>
+        <p class="text-sm text-[var(--color-fg-muted)] mb-3">
+          Send to <a href="mailto:hello@vybify.com?subject=Submission" class="text-[var(--color-accent)] hover:underline">hello@vybify.com</a>:
+        </p>
+        <ul class="text-sm space-y-1.5 text-[var(--color-fg-muted)] list-disc list-inside">
+          <li>Name + one-line tagline</li>
+          <li>Live URL</li>
+          <li>GitHub repo (recommended)</li>
+          <li>3–5 tags</li>
+          <li>What you built it with</li>
+        </ul>
+      </div>
 
-    <div class="md:col-span-5">
-      <p class="label mb-3">Or directly</p>
-      <h2 class="display text-3xl mb-3">Open a pull request</h2>
-      <p class="mb-4 leading-relaxed">
-        Add a JSON entry to the <a href="https://github.com/jakemellman/vybify" class="text-[var(--color-accent)] italic hover:underline">repository</a>, in
-        <code class="font-mono text-sm bg-[var(--color-surface)] px-1.5 py-0.5 border border-[var(--color-border)]">src/content/projects/</code>
-        or
-        <code class="font-mono text-sm bg-[var(--color-surface)] px-1.5 py-0.5 border border-[var(--color-border)]">src/content/skills/</code>.
-      </p>
-      <pre class="text-xs font-mono bg-[var(--color-surface)] border border-[var(--color-border)] p-4 overflow-x-auto leading-relaxed"><code>{`{
+      <div class="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-5">
+        <h2 class="text-base font-semibold mb-2">Open a pull request</h2>
+        <p class="text-sm text-[var(--color-fg-muted)] mb-3">
+          Add a JSON file to the
+          <a href="https://github.com/jakemellman/vybify" class="text-[var(--color-accent)] hover:underline">repo</a>
+          under <code class="font-mono text-xs px-1 py-0.5 rounded bg-[var(--color-bg)]">src/content/projects/</code>
+          or <code class="font-mono text-xs px-1 py-0.5 rounded bg-[var(--color-bg)]">src/content/skills/</code>:
+        </p>
+        <pre class="text-xs font-mono bg-[var(--color-bg)] border border-[var(--color-border)] rounded p-3 overflow-x-auto"><code>{`{
   "name": "Your project",
   "tagline": "One short sentence.",
   "url": "https://example.com",
@@ -52,6 +46,7 @@ import Layout from '../layouts/Layout.astro';
   "builtWith": ["Claude Code"],
   "addedAt": "2026-04-29"
 }`}</code></pre>
+      </div>
     </div>
   </section>
 </Layout>

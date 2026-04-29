@@ -3,15 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import SearchableGrid from '../../components/SearchableGrid.astro';
 ---
 
-<Layout title="Projects · Vybify">
-  <section class="mb-10 pb-8 border-b border-[var(--color-border)]">
-    <p class="eyebrow mb-3">Section · Projects</p>
-    <h1 class="display text-5xl md:text-6xl leading-tight mb-3">
-      Vibe-coded apps, agents &amp; tools.
-    </h1>
-    <p class="lede max-w-2xl">
-      Things people built with AI — ranked by GitHub stars, refreshed daily.
-    </p>
+<Layout title="Projects · vybify">
+  <section class="mb-6">
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-fg)] mb-1">Projects</h1>
+    <p class="text-[var(--color-fg-muted)]">Vibe-coded apps, agents, and tools — ranked by GitHub stars.</p>
   </section>
 
   <SearchableGrid type="project" />

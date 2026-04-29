@@ -34,7 +34,6 @@ const related = [...siblings, ...otherType]
   .map((x) => x.e);
 
 const deltaStr = formatDelta(delta7d);
-const description = data.tagline;
 
 const kindLabel: Record<string, string> = {
   'claude-code-skill': 'Claude Code skill',
@@ -45,46 +44,37 @@ const kindLabel: Record<string, string> = {
 };
 ---
 
-<Layout title={`${data.name} · Vybify`} description={description}>
-  <a href="/skills" class="eyebrow inline-flex items-center gap-2 mb-12 hover:text-[var(--color-accent)] transition">
+<Layout title={`${data.name} · vybify`} description={data.tagline}>
+  <a href="/skills" class="inline-flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition mb-6">
     <span aria-hidden="true">←</span> All skills
   </a>
 
-  <article class="grid md:grid-cols-12 gap-x-8 gap-y-10">
-    <header class="md:col-span-12 pb-10 border-b-2 border-[var(--color-fg)]">
-      <div class="flex items-baseline gap-3 mb-4">
-        <span class="eyebrow">{kindLabel[data.kind] ?? 'Skill'}</span>
-        {data.featured && (
-          <>
-            <span class="text-[var(--color-fg-faint)]">·</span>
-            <span class="eyebrow text-[var(--color-accent)]">Featured</span>
-          </>
-        )}
+  <article class="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-6 sm:p-8 mb-8">
+    <div class="flex items-start justify-between gap-4 flex-wrap">
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="label">{kindLabel[data.kind] ?? 'Skill'}</span>
+          {data.featured && (
+            <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium uppercase tracking-wide bg-yellow-50 text-yellow-700 border border-yellow-200">
+              Featured
+            </span>
+          )}
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-2">{data.name}</h1>
+        <p class="text-lg text-[var(--color-fg-muted)] max-w-2xl leading-relaxed">{data.tagline}</p>
       </div>
 
-      <h1 class="display text-6xl md:text-8xl leading-[0.95] tracking-tight mb-6">
-        {data.name}
-      </h1>
-      <p class="lede text-xl md:text-2xl max-w-3xl">
-        {data.tagline}
-      </p>
-
-      {data.install && (
-        <div class="mt-10 max-w-2xl">
-          <CopyableCommand command={data.install} label="Install" />
-        </div>
-      )}
-
-      <div class="flex flex-wrap gap-3 mt-6">
+      <div class="flex flex-wrap gap-2 shrink-0">
         <a
           href={data.url}
           target="_blank"
           rel="noopener"
-          class={`inline-flex items-center gap-2 px-5 py-2.5 transition ${data.install
-            ? 'border border-[var(--color-fg)] hover:bg-[var(--color-fg)] hover:text-[var(--color-paper)]'
-            : 'bg-[var(--color-fg)] text-[var(--color-paper)] hover:bg-[var(--color-accent)]'}`}
+          class={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition ${data.install
+            ? 'bg-[var(--color-card)] border border-[var(--color-border)] text-[var(--color-fg)] hover:border-[var(--color-border-strong)]'
+            : 'bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)]'}`}
         >
-          <span>Open {data.name}</span>
+          Open
           <span aria-hidden="true">↗</span>
         </a>
         {data.github && (
@@ -92,67 +82,69 @@ const kindLabel: Record<string, string> = {
             href={`https://github.com/${data.github}`}
             target="_blank"
             rel="noopener"
-            class="inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--color-fg)] hover:bg-[var(--color-fg)] hover:text-[var(--color-paper)] transition"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[var(--color-card)] border border-[var(--color-border)] text-sm font-medium text-[var(--color-fg)] hover:border-[var(--color-border-strong)] transition"
           >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
               <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
             </svg>
-            <span>View on GitHub</span>
+            GitHub
           </a>
         )}
       </div>
-    </header>
+    </div>
 
-    <aside class="md:col-span-4 md:order-2 md:sticky md:top-8 md:self-start space-y-6">
-      <div class="border-t border-[var(--color-fg)] pt-4">
-        <p class="label mb-2">Stars</p>
-        <p class="display tnum text-4xl">
+    {data.install && (
+      <div class="mt-6">
+        <CopyableCommand command={data.install} label="Install" />
+      </div>
+    )}
+
+    <hr class="border-[var(--color-border)] my-6" />
+
+    <dl class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4">
+      <div>
+        <dt class="label mb-1">Stars</dt>
+        <dd class="text-lg font-medium tnum">
           {formatStars(stars)}
-          <span class="text-[var(--color-fg-muted)] text-2xl">★</span>
-        </p>
-        {deltaStr && (
-          <p class="font-mono text-sm text-[var(--color-accent-2)] mt-1">{deltaStr} in 7 days</p>
-        )}
+          {deltaStr && (
+            <span class="text-sm text-[var(--color-positive)] ml-1.5 font-normal">{deltaStr}</span>
+          )}
+        </dd>
       </div>
-
-      <div class="border-t border-[var(--color-border)] pt-4">
-        <p class="label mb-2">Type</p>
-        <p class="text-lg">{kindLabel[data.kind] ?? 'Skill'}</p>
+      <div>
+        <dt class="label mb-1">Type</dt>
+        <dd class="text-sm">{kindLabel[data.kind] ?? 'Skill'}</dd>
       </div>
-
       {data.author && (
-        <div class="border-t border-[var(--color-border)] pt-4">
-          <p class="label mb-2">Made by</p>
-          <p class="text-lg">{data.author}</p>
+        <div>
+          <dt class="label mb-1">Author</dt>
+          <dd class="text-sm">{data.author}</dd>
         </div>
       )}
-
-      <div class="border-t border-[var(--color-border)] pt-4">
-        <p class="label mb-2">Catalogued</p>
-        <p class="font-mono tnum text-sm text-[var(--color-fg-muted)]">{data.addedAt}</p>
+      <div>
+        <dt class="label mb-1">Added</dt>
+        <dd class="text-sm tnum text-[var(--color-fg-muted)]">{data.addedAt}</dd>
       </div>
-    </aside>
+    </dl>
 
-    <section class="md:col-span-8 md:order-1">
-      <p class="label mb-4">Tags</p>
-      <div class="flex flex-wrap gap-x-4 gap-y-2 mb-12">
-        {data.tags.map((tag: string) => (
-          <a
-            href={`/tag/${encodeURIComponent(tag.toLowerCase())}`}
-            class="text-base text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition"
-          >
-            #{tag}
-          </a>
-        ))}
-      </div>
-    </section>
+    <hr class="border-[var(--color-border)] my-6" />
+
+    <div class="flex flex-wrap gap-1.5">
+      {data.tags.map((tag: string) => (
+        <a
+          href={`/tag/${encodeURIComponent(tag.toLowerCase())}`}
+          class="inline-flex items-center px-2.5 py-1 rounded-full text-xs bg-[var(--color-bg)] text-[var(--color-fg-muted)] hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)] transition"
+        >
+          #{tag}
+        </a>
+      ))}
+    </div>
   </article>
 
   {related.length > 0 && (
-    <section class="mt-20 pt-12 border-t-2 border-[var(--color-fg)]">
-      <p class="eyebrow mb-2">Read next</p>
-      <h2 class="display text-3xl md:text-4xl mb-6">Related entries</h2>
-      <div class="border-t-2 border-[var(--color-fg)]">
+    <section>
+      <h2 class="text-lg font-semibold mb-3">Related</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {related.map((r) => (
           <Card
             name={r.data.name}

@@ -23,25 +23,24 @@ const matches = [...projects, ...skills]
   .sort((a, b) => (b.stars ?? -1) - (a.stars ?? -1));
 ---
 
-<Layout title={`#${tag} · Vybify`}>
-  <a href="/" class="eyebrow inline-flex items-center gap-2 mb-12 hover:text-[var(--color-accent)] transition">
-    <span aria-hidden="true">←</span> Back to the index
+<Layout title={`#${tag} · vybify`}>
+  <a href="/" class="inline-flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition mb-6">
+    <span aria-hidden="true">←</span> All
   </a>
 
-  <section class="mb-10 pb-8 border-b-2 border-[var(--color-fg)]">
-    <p class="eyebrow mb-3">Topic</p>
-    <h1 class="display text-6xl md:text-7xl tracking-tight">
+  <section class="mb-6">
+    <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight mb-1">
       <span class="text-[var(--color-accent)]">#</span>{tag}
     </h1>
-    <p class="lede mt-3">
-      {matches.length} {matches.length === 1 ? 'entry' : 'entries'} carry this topic.
+    <p class="text-[var(--color-fg-muted)]">
+      <span class="tnum font-medium text-[var(--color-fg)]">{matches.length}</span>
+      {matches.length === 1 ? 'entry' : 'entries'} tagged.
     </p>
   </section>
 
-  <div>
-    {matches.map((entry, i) => (
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+    {matches.map((entry) => (
       <Card
-        rank={i + 1}
         name={entry.data.name}
         tagline={entry.data.tagline}
         href={`/${entry._type === 'project' ? 'projects' : 'skills'}/${entry.id}`}
