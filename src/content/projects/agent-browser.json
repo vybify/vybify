@@ -1,0 +1,10 @@
+{
+  "name": "Agent Browser",
+  "tagline": "Vercel's headless browser for AI agents — built for reliable web automation at scale.",
+  "url": "https://github.com/vercel-labs/agent-browser",
+  "github": "vercel-labs/agent-browser",
+  "author": "Vercel Labs",
+  "tags": ["agent", "browser", "automation", "vercel"],
+  "builtWith": ["TypeScript"],
+  "addedAt": "2026-04-29"
+}

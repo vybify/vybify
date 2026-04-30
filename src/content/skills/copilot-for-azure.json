@@ -1,0 +1,11 @@
+{
+  "name": "GitHub Copilot for Azure",
+  "tagline": "Microsoft's Copilot skills for Azure — AI services, observability, hosted SDK, compute.",
+  "url": "https://skills.sh/microsoft/github-copilot-for-azure",
+  "github": "microsoft/github-copilot-for-azure",
+  "author": "Microsoft",
+  "tags": ["claude-code", "copilot", "azure", "official"],
+  "kind": "claude-code-skill",
+  "install": "npx skills add microsoft/github-copilot-for-azure",
+  "addedAt": "2026-04-29"
+}

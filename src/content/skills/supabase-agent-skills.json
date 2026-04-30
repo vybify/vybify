@@ -1,0 +1,11 @@
+{
+  "name": "Supabase Agent Skills",
+  "tagline": "Supabase's official skill pack — Postgres best practices, RLS, auth patterns, edge functions.",
+  "url": "https://skills.sh/supabase/agent-skills",
+  "github": "supabase/agent-skills",
+  "author": "Supabase",
+  "tags": ["claude-code", "postgres", "supabase", "database", "official"],
+  "kind": "claude-code-skill",
+  "install": "npx skills add supabase/agent-skills",
+  "addedAt": "2026-04-29"
+}

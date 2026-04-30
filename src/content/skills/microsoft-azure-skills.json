@@ -1,0 +1,11 @@
+{
+  "name": "Microsoft Azure Skills",
+  "tagline": "Microsoft's official Azure skill pack — Foundry, Kubernetes, cost optimization, observability, compute.",
+  "url": "https://skills.sh/microsoft/azure-skills",
+  "github": "microsoft/azure-skills",
+  "author": "Microsoft",
+  "tags": ["claude-code", "azure", "cloud", "infrastructure", "official"],
+  "kind": "claude-code-skill",
+  "install": "npx skills add microsoft/azure-skills",
+  "addedAt": "2026-04-29"
+}

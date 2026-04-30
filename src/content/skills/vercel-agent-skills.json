@@ -1,0 +1,12 @@
+{
+  "name": "Vercel Agent Skills",
+  "tagline": "Vercel's official skill pack — React, Next.js, web design, view transitions, and native best practices.",
+  "url": "https://skills.sh/vercel-labs/agent-skills",
+  "github": "vercel-labs/agent-skills",
+  "author": "Vercel Labs",
+  "tags": ["claude-code", "react", "nextjs", "vercel", "official"],
+  "kind": "claude-code-skill",
+  "install": "npx skills add vercel-labs/agent-skills",
+  "featured": true,
+  "addedAt": "2026-04-29"
+}

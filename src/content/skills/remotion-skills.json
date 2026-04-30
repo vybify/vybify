@@ -1,0 +1,11 @@
+{
+  "name": "Remotion Skills",
+  "tagline": "Best practices for creating videos in React with Remotion — timeline, transitions, rendering.",
+  "url": "https://skills.sh/remotion-dev/skills",
+  "github": "remotion-dev/skills",
+  "author": "Remotion",
+  "tags": ["claude-code", "video", "react", "remotion"],
+  "kind": "claude-code-skill",
+  "install": "npx skills add remotion-dev/skills",
+  "addedAt": "2026-04-29"
+}

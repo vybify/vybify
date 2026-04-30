@@ -1,0 +1,11 @@
+{
+  "name": "shadcn/ui",
+  "tagline": "Beautifully designed, copy-paste React components — open source, accessible, Tailwind-based.",
+  "url": "https://ui.shadcn.com",
+  "github": "shadcn-ui/ui",
+  "author": "shadcn",
+  "tags": ["react", "components", "tailwind", "ui"],
+  "builtWith": ["React", "Tailwind", "Radix"],
+  "featured": true,
+  "addedAt": "2026-04-29"
+}

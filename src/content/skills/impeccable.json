@@ -1,0 +1,11 @@
+{
+  "name": "Impeccable",
+  "tagline": "Polish, critique, and audit skills for fixing the design and copy your AI agent ships.",
+  "url": "https://skills.sh/pbakaus/impeccable",
+  "github": "pbakaus/impeccable",
+  "author": "Paul Bakaus",
+  "tags": ["claude-code", "design", "polish", "critique"],
+  "kind": "claude-code-skill",
+  "install": "npx skills add pbakaus/impeccable",
+  "addedAt": "2026-04-29"
+}
