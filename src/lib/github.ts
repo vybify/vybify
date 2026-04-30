@@ -64,56 +64,25 @@ function compute7dDelta(history: HistoryEntry[] | undefined, currentStars: numbe
 }
 
 /**
- * In-flight request dedupe. Multiple concurrent calls for the same repo
- * share a single fetch promise — critical when many entries share a repo
- * (e.g., 14 entries from anthropics/skills).
+ * Light in-flight dedupe. Bulk fetches happen in scripts/prefetch-stars.mjs
+ * before Astro builds, so this is just a safety net for entries that may
+ * have missed the prefetch cache (e.g., a brand-new entry).
  */
 const inflight = new Map<string, Promise<number | null>>();
-
-/**
- * Concurrency cap at the fetch level (process-wide). Astro builds many
- * pages in parallel; each calls withStars; without a global cap they
- * all fire fetches simultaneously and trigger GitHub's secondary rate
- * limit. The slot-handoff pattern below avoids the over-acquisition
- * race that plagued earlier attempts: on release we hand the slot
- * directly to the next waiter without re-incrementing the counter.
- */
-const MAX_CONCURRENT = 6;
-let activeCount = 0;
-const waitQueue: Array<() => void> = [];
-
-async function acquireSlot(): Promise<void> {
-  if (activeCount < MAX_CONCURRENT && waitQueue.length === 0) {
-    activeCount++;
-    return;
-  }
-  await new Promise<void>((resolve) => waitQueue.push(resolve));
-  // Slot was handed to us by releaseSlot (no increment needed; transferred).
-}
-
-function releaseSlot(): void {
-  const next = waitQueue.shift();
-  if (next) {
-    next();
-  } else {
-    activeCount--;
-  }
-}
 
 async function fetchStarsLive(repo: string): Promise<number | null> {
   const existing = inflight.get(repo);
   if (existing) return existing;
 
   const p = (async () => {
-    await acquireSlot();
-    try {
-      const token = process.env.GITHUB_TOKEN;
-      const headers: Record<string, string> = {
-        Accept: 'application/vnd.github+json',
-        'User-Agent': 'vybify-build',
-      };
-      if (token) headers.Authorization = `Bearer ${token}`;
+    const token = process.env.GITHUB_TOKEN;
+    const headers: Record<string, string> = {
+      Accept: 'application/vnd.github+json',
+      'User-Agent': 'vybify-build',
+    };
+    if (token) headers.Authorization = `Bearer ${token}`;
 
+    try {
       const res = await fetch(`https://api.github.com/repos/${repo}`, { headers });
       if (!res.ok) {
         console.warn(`[github] ${repo} → ${res.status}`);
@@ -124,8 +93,6 @@ async function fetchStarsLive(repo: string): Promise<number | null> {
     } catch (err) {
       console.warn(`[github] ${repo} fetch failed`, err);
       return null;
-    } finally {
-      releaseSlot();
     }
   })();
 
