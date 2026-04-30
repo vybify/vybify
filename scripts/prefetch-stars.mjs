@@ -17,7 +17,9 @@ import { dirname, join, resolve } from 'node:path';
 const CACHE_PATH = resolve(process.cwd(), '.cache/github-stars.json');
 const HISTORY_PATH = resolve(process.cwd(), '.cache/github-history.json');
 const HISTORY_DAYS = 14;
-const REQUEST_DELAY_MS = 75;
+const REQUEST_DELAY_MS = 800;
+const RETRY_DELAY_MS = 5000;
+const MAX_RETRIES = 2;
 
 const TOKEN = process.env.GITHUB_TOKEN;
 if (!TOKEN) {
@@ -57,7 +59,7 @@ async function collectUniqueRepos() {
   return [...repos];
 }
 
-async function fetchStars(repo) {
+async function fetchStars(repo, attempt = 0) {
   const headers = {
     Accept: 'application/vnd.github+json',
     'User-Agent': 'vybify-prefetch',
@@ -66,6 +68,18 @@ async function fetchStars(repo) {
 
   try {
     const res = await fetch(`https://api.github.com/repos/${repo}`, { headers });
+    if (res.status === 403 || res.status === 429) {
+      // Rate limit hit — back off and retry
+      const retryAfter = parseInt(res.headers.get('retry-after') || '0', 10) * 1000;
+      const waitMs = retryAfter || (RETRY_DELAY_MS * (attempt + 1));
+      if (attempt < MAX_RETRIES) {
+        console.warn(`[prefetch] ${repo} → ${res.status}; retry in ${waitMs}ms`);
+        await sleep(waitMs);
+        return fetchStars(repo, attempt + 1);
+      }
+      console.warn(`[prefetch] ${repo} → ${res.status} after ${MAX_RETRIES} retries`);
+      return null;
+    }
     if (!res.ok) {
       console.warn(`[prefetch] ${repo} → ${res.status}`);
       return null;
@@ -109,18 +123,21 @@ async function main() {
   for (let i = 0; i < repos.length; i++) {
     const repo = repos[i];
     const existing = cache[repo];
-    // Skip if recently cached (within 6 hours)
-    if (existing && now - existing.fetchedAt < 1000 * 60 * 60 * 6) {
+    // Skip only if we have a SUCCESSFUL recent value. Never lock in nulls
+    // — failed fetches must be retried on subsequent builds.
+    if (existing && existing.stars !== null && now - existing.fetchedAt < 1000 * 60 * 60 * 6) {
       cached++;
       continue;
     }
 
     const stars = await fetchStars(repo);
-    cache[repo] = { stars, fetchedAt: now };
     if (stars !== null) {
+      cache[repo] = { stars, fetchedAt: now };
       recordHistory(history, repo, stars);
       fetched++;
     } else {
+      // Don't overwrite a previously-successful cached value with null
+      if (!existing) cache[repo] = { stars: null, fetchedAt: now };
       failed++;
     }
 
