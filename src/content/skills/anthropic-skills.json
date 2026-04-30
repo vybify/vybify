@@ -6,6 +6,7 @@
   "author": "Anthropic",
   "tags": ["claude-code", "official", "reference"],
   "kind": "claude-code-skill",
+  "install": "npx skills add anthropics/skills",
   "featured": true,
   "addedAt": "2026-04-28"
 }

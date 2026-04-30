@@ -6,5 +6,6 @@
   "author": "Microsoft",
   "tags": ["mcp", "browser", "automation"],
   "kind": "mcp-server",
+  "install": "claude mcp add playwright npx @playwright/mcp@latest",
   "addedAt": "2026-04-28"
 }

@@ -6,5 +6,6 @@
   "author": "SuperClaude",
   "tags": ["claude-code", "framework", "workflow"],
   "kind": "claude-code-skill",
+  "install": "pipx install SuperClaude",
   "addedAt": "2026-04-28"
 }

@@ -102,11 +102,13 @@ const searchIndex = entries.map((e) => ({
       </div>
 
       <div class="flex flex-wrap items-center gap-2 mt-4">
-        <div class="vyb-type inline-flex p-0.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg" role="tablist">
-          <button data-type="all" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">All</button>
-          <button data-type="project" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Projects</button>
-          <button data-type="skill" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Skills</button>
-        </div>
+        {type === 'all' && (
+          <div class="vyb-type inline-flex p-0.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg" role="tablist">
+            <button data-type="all" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">All</button>
+            <button data-type="project" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Projects</button>
+            <button data-type="skill" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Skills <span class="ml-1 text-[var(--color-fg-faint)]">(installable)</span></button>
+          </div>
+        )}
 
         <div class="vyb-sort inline-flex p-0.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg" role="tablist">
           <button data-sort="stars" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Stars</button>
@@ -148,6 +150,7 @@ const searchIndex = entries.map((e) => ({
           data-added={e.data.addedAt}
           data-name={e.data.name.toLowerCase()}
           data-tags={(e.data.tags ?? []).map((t: string) => t.toLowerCase()).join('|')}
+          data-installable={e._type === 'skill' && e.data.install ? 'yes' : 'no'}
         >
           <Card
             name={e.data.name}
@@ -254,6 +257,8 @@ const searchIndex = entries.map((e) => ({
 
         let visible = allowed === null ? true : allowed.has(id);
         if (activeType !== 'all' && t !== activeType) visible = false;
+        // Skills filter additionally narrows to entries with an install command
+        if (activeType === 'skill' && card.dataset.installable !== 'yes') visible = false;
         if (activeTags.size > 0) {
           for (const wanted of activeTags) {
             if (!tags.includes(wanted)) {

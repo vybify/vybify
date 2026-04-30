@@ -6,6 +6,7 @@
   "author": "Upstash",
   "tags": ["mcp", "docs", "context"],
   "kind": "mcp-server",
+  "install": "claude mcp add context7 -- npx -y @upstash/context7-mcp",
   "featured": true,
   "addedAt": "2026-04-28"
 }
