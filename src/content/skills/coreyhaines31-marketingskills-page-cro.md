@@ -1,6 +1,6 @@
 ---
 name: Page Cro
-tagline: "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or bl"
+tagline: "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or…"
 url: "https://skills.sh/coreyhaines31/marketingskills/page-cro"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

@@ -1,6 +1,6 @@
 ---
 name: Value
-tagline: Skill value from hugmouse/skills.
+tagline: "Skill value from hugmouse/skills."
 url: "https://skills.sh/hugmouse/skills/value"
 github: hugmouse/skills
 author: hugmouse

@@ -1,6 +1,6 @@
 ---
 name: Azure Deploy
-tagline: "Execute Azure deployments for ALREADY-PREPARED applications that have existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill when th"
+tagline: "Execute Azure deployments for ALREADY-PREPARED applications that have existing .azure/deployment-plan.md and infrastructure files."
 url: "https://skills.sh/microsoft/azure-skills/azure-deploy"
 github: "microsoft/azure-skills"
 author: microsoft

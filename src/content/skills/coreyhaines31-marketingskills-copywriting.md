@@ -1,6 +1,6 @@
 ---
 name: Copywriting
-tagline: "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or"
+tagline: "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages…"
 url: "https://skills.sh/coreyhaines31/marketingskills/copywriting"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

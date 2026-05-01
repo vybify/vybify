@@ -1,6 +1,6 @@
 ---
 name: Azure Aigateway
-tagline: "Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents. WHEN: semantic caching, token limit, content safety, load balancing, AI mo"
+tagline: "Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents."
 url: "https://skills.sh/microsoft/azure-skills/azure-aigateway"
 github: "microsoft/azure-skills"
 author: microsoft

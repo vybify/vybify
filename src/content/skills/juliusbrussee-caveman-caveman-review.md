@@ -1,6 +1,6 @@
 ---
 name: Caveman Review
-tagline: "Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use"
+tagline: "Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix."
 url: "https://skills.sh/juliusbrussee/caveman/caveman-review"
 github: juliusbrussee/caveman
 author: juliusbrussee

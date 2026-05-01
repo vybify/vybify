@@ -1,6 +1,6 @@
 ---
 name: Copy Editing
-tagline: "When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the user mentions 'edit this copy,' 'review "
+tagline: "When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content."
 url: "https://skills.sh/coreyhaines31/marketingskills/copy-editing"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

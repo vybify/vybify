@@ -1,6 +1,6 @@
 ---
 name: Supabase Postgres Best Practices
-tagline: "Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or d"
+tagline: "Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or…"
 url: "https://skills.sh/supabase/agent-skills/supabase-postgres-best-practices"
 github: "supabase/agent-skills"
 author: supabase

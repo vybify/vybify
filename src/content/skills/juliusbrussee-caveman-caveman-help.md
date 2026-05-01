@@ -1,6 +1,6 @@
 ---
 name: Caveman Help
-tagline: "Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, \"caveman help\", \"what caveman"
+tagline: "Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode."
 url: "https://skills.sh/juliusbrussee/caveman/caveman-help"
 github: juliusbrussee/caveman
 author: juliusbrussee

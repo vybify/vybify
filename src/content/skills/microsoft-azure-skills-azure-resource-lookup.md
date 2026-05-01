@@ -1,6 +1,6 @@
 ---
 name: Azure Resource Lookup
-tagline: "List, find, and show Azure resources across subscriptions or resource groups. Handles prompts like \\\"list the websites in my subscription\\\", \\\"list my web apps\\"
+tagline: "List, find, and show Azure resources across subscriptions or resource groups. Handles prompts like \\\"list the websites in my subscription\\\", \\\"list my web…"
 url: "https://skills.sh/microsoft/azure-skills/azure-resource-lookup"
 github: "microsoft/azure-skills"
 author: microsoft

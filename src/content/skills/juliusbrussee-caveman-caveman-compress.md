@@ -1,6 +1,6 @@
 ---
 name: Caveman Compress
-tagline: "Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format to save input tokens. Preserves all technical substance, code, URLs, "
+tagline: "Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format to save input tokens."
 url: "https://skills.sh/juliusbrussee/caveman/caveman-compress"
 github: juliusbrussee/caveman
 author: juliusbrussee

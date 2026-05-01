@@ -1,6 +1,6 @@
 ---
 name: Azure Postgres
-tagline: GitHub Copilot for Azure
+tagline: "GitHub Copilot for Azure"
 url: "https://skills.sh/microsoft/github-copilot-for-azure/azure-postgres"
 github: "microsoft/github-copilot-for-azure"
 author: microsoft

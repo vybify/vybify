@@ -1,6 +1,6 @@
 ---
 name: Sales Enablement
-tagline: "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also use when the user mentions 'sales deck,'"
+tagline: "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts."
 url: "https://skills.sh/coreyhaines31/marketingskills/sales-enablement"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

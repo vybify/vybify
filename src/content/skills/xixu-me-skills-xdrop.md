@@ -1,6 +1,6 @@
 ---
 name: Xdrop
-tagline: "Use this skill when the user wants to send or fetch files through an Xdrop server from the terminal, asks to automate encrypted Xdrop share-link workflows, prov"
+tagline: "Use this skill when the user wants to send or fetch files through an Xdrop server from the terminal, asks to automate encrypted Xdrop share-link workflows…"
 url: "https://skills.sh/xixu-me/skills/xdrop"
 github: "xixu-me/skills"
 author: "xixu-me"

@@ -1,6 +1,6 @@
 ---
 name: Convex Performance Audit
-tagline: "Audits Convex performance for reads, subscriptions, write contention, and function limits. Use for slow features, insights findings, OCC conflicts, or read ampl"
+tagline: "Audits Convex performance for reads, subscriptions, write contention, and function limits."
 url: "https://skills.sh/get-convex/agent-skills/convex-performance-audit"
 github: "get-convex/agent-skills"
 author: "get-convex"

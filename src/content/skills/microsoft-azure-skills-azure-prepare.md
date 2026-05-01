@@ -1,6 +1,6 @@
 ---
 name: Azure Prepare
-tagline: "Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml, Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration (use az"
+tagline: "Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml, Dockerfiles)."
 url: "https://skills.sh/microsoft/azure-skills/azure-prepare"
 github: "microsoft/azure-skills"
 author: microsoft

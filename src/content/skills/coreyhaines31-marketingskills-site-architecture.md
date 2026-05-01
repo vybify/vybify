@@ -1,6 +1,6 @@
 ---
 name: Site Architecture
-tagline: "When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking. Also use when the user mentions"
+tagline: "When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking."
 url: "https://skills.sh/coreyhaines31/marketingskills/site-architecture"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

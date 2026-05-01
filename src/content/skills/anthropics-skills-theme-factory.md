@@ -1,6 +1,6 @@
 ---
 name: Theme Factory
-tagline: "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fo"
+tagline: "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc."
 url: "https://skills.sh/anthropics/skills/theme-factory"
 github: anthropics/skills
 author: anthropics

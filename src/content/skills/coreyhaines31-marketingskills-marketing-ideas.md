@@ -1,6 +1,6 @@
 ---
 name: Marketing Ideas
-tagline: "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the user asks for 'marketing ideas,' 'growth i"
+tagline: "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product."
 url: "https://skills.sh/coreyhaines31/marketingskills/marketing-ideas"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

@@ -1,6 +1,6 @@
 ---
 name: Popup Cro
-tagline: "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,"
+tagline: "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes."
 url: "https://skills.sh/coreyhaines31/marketingskills/popup-cro"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

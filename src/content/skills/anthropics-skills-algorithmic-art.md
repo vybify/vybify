@@ -1,6 +1,6 @@
 ---
 name: Algorithmic Art
-tagline: "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generati"
+tagline: "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration."
 url: "https://skills.sh/anthropics/skills/algorithmic-art"
 github: anthropics/skills
 author: anthropics

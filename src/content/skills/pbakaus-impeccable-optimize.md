@@ -1,6 +1,6 @@
 ---
 name: Optimize
-tagline: The design language that makes your AI harness better at design.
+tagline: "The design language that makes your AI harness better at design."
 url: "https://skills.sh/pbakaus/impeccable/optimize"
 github: pbakaus/impeccable
 author: pbakaus

@@ -1,6 +1,6 @@
 ---
 name: Pdf
-tagline: "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple P"
+tagline: "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple…"
 url: "https://skills.sh/anthropics/skills/pdf"
 github: anthropics/skills
 author: anthropics

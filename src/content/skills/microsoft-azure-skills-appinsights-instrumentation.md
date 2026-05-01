@@ -1,6 +1,6 @@
 ---
 name: Appinsights Instrumentation
-tagline: "Guidance for instrumenting webapps with Azure Application Insights. Provides telemetry patterns, SDK setup, and configuration references. WHEN: how to instrumen"
+tagline: "Guidance for instrumenting webapps with Azure Application Insights. Provides telemetry patterns, SDK setup, and configuration references."
 url: "https://skills.sh/microsoft/azure-skills/appinsights-instrumentation"
 github: "microsoft/azure-skills"
 author: microsoft

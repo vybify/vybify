@@ -1,6 +1,6 @@
 ---
 name: Xget
-tagline: "Use when tasks involve Xget URL rewriting, registry/package/container/API acceleration, integrating Xget into Git, download tools, package managers, container b"
+tagline: "Use when tasks involve Xget URL rewriting, registry/package/container/API acceleration, integrating Xget into Git, download tools, package managers, container…"
 url: "https://skills.sh/xixu-me/skills/xget"
 github: "xixu-me/skills"
 author: "xixu-me"

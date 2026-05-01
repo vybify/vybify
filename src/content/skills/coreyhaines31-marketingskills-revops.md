@@ -1,6 +1,6 @@
 ---
 name: Revops
-tagline: "When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes. Also use when the user mentions 'RevOps,' "
+tagline: "When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes."
 url: "https://skills.sh/coreyhaines31/marketingskills/revops"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

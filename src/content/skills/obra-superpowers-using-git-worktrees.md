@@ -1,6 +1,6 @@
 ---
 name: Using Git Worktrees
-tagline: "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart "
+tagline: "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart…"
 url: "https://skills.sh/obra/superpowers/using-git-worktrees"
 github: obra/superpowers
 author: obra

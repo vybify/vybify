@@ -1,6 +1,6 @@
 ---
 name: Firebase Hosting Basics
-tagline: "Skill for working with Firebase Hosting (Classic). Use this when you want to deploy static web apps, Single Page Apps (SPAs), or simple microservices. Do NOT us"
+tagline: "Skill for working with Firebase Hosting (Classic). Use this when you want to deploy static web apps, Single Page Apps (SPAs), or simple microservices."
 url: "https://skills.sh/firebase/agent-skills/firebase-hosting-basics"
 github: "firebase/agent-skills"
 author: firebase

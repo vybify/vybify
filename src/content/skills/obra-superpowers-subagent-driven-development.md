@@ -1,6 +1,6 @@
 ---
 name: Subagent Driven Development
-tagline: Use when executing implementation plans with independent tasks in the current session
+tagline: "Use when executing implementation plans with independent tasks in the current session"
 url: "https://skills.sh/obra/superpowers/subagent-driven-development"
 github: obra/superpowers
 author: obra

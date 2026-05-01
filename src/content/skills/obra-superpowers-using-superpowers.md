@@ -1,6 +1,6 @@
 ---
 name: Using Superpowers
-tagline: "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions"
+tagline: "Establishes how to find and use skills at the start of every conversation. Requires Skill tool invocation before any response, including clarifying questions."
 url: "https://skills.sh/obra/superpowers/using-superpowers"
 github: obra/superpowers
 author: obra

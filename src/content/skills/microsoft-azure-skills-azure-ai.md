@@ -1,6 +1,6 @@
 ---
 name: Azure Ai
-tagline: "Use for Azure AI: Search, Speech, OpenAI, Document Intelligence. Helps with search, vector/hybrid search, speech-to-text, text-to-speech, transcription, OCR. WH"
+tagline: "Use for Azure AI: Search, Speech, OpenAI, Document Intelligence. Helps with search, vector/hybrid search, speech-to-text, text-to-speech, transcription, OCR."
 url: "https://skills.sh/microsoft/azure-skills/azure-ai"
 github: "microsoft/azure-skills"
 author: microsoft

@@ -1,6 +1,6 @@
 ---
 name: Free Tool Strategy
-tagline: "When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user ment"
+tagline: "When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness."
 url: "https://skills.sh/coreyhaines31/marketingskills/free-tool-strategy"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

@@ -1,6 +1,6 @@
 ---
 name: Email Sequence
-tagline: "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"e"
+tagline: "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program."
 url: "https://skills.sh/coreyhaines31/marketingskills/email-sequence"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

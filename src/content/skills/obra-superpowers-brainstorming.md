@@ -1,6 +1,6 @@
 ---
 name: Brainstorming
-tagline: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirem"
+tagline: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior."
 url: "https://skills.sh/obra/superpowers/brainstorming"
 github: obra/superpowers
 author: obra

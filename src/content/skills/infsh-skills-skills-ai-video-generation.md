@@ -1,6 +1,6 @@
 ---
 name: Ai Video Generation
-tagline: inference.sh Agent skills for using our API to give your agents access to hundreds of apps and other agents
+tagline: "inference.sh Agent skills for using our API to give your agents access to hundreds of apps and other agents"
 url: "https://skills.sh/infsh-skills/skills/ai-video-generation"
 github: "infsh-skills/skills"
 author: "infsh-skills"

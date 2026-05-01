@@ -1,6 +1,6 @@
 ---
 name: Firecrawl
-tagline: Skill firecrawl from firecrawl/cli.
+tagline: "Skill firecrawl from firecrawl/cli."
 url: "https://skills.sh/firecrawl/cli/firecrawl"
 github: firecrawl/cli
 author: firecrawl

@@ -1,6 +1,6 @@
 ---
 name: Caveman
-tagline: "Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full"
+tagline: "Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy."
 url: "https://skills.sh/juliusbrussee/caveman/caveman"
 github: juliusbrussee/caveman
 author: juliusbrussee

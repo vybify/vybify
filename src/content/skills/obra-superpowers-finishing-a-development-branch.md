@@ -1,6 +1,6 @@
 ---
 name: Finishing A Development Branch
-tagline: "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting stru"
+tagline: "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting…"
 url: "https://skills.sh/obra/superpowers/finishing-a-development-branch"
 github: obra/superpowers
 author: obra

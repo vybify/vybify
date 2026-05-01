@@ -1,6 +1,6 @@
 ---
 name: Convex Create Component
-tagline: "Builds reusable Convex components with isolated tables and app-facing APIs. Use for new components, reusable backend modules, integrations, or component boundar"
+tagline: "Builds reusable Convex components with isolated tables and app-facing APIs. Use for new components, reusable backend modules, integrations, or component…"
 url: "https://skills.sh/get-convex/agent-skills/convex-create-component"
 github: "get-convex/agent-skills"
 author: "get-convex"

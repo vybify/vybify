@@ -1,6 +1,6 @@
 ---
 name: Cursor Directory
-tagline: The largest curated directory of Cursor rules and MCP integrations.
+tagline: "The largest curated directory of Cursor rules and MCP integrations."
 url: "https://cursor.directory"
 github: pontusab/cursor.directory
 author: Pontus Abrahamsson

@@ -1,6 +1,6 @@
 ---
 name: Seo Audit
-tagline: "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,"
+tagline: "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not…"
 url: "https://skills.sh/coreyhaines31/marketingskills/seo-audit"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

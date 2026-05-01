@@ -1,6 +1,6 @@
 ---
 name: Azure Validate
-tagline: "Pre-deployment validation for Azure readiness. Run deep checks on configuration, infrastructure (Bicep or Terraform), RBAC role assignments, managed identity pe"
+tagline: "Pre-deployment validation for Azure readiness. Run deep checks on configuration, infrastructure (Bicep or Terraform), RBAC role assignments, managed identity…"
 url: "https://skills.sh/microsoft/azure-skills/azure-validate"
 github: "microsoft/azure-skills"
 author: microsoft

@@ -1,6 +1,6 @@
 ---
 name: Azure Resource Visualizer
-tagline: "Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources. WHEN: create architect"
+tagline: "Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources."
 url: "https://skills.sh/microsoft/azure-skills/azure-resource-visualizer"
 github: "microsoft/azure-skills"
 author: microsoft

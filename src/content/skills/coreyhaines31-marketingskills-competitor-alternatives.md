@@ -1,6 +1,6 @@
 ---
 name: Competitor Alternatives
-tagline: "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs p"
+tagline: "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement."
 url: "https://skills.sh/coreyhaines31/marketingskills/competitor-alternatives"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

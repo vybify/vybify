@@ -1,6 +1,6 @@
 ---
 name: Azure Kusto
-tagline: "Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis. WHEN: KQL queries, Kusto database qu"
+tagline: "Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis."
 url: "https://skills.sh/microsoft/azure-skills/azure-kusto"
 github: "microsoft/azure-skills"
 author: microsoft

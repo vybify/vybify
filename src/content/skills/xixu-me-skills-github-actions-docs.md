@@ -1,6 +1,6 @@
 ---
 name: Github Actions Docs
-tagline: "Use when users ask how to write, explain, customize, migrate, secure, or troubleshoot GitHub Actions workflows, workflow syntax, triggers, matrices, runners, re"
+tagline: "Use when users ask how to write, explain, customize, migrate, secure, or troubleshoot GitHub Actions workflows, workflow syntax, triggers, matrices, runners…"
 url: "https://skills.sh/xixu-me/skills/github-actions-docs"
 github: "xixu-me/skills"
 author: "xixu-me"

@@ -1,6 +1,6 @@
 ---
 name: Azure Cloud Migrate
-tagline: "Assess and migrate cross-cloud workloads to Azure with migration reports and code conversion. Supports Lambda→Functions, Fargate→Container Apps, Kubernetes→Cont"
+tagline: "Assess and migrate cross-cloud workloads to Azure with migration reports and code conversion."
 url: "https://skills.sh/microsoft/azure-skills/azure-cloud-migrate"
 github: "microsoft/azure-skills"
 author: microsoft

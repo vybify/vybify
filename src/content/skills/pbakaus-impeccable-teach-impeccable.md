@@ -1,6 +1,6 @@
 ---
 name: Teach Impeccable
-tagline: The design language that makes your AI harness better at design.
+tagline: "The design language that makes your AI harness better at design."
 url: "https://skills.sh/pbakaus/impeccable/teach-impeccable"
 github: pbakaus/impeccable
 author: pbakaus

@@ -1,6 +1,6 @@
 ---
 name: Azure Storage
-tagline: "Azure Storage Services including Blob Storage, File Shares, Queue Storage, Table Storage, and Data Lake. Answers questions about storage access tiers (hot, cool"
+tagline: "Azure Storage Services including Blob Storage, File Shares, Queue Storage, Table Storage, and Data Lake."
 url: "https://skills.sh/microsoft/azure-skills/azure-storage"
 github: "microsoft/azure-skills"
 author: microsoft

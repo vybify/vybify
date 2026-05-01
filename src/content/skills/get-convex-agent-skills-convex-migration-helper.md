@@ -1,6 +1,6 @@
 ---
 name: Convex Migration Helper
-tagline: "Plans Convex schema and data migrations with widen-migrate-narrow and @convex-dev/migrations. Use for breaking schema changes, backfills, table reshaping, or ze"
+tagline: "Plans Convex schema and data migrations with widen-migrate-narrow and @convex-dev/migrations."
 url: "https://skills.sh/get-convex/agent-skills/convex-migration-helper"
 github: "get-convex/agent-skills"
 author: "get-convex"

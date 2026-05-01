@@ -1,6 +1,6 @@
 ---
 name: Frontend Design
-tagline: "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, "
+tagline: "Create distinctive, production-grade frontend interfaces with high design quality."
 url: "https://skills.sh/anthropics/skills/frontend-design"
 github: anthropics/skills
 author: anthropics

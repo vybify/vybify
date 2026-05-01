@@ -1,6 +1,6 @@
 ---
 name: Caveman Commit
-tagline: "Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format. Subject ≤50 chars"
+tagline: "Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format."
 url: "https://skills.sh/juliusbrussee/caveman/caveman-commit"
 github: juliusbrussee/caveman
 author: juliusbrussee

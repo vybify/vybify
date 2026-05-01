@@ -1,6 +1,6 @@
 ---
 name: Ai Seo
-tagline: "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' '"
+tagline: "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers."
 url: "https://skills.sh/coreyhaines31/marketingskills/ai-seo"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

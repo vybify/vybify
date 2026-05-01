@@ -1,6 +1,6 @@
 ---
 name: Simple
-tagline: "Invoke before any creative or architectural work — feature design, component creation, or behavioral changes. A streamlined brainstorming process optimized for "
+tagline: "Invoke before any creative or architectural work — feature design, component creation, or behavioral changes."
 url: "https://skills.sh/roin-orca/skills/simple"
 github: "roin-orca/skills"
 author: "roin-orca"

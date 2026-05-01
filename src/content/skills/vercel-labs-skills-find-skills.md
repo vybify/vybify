@@ -1,6 +1,6 @@
 ---
 name: Find Skills
-tagline: "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express int"
+tagline: "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express…"
 url: "https://skills.sh/vercel-labs/skills/find-skills"
 github: "vercel-labs/skills"
 author: "vercel-labs"

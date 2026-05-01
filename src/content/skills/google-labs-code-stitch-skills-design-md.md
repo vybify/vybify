@@ -1,6 +1,6 @@
 ---
 name: Design Md
-tagline: Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files
+tagline: "Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files"
 url: "https://skills.sh/google-labs-code/stitch-skills/design-md"
 github: "google-labs-code/stitch-skills"
 author: "google-labs-code"

@@ -1,6 +1,6 @@
 ---
 name: Developing Genkit Js
-tagline: "Develop AI-powered applications using Genkit in Node.js/TypeScript. Use when the user asks about Genkit, AI agents, flows, or tools in JavaScript/TypeScript, or"
+tagline: "Develop AI-powered applications using Genkit in Node.js/TypeScript. Use when the user asks about Genkit, AI agents, flows, or tools in JavaScript/TypeScript…"
 url: "https://skills.sh/firebase/agent-skills/developing-genkit-js"
 github: "firebase/agent-skills"
 author: firebase

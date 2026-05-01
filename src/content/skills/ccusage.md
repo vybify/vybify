@@ -1,6 +1,6 @@
 ---
 name: ccusage
-tagline: CLI to analyze your Claude Code token usage and spend.
+tagline: "CLI to analyze your Claude Code token usage and spend."
 url: "https://github.com/ryoppippi/ccusage"
 github: ryoppippi/ccusage
 author: ryoppippi

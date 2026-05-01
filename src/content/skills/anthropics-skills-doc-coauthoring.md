@@ -1,6 +1,6 @@
 ---
 name: Doc Coauthoring
-tagline: "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs,"
+tagline: "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision…"
 url: "https://skills.sh/anthropics/skills/doc-coauthoring"
 github: anthropics/skills
 author: anthropics

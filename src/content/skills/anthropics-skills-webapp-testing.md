@@ -1,6 +1,6 @@
 ---
 name: Webapp Testing
-tagline: "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing br"
+tagline: "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing…"
 url: "https://skills.sh/anthropics/skills/webapp-testing"
 github: anthropics/skills
 author: anthropics

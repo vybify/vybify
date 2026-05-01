@@ -1,6 +1,6 @@
 ---
 name: Azure Upgrade
-tagline: "Assess and upgrade Azure workloads between plans, tiers, or SKUs, or modernize Azure SDK dependencies in source code. WHEN: upgrade Consumption to Flex Consumpt"
+tagline: "Assess and upgrade Azure workloads between plans, tiers, or SKUs, or modernize Azure SDK dependencies in source code."
 url: "https://skills.sh/microsoft/azure-skills/azure-upgrade"
 github: "microsoft/azure-skills"
 author: microsoft

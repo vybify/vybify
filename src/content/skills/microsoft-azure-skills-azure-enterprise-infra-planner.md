@@ -1,6 +1,6 @@
 ---
 name: Azure Enterprise Infra Planner
-tagline: "Architect and provision enterprise Azure infrastructure from workload descriptions. For cloud architects and platform engineers planning networking, identity, s"
+tagline: "Architect and provision enterprise Azure infrastructure from workload descriptions."
 url: "https://skills.sh/microsoft/azure-skills/azure-enterprise-infra-planner"
 github: "microsoft/azure-skills"
 author: microsoft

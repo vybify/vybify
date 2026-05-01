@@ -1,6 +1,6 @@
 ---
 name: Signup Flow Cro
-tagline: "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"regist"
+tagline: "When the user wants to optimize signup, registration, account creation, or trial activation flows."
 url: "https://skills.sh/coreyhaines31/marketingskills/signup-flow-cro"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

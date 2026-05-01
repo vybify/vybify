@@ -1,6 +1,6 @@
 ---
 name: Skill Creator
-tagline: "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an e"
+tagline: "Create new skills, modify and improve existing skills, and measure skill performance."
 url: "https://skills.sh/anthropics/skills/skill-creator"
 github: anthropics/skills
 author: anthropics

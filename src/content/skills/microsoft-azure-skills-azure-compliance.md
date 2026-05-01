@@ -1,6 +1,6 @@
 ---
 name: Azure Compliance
-tagline: "Run Azure compliance and security audits with azqr plus Key Vault expiration checks. Covers best-practice assessment, resource review, policy/compliance validat"
+tagline: "Run Azure compliance and security audits with azqr plus Key Vault expiration checks."
 url: "https://skills.sh/microsoft/azure-skills/azure-compliance"
 github: "microsoft/azure-skills"
 author: microsoft

@@ -1,6 +1,6 @@
 ---
 name: Tzst
-tagline: "Use when the user needs to create, extract, flatten, list, test, install, script, or troubleshoot `tzst` CLI workflows for `.tzst` or `.tar.zst` archives, inclu"
+tagline: "Use when the user needs to create, extract, flatten, list, test, install, script, or troubleshoot `tzst` CLI workflows for `.tzst` or `.tar.zst` archives…"
 url: "https://skills.sh/xixu-me/skills/tzst"
 github: "xixu-me/skills"
 author: "xixu-me"

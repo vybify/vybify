@@ -1,6 +1,6 @@
 ---
 name: Azure Diagnostics
-tagline: "Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage. WHEN: debug production issues, troubleshoot container app"
+tagline: "Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage."
 url: "https://skills.sh/microsoft/azure-skills/azure-diagnostics"
 github: "microsoft/azure-skills"
 author: microsoft

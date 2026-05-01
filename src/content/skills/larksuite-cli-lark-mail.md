@@ -1,6 +1,6 @@
 ---
 name: Lark Mail
-tagline: "飞书邮箱 — draft, compose, send, reply, forward, read, and search emails; manage drafts, folders, labels, contacts, attachments, and mail rules. Use when user menti"
+tagline: "飞书邮箱 — draft, compose, send, reply, forward, read, and search emails; manage drafts, folders, labels, contacts, attachments, and mail rules."
 url: "https://skills.sh/larksuite/cli/lark-mail"
 github: larksuite/cli
 author: larksuite

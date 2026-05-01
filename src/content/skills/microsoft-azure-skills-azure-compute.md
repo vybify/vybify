@@ -1,6 +1,6 @@
 ---
 name: Azure Compute
-tagline: "Azure VM and VMSS router for recommendations, pricing, autoscale, orchestration, connectivity troubleshooting, and capacity reservations. WHEN: Azure VM, VMSS, "
+tagline: "Azure VM and VMSS router for recommendations, pricing, autoscale, orchestration, connectivity troubleshooting, and capacity reservations."
 url: "https://skills.sh/microsoft/azure-skills/azure-compute"
 github: "microsoft/azure-skills"
 author: microsoft

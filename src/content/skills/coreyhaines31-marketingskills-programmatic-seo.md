@@ -1,6 +1,6 @@
 ---
 name: Programmatic Seo
-tagline: "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages a"
+tagline: "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages…"
 url: "https://skills.sh/coreyhaines31/marketingskills/programmatic-seo"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

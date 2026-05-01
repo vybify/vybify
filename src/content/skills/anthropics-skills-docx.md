@@ -1,6 +1,6 @@
 ---
 name: Docx
-tagline: "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word doc"
+tagline: "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files)."
 url: "https://skills.sh/anthropics/skills/docx"
 github: anthropics/skills
 author: anthropics

@@ -1,6 +1,6 @@
 ---
 name: Firebase Auth Basics
-tagline: "Guide for setting up and using Firebase Authentication. Use this skill when the user's app requires user sign-in, user management, or secure data access using a"
+tagline: "Guide for setting up and using Firebase Authentication. Use this skill when the user's app requires user sign-in, user management, or secure data access using…"
 url: "https://skills.sh/firebase/agent-skills/firebase-auth-basics"
 github: "firebase/agent-skills"
 author: firebase

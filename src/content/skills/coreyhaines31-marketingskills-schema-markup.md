@@ -1,6 +1,6 @@
 ---
 name: Schema Markup
-tagline: "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions \"schema markup,\" \"structured data,"
+tagline: "When the user wants to add, fix, or optimize schema markup and structured data on their site."
 url: "https://skills.sh/coreyhaines31/marketingskills/schema-markup"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

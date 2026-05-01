@@ -1,6 +1,6 @@
 ---
 name: Paid Ads
-tagline: "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the"
+tagline: "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms."
 url: "https://skills.sh/coreyhaines31/marketingskills/paid-ads"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

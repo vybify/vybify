@@ -1,6 +1,6 @@
 ---
 name: Dispatching Parallel Agents
-tagline: Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
+tagline: "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies"
 url: "https://skills.sh/obra/superpowers/dispatching-parallel-agents"
 github: obra/superpowers
 author: obra

@@ -1,6 +1,6 @@
 ---
 name: Awesome Cursor Rules
-tagline: Curated .cursorrules files for every framework and language.
+tagline: "Curated .cursorrules files for every framework and language."
 url: "https://github.com/PatrickJS/awesome-cursorrules"
 github: "PatrickJS/awesome-cursorrules"
 author: PatrickJS

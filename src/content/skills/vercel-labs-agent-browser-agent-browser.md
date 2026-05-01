@@ -1,6 +1,6 @@
 ---
 name: Agent Browser
-tagline: "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking scr"
+tagline: "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking…"
 url: "https://skills.sh/vercel-labs/agent-browser/agent-browser"
 github: "vercel-labs/agent-browser"
 author: "vercel-labs"

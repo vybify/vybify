@@ -1,6 +1,6 @@
 ---
 name: Azure Messaging
-tagline: "Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus. Covers connection failures, authentication errors, message processing "
+tagline: "Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus."
 url: "https://skills.sh/microsoft/azure-skills/azure-messaging"
 github: "microsoft/azure-skills"
 author: microsoft

@@ -1,6 +1,6 @@
 ---
 name: Skills CLI
-tagline: The package manager for the open agent skills ecosystem — find and install skills with one command.
+tagline: "The package manager for the open agent skills ecosystem — find and install skills with one command."
 url: "https://skills.sh"
 github: "vercel-labs/skills"
 author: Vercel Labs

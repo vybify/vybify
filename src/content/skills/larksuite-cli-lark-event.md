@@ -1,6 +1,6 @@
 ---
 name: Lark Event
-tagline: "Lark/Feishu real-time event listening / subscribing / consuming: stream events as NDJSON via `lark-cli event consume <EventKey>` (covers IM message receive, rea"
+tagline: "Lark/Feishu real-time event listening / subscribing / consuming: stream events as NDJSON via `lark-cli event consume <EventKey>` (covers IM message receive…"
 url: "https://skills.sh/larksuite/cli/lark-event"
 github: larksuite/cli
 author: larksuite

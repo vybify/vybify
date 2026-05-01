@@ -1,6 +1,6 @@
 ---
 name: Supabase
-tagline: "Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client libra"
+tagline: "Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client…"
 url: "https://skills.sh/supabase/agent-skills/supabase"
 github: "supabase/agent-skills"
 author: supabase

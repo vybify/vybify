@@ -1,6 +1,6 @@
 ---
 name: Lark Approval
-tagline: 飞书审批 API：审批实例、审批任务管理。
+tagline: "飞书审批 API：审批实例、审批任务管理。"
 url: "https://skills.sh/larksuite/cli/lark-approval"
 github: larksuite/cli
 author: larksuite

@@ -1,6 +1,6 @@
 ---
 name: Soultrace
-tagline: "Take a personality assessment via the SoulTrace API. Use when the user wants to take a personality test, discover their psychological archetype, understand thei"
+tagline: "Take a personality assessment via the SoulTrace API. Use when the user wants to take a personality test, discover their psychological archetype, understand…"
 url: "https://skills.sh/soultrace-ai/soultrace-skill/soultrace"
 github: "soultrace-ai/soultrace-skill"
 author: "soultrace-ai"

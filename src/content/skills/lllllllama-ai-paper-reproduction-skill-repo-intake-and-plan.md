@@ -1,6 +1,6 @@
 ---
 name: Repo Intake And Plan
-tagline: "Narrow helper skill for README-first AI repo reproduction. Use when the task is specifically to scan a repository, read the README and common project files, ext"
+tagline: "Narrow helper skill for README-first AI repo reproduction. Use when the task is specifically to scan a repository, read the README and common project files…"
 url: "https://skills.sh/lllllllama/ai-paper-reproduction-skill/repo-intake-and-plan"
 github: "lllllllama/ai-paper-reproduction-skill"
 author: lllllllama

@@ -1,6 +1,6 @@
 ---
 name: Ui Ux Pro Max
-tagline: An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
+tagline: "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms"
 url: "https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max"
 github: "nextlevelbuilder/ui-ux-pro-max-skill"
 author: nextlevelbuilder

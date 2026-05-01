@@ -1,6 +1,6 @@
 ---
 name: Marketing Psychology
-tagline: "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental "
+tagline: "When the user wants to apply psychological principles, mental models, or behavioral science to marketing."
 url: "https://skills.sh/coreyhaines31/marketingskills/marketing-psychology"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

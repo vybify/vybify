@@ -1,6 +1,6 @@
 ---
 name: Verification Before Completion
-tagline: "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output be"
+tagline: "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output…"
 url: "https://skills.sh/obra/superpowers/verification-before-completion"
 github: obra/superpowers
 author: obra

@@ -1,6 +1,6 @@
 ---
 name: Referral Program
-tagline: "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,"
+tagline: "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy."
 url: "https://skills.sh/coreyhaines31/marketingskills/referral-program"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

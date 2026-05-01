@@ -1,6 +1,6 @@
 ---
 name: Audit Website
-tagline: "Audit websites for SEO, performance, security, technical, content, and 15 other issue cateories with 230+ rules using the squirrelscan CLI. Returns LLM-optimize"
+tagline: "Audit websites for SEO, performance, security, technical, content, and 15 other issue cateories with 230+ rules using the squirrelscan CLI."
 url: "https://skills.sh/squirrelscan/skills/audit-website"
 github: squirrelscan/skills
 author: squirrelscan

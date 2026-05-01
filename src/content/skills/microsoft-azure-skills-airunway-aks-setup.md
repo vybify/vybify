@@ -1,6 +1,6 @@
 ---
 name: Airunway Aks Setup
-tagline: "Set up AI Runway on AKS — from bare cluster to running model. Covers cluster verification, controller install, GPU assessment, provider setup, and first deploym"
+tagline: "Set up AI Runway on AKS — from bare cluster to running model. Covers cluster verification, controller install, GPU assessment, provider setup, and first…"
 url: "https://skills.sh/microsoft/azure-skills/airunway-aks-setup"
 github: "microsoft/azure-skills"
 author: microsoft

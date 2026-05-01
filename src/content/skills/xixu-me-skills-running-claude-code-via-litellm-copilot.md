@@ -1,6 +1,6 @@
 ---
 name: Running Claude Code Via Litellm Copilot
-tagline: "Use when routing Claude Code through a local LiteLLM proxy to GitHub Copilot, reducing direct Anthropic spend, configuring ANTHROPIC_BASE_URL or ANTHROPIC_MODEL"
+tagline: "Use when routing Claude Code through a local LiteLLM proxy to GitHub Copilot, reducing direct Anthropic spend, configuring ANTHROPIC_BASE_URL or…"
 url: "https://skills.sh/xixu-me/skills/running-claude-code-via-litellm-copilot"
 github: "xixu-me/skills"
 author: "xixu-me"

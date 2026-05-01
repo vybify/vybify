@@ -1,6 +1,6 @@
 ---
 name: Mcp Builder
-tagline: "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when b"
+tagline: "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools."
 url: "https://skills.sh/anthropics/skills/mcp-builder"
 github: anthropics/skills
 author: anthropics

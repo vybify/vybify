@@ -1,6 +1,6 @@
 ---
 name: Azure Quotas
-tagline: "Check/manage Azure quotas and usage across providers. For deployment planning, capacity validation, region selection. WHEN: \\\"check quotas\\\", \\\"service limits\\\""
+tagline: "Check/manage Azure quotas and usage across providers. For deployment planning, capacity validation, region selection."
 url: "https://skills.sh/microsoft/azure-skills/azure-quotas"
 github: "microsoft/azure-skills"
 author: microsoft

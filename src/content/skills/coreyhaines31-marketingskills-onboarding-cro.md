@@ -1,6 +1,6 @@
 ---
 name: Onboarding Cro
-tagline: "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flo"
+tagline: "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value."
 url: "https://skills.sh/coreyhaines31/marketingskills/onboarding-cro"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

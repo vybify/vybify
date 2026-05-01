@@ -1,6 +1,6 @@
 ---
 name: Ab Test Setup
-tagline: "When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program. Also use when the user mentions \"A/B tes"
+tagline: "When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program."
 url: "https://skills.sh/coreyhaines31/marketingskills/ab-test-setup"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

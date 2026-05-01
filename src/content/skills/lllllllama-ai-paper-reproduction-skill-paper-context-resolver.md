@@ -1,6 +1,6 @@
 ---
 name: Paper Context Resolver
-tagline: "Optional narrow helper skill for README-first AI repo reproduction. Use only when the README and repository files leave a narrow reproduction-critical gap and t"
+tagline: "Optional narrow helper skill for README-first AI repo reproduction. Use only when the README and repository files leave a narrow reproduction-critical gap and…"
 url: "https://skills.sh/lllllllama/ai-paper-reproduction-skill/paper-context-resolver"
 github: "lllllllama/ai-paper-reproduction-skill"
 author: lllllllama

@@ -1,6 +1,6 @@
 ---
 name: Browser Use
-tagline: "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with web "
+tagline: "Automates browser interactions for web testing, form filling, screenshots, and data extraction."
 url: "https://skills.sh/browser-use/browser-use/browser-use"
 github: "browser-use/browser-use"
 author: "browser-use"

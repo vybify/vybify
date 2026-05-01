@@ -1,6 +1,6 @@
 ---
 name: Azure Cost Optimization
-tagline: Official agent plugin providing skills and MCP server configurations for Azure scenarios.
+tagline: "Official agent plugin providing skills and MCP server configurations for Azure scenarios."
 url: "https://skills.sh/microsoft/azure-skills/azure-cost-optimization"
 github: "microsoft/azure-skills"
 author: microsoft

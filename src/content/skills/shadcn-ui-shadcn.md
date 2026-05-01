@@ -1,6 +1,6 @@
 ---
 name: Shadcn
-tagline: "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI. Provides project context, component docs, and usage ex"
+tagline: "Manages shadcn components and projects — adding, searching, fixing, debugging, styling, and composing UI."
 url: "https://skills.sh/shadcn/ui/shadcn"
 github: shadcn/ui
 author: shadcn

@@ -1,6 +1,6 @@
 ---
 name: Entra App Registration
-tagline: "Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL integration. USE FOR: create app registration, register Azure AD app, configure O"
+tagline: "Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL integration."
 url: "https://skills.sh/microsoft/azure-skills/entra-app-registration"
 github: "microsoft/azure-skills"
 author: microsoft

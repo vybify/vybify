@@ -1,6 +1,6 @@
 ---
 name: Firebase Basics
-tagline: ">-"
+tagline: "Provides foundational setup, authentication, and project management workflows for Firebase using the Firebase CLI."
 url: "https://skills.sh/firebase/agent-skills/firebase-basics"
 github: "firebase/agent-skills"
 author: firebase

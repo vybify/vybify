@@ -1,6 +1,6 @@
 ---
 name: Extract Design System
-tagline: Extract design primitives from a public website and generate starter token files for your project.
+tagline: "Extract design primitives from a public website and generate starter token files for your project."
 url: "https://skills.sh/arvindrk/extract-design-system/extract-design-system"
 github: "arvindrk/extract-design-system"
 author: arvindrk

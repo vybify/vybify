@@ -1,6 +1,6 @@
 ---
 name: Azure Kubernetes
-tagline: "Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters. Covers Day-0 checklist, SKU selection (Automatic vs Standard), networking "
+tagline: "Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters."
 url: "https://skills.sh/microsoft/azure-skills/azure-kubernetes"
 github: "microsoft/azure-skills"
 author: microsoft

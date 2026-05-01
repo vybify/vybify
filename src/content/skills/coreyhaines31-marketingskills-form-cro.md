@@ -1,6 +1,6 @@
 ---
 name: Form Cro
-tagline: "When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms, demo request forms, application forms, s"
+tagline: "When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms, demo request forms, application forms…"
 url: "https://skills.sh/coreyhaines31/marketingskills/form-cro"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

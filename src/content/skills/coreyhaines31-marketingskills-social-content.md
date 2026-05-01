@@ -1,6 +1,6 @@
 ---
 name: Social Content
-tagline: "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also"
+tagline: "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms."
 url: "https://skills.sh/coreyhaines31/marketingskills/social-content"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

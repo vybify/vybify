@@ -1,6 +1,6 @@
 ---
 name: Opensource Guide Coach
-tagline: "Use when a user wants guidance on starting, contributing to, growing, governing, funding, securing, or sustaining an open source project, or asks about contribu"
+tagline: "Use when a user wants guidance on starting, contributing to, growing, governing, funding, securing, or sustaining an open source project, or asks about…"
 url: "https://skills.sh/xixu-me/skills/opensource-guide-coach"
 github: "xixu-me/skills"
 author: "xixu-me"

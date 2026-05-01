@@ -1,6 +1,6 @@
 ---
 name: Canvas Design
-tagline: "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, d"
+tagline: "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art…"
 url: "https://skills.sh/anthropics/skills/canvas-design"
 github: anthropics/skills
 author: anthropics

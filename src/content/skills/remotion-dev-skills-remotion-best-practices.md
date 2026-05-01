@@ -1,6 +1,6 @@
 ---
 name: Remotion Best Practices
-tagline: Agent Skills
+tagline: "Agent Skills"
 url: "https://skills.sh/remotion-dev/skills/remotion-best-practices"
 github: "remotion-dev/skills"
 author: "remotion-dev"

@@ -1,6 +1,6 @@
 ---
 name: Skills Cli
-tagline: "Use when users ask to discover, install, list, check, update, remove, back up, restore, sync, or initialize Agent Skills, mention `bunx skills`, `npx skills`, `"
+tagline: "Use when users ask to discover, install, list, check, update, remove, back up, restore, sync, or initialize Agent Skills, mention `bunx skills`, `npx skills`…"
 url: "https://skills.sh/xixu-me/skills/skills-cli"
 github: "xixu-me/skills"
 author: "xixu-me"

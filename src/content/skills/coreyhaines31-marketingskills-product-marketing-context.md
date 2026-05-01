@@ -1,6 +1,6 @@
 ---
 name: Product Marketing Context
-tagline: "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set u"
+tagline: "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set…"
 url: "https://skills.sh/coreyhaines31/marketingskills/product-marketing-context"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

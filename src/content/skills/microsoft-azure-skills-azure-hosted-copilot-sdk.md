@@ -1,6 +1,6 @@
 ---
 name: Azure Hosted Copilot Sdk
-tagline: "Build, deploy, modify GitHub Copilot SDK apps on Azure. MANDATORY when codebase contains @github/copilot-sdk or CopilotClient — use this skill instead of azure-"
+tagline: "Build, deploy, modify GitHub Copilot SDK apps on Azure. MANDATORY when codebase contains @github/copilot-sdk or CopilotClient — use this skill instead of…"
 url: "https://skills.sh/microsoft/azure-skills/azure-hosted-copilot-sdk"
 github: "microsoft/azure-skills"
 author: microsoft

@@ -1,6 +1,6 @@
 ---
 name: Firebase Firestore Standard
-tagline: "Comprehensive guide for Firestore Standard Edition, including provisioning, security rules, and SDK usage. Use this skill when the user needs help setting up Fi"
+tagline: "Agent Skills for Firebase"
 url: "https://skills.sh/firebase/agent-skills/firebase-firestore-standard"
 github: "firebase/agent-skills"
 author: firebase

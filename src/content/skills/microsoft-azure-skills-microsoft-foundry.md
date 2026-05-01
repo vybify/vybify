@@ -1,6 +1,6 @@
 ---
 name: Microsoft Foundry
-tagline: "Deploy, evaluate, and manage Foundry agents end-to-end: Docker build, ACR push, hosted/prompt agent create, container start, batch eval, prompt optimization, pr"
+tagline: "Deploy, evaluate, and manage Foundry agents end-to-end: Docker build, ACR push, hosted/prompt agent create, container start, batch eval, continuous eval…"
 url: "https://skills.sh/microsoft/azure-skills/microsoft-foundry"
 github: "microsoft/azure-skills"
 author: microsoft

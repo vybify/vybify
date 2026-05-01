@@ -1,6 +1,6 @@
 ---
 name: Paywall Upgrade Cro
-tagline: "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgrade"
+tagline: "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates."
 url: "https://skills.sh/coreyhaines31/marketingskills/paywall-upgrade-cro"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

@@ -1,6 +1,6 @@
 ---
 name: Superpowers
-tagline: A library of composable Claude Code skills you can mix into any workflow.
+tagline: "A library of composable Claude Code skills you can mix into any workflow."
 url: "https://github.com/obra/superpowers"
 github: obra/superpowers
 author: obra

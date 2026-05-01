@@ -1,6 +1,6 @@
 ---
 name: Ad Creative
-tagline: "When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad variations — for any paid advertising platfor"
+tagline: "When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad variations — for any paid advertising…"
 url: "https://skills.sh/coreyhaines31/marketingskills/ad-creative"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

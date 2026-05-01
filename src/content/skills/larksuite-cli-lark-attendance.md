@@ -1,6 +1,6 @@
 ---
 name: Lark Attendance
-tagline: 飞书考勤打卡：查询自己的考勤打卡记录
+tagline: "飞书考勤打卡：查询自己的考勤打卡记录"
 url: "https://skills.sh/larksuite/cli/lark-attendance"
 github: larksuite/cli
 author: larksuite

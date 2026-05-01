@@ -1,6 +1,6 @@
 ---
 name: Next Best Practices
-tagline: "Next.js best practices - file conventions, RSC boundaries, data patterns, async APIs, metadata, error handling, route handlers, image/font optimization, bundlin"
+tagline: "Next.js best practices - file conventions, RSC boundaries, data patterns, async APIs, metadata, error handling, route handlers, image/font optimization…"
 url: "https://skills.sh/vercel-labs/next-skills/next-best-practices"
 github: "vercel-labs/next-skills"
 author: "vercel-labs"

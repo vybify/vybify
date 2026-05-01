@@ -1,6 +1,6 @@
 ---
 name: Firebase App Hosting Basics
-tagline: Deploy and manage web apps with Firebase App Hosting. Use this skill when deploying Next.js/Angular apps with backends.
+tagline: "Deploy and manage web apps with Firebase App Hosting. Use this skill when deploying Next.js/Angular apps with backends."
 url: "https://skills.sh/firebase/agent-skills/firebase-app-hosting-basics"
 github: "firebase/agent-skills"
 author: firebase

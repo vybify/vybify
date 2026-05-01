@@ -1,6 +1,6 @@
 ---
 name: Churn Prevention
-tagline: "When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or implement retention strategies. Also use when the"
+tagline: "When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or implement retention strategies."
 url: "https://skills.sh/coreyhaines31/marketingskills/churn-prevention"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

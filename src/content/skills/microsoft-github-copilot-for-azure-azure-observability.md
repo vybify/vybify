@@ -1,6 +1,6 @@
 ---
 name: Azure Observability
-tagline: GitHub Copilot for Azure
+tagline: "GitHub Copilot for Azure"
 url: "https://skills.sh/microsoft/github-copilot-for-azure/azure-observability"
 github: "microsoft/github-copilot-for-azure"
 author: microsoft

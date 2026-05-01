@@ -1,6 +1,6 @@
 ---
 name: Cold Email
-tagline: "Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails, prospecting emails, cold email campaigns,"
+tagline: "Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails, prospecting emails, cold email…"
 url: "https://skills.sh/coreyhaines31/marketingskills/cold-email"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

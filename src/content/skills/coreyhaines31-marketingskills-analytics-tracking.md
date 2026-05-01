@@ -1,6 +1,6 @@
 ---
 name: Analytics Tracking
-tagline: "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics"
+tagline: "When the user wants to set up, improve, or audit analytics tracking and measurement."
 url: "https://skills.sh/coreyhaines31/marketingskills/analytics-tracking"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

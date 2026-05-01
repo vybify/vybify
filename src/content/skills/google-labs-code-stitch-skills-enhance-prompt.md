@@ -1,6 +1,6 @@
 ---
 name: Enhance Prompt
-tagline: "Transforms vague UI ideas into polished, Stitch-optimized prompts. Enhances specificity, adds UI/UX keywords, injects design system context, and structures outp"
+tagline: "Transforms vague UI ideas into polished, Stitch-optimized prompts. Enhances specificity, adds UI/UX keywords, injects design system context, and structures…"
 url: "https://skills.sh/google-labs-code/stitch-skills/enhance-prompt"
 github: "google-labs-code/stitch-skills"
 author: "google-labs-code"

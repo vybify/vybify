@@ -1,6 +1,6 @@
 ---
 name: Anthropic Skills
-tagline: Official skill examples and reference implementations from Anthropic.
+tagline: "Official skill examples and reference implementations from Anthropic."
 url: "https://github.com/anthropics/skills"
 github: anthropics/skills
 author: Anthropic

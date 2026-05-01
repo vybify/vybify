@@ -1,6 +1,6 @@
 ---
 name: Deploy To Vercel
-tagline: "Deploy applications and websites to Vercel. Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this live\","
+tagline: "Deploy applications and websites to Vercel. Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this…"
 url: "https://skills.sh/vercel-labs/agent-skills/deploy-to-vercel"
 github: "vercel-labs/agent-skills"
 author: "vercel-labs"

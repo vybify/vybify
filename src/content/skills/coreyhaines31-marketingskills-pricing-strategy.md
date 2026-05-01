@@ -1,6 +1,6 @@
 ---
 name: Pricing Strategy
-tagline: "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'f"
+tagline: "When the user wants help with pricing decisions, packaging, or monetization strategy."
 url: "https://skills.sh/coreyhaines31/marketingskills/pricing-strategy"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

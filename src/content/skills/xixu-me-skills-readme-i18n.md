@@ -1,6 +1,6 @@
 ---
 name: Readme I18n
-tagline: "Use when the user wants to translate a repository README, make a repo multilingual, localize docs, add a language switcher, internationalize the README, or upda"
+tagline: "Use when the user wants to translate a repository README, make a repo multilingual, localize docs, add a language switcher, internationalize the README, or…"
 url: "https://skills.sh/xixu-me/skills/readme-i18n"
 github: "xixu-me/skills"
 author: "xixu-me"

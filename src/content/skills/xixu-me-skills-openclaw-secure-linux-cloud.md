@@ -1,6 +1,6 @@
 ---
 name: Openclaw Secure Linux Cloud
-tagline: "Use when self-hosting OpenClaw on a cloud server, hardening a remote OpenClaw gateway, choosing between SSH tunneling, Tailscale, or reverse-proxy exposure, or "
+tagline: "Use when self-hosting OpenClaw on a cloud server, hardening a remote OpenClaw gateway, choosing between SSH tunneling, Tailscale, or reverse-proxy exposure, or…"
 url: "https://skills.sh/xixu-me/skills/openclaw-secure-linux-cloud"
 github: "xixu-me/skills"
 author: "xixu-me"

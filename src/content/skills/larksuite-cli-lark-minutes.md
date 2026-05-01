@@ -1,6 +1,6 @@
 ---
 name: Lark Minutes
-tagline: "飞书妙记：妙记相关基本功能。1.查询妙记列表（按关键词/所有者/参与者/时间范围）；2.获取妙记基础信息（标题、封面、时长 等）；3.下载妙记音视频文件；4.获取妙记相关 AI 产物（总结、待办、章节）；5.上传音视频生成妙记。飞书妙记 URL 格式: http(s)://<host>/minutes/<minute-"
+tagline: "飞书妙记：妙记相关基本功能。1.查询妙记列表（按关键词/所有者/参与者/时间范围）；2.获取妙记基础信息（标题、封面、时长 等）；3.下载妙记音视频文件；4.获取妙记相关 AI…"
 url: "https://skills.sh/larksuite/cli/lark-minutes"
 github: larksuite/cli
 author: larksuite

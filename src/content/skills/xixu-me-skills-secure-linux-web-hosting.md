@@ -1,6 +1,6 @@
 ---
 name: Secure Linux Web Hosting
-tagline: "Use when setting up, hardening, or reviewing a cloud server for self-hosting, including DNS, SSH, firewalls, Nginx, static-site hosting, reverse-proxying an app"
+tagline: "Use when setting up, hardening, or reviewing a cloud server for self-hosting, including DNS, SSH, firewalls, Nginx, static-site hosting, reverse-proxying an…"
 url: "https://skills.sh/xixu-me/skills/secure-linux-web-hosting"
 github: "xixu-me/skills"
 author: "xixu-me"

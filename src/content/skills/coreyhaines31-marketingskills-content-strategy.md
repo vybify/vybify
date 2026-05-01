@@ -1,6 +1,6 @@
 ---
 name: Content Strategy
-tagline: "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions \"content stra"
+tagline: "When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover."
 url: "https://skills.sh/coreyhaines31/marketingskills/content-strategy"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

@@ -1,6 +1,6 @@
 ---
 name: Receiving Code Review
-tagline: "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical "
+tagline: "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical…"
 url: "https://skills.sh/obra/superpowers/receiving-code-review"
 github: obra/superpowers
 author: obra

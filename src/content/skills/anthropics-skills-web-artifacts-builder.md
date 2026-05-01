@@ -1,6 +1,6 @@
 ---
 name: Web Artifacts Builder
-tagline: "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for"
+tagline: "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui)."
 url: "https://skills.sh/anthropics/skills/web-artifacts-builder"
 github: anthropics/skills
 author: anthropics

@@ -1,6 +1,6 @@
 ---
 name: Xlsx
-tagline: "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xl"
+tagline: "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing…"
 url: "https://skills.sh/anthropics/skills/xlsx"
 github: anthropics/skills
 author: anthropics

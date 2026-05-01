@@ -1,6 +1,6 @@
 ---
 name: Env And Assets Bootstrap
-tagline: "Environment and assets sub-skill for README-first AI repo reproduction. Use when the task is specifically to prepare a conservative conda-first environment, che"
+tagline: "Environment and assets sub-skill for README-first AI repo reproduction. Use when the task is specifically to prepare a conservative conda-first environment…"
 url: "https://skills.sh/lllllllama/ai-paper-reproduction-skill/env-and-assets-bootstrap"
 github: "lllllllama/ai-paper-reproduction-skill"
 author: lllllllama

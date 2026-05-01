@@ -1,6 +1,6 @@
 ---
 name: Developing Genkit Dart
-tagline: "Generates code and provides documentation for the Genkit Dart SDK. Use when the user asks to build AI agents in Dart, use Genkit flows, or integrate LLMs into D"
+tagline: "Generates code and provides documentation for the Genkit Dart SDK. Use when the user asks to build AI agents in Dart, use Genkit flows, or integrate LLMs into…"
 url: "https://skills.sh/firebase/agent-skills/developing-genkit-dart"
 github: "firebase/agent-skills"
 author: firebase

@@ -1,6 +1,6 @@
 ---
 name: Use My Browser
-tagline: "Use when work depends on the user's live browser session or visible rendered state rather than static fetches, especially for browser debugging contexts or DevT"
+tagline: "Use when work depends on the user's live browser session or visible rendered state rather than static fetches, especially for browser debugging contexts or…"
 url: "https://skills.sh/xixu-me/skills/use-my-browser"
 github: "xixu-me/skills"
 author: "xixu-me"

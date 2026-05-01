@@ -1,6 +1,6 @@
 ---
 name: Minimal Run And Audit
-tagline: "Trusted-lane execution and reporting skill for README-first AI repo reproduction. Use when the task is specifically to capture or normalize evidence from the se"
+tagline: "Trusted-lane execution and reporting skill for README-first AI repo reproduction. Use when the task is specifically to capture or normalize evidence from the…"
 url: "https://skills.sh/lllllllama/ai-paper-reproduction-skill/minimal-run-and-audit"
 github: "lllllllama/ai-paper-reproduction-skill"
 author: lllllllama

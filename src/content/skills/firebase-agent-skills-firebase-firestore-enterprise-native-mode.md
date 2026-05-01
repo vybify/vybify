@@ -1,6 +1,6 @@
 ---
 name: Firebase Firestore Enterprise Native Mode
-tagline: "Comprehensive guide for Firestore enterprise native including provisioning, data model, security rules, and SDK usage. Use this skill when the user needs help s"
+tagline: "Agent Skills for Firebase"
 url: "https://skills.sh/firebase/agent-skills/firebase-firestore-enterprise-native-mode"
 github: "firebase/agent-skills"
 author: firebase

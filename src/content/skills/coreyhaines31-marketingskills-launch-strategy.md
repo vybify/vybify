@@ -1,6 +1,6 @@
 ---
 name: Launch Strategy
-tagline: "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature rele"
+tagline: "When the user wants to plan a product launch, feature announcement, or release strategy."
 url: "https://skills.sh/coreyhaines31/marketingskills/launch-strategy"
 github: coreyhaines31/marketingskills
 author: coreyhaines31

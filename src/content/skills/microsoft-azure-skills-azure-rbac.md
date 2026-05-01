@@ -1,6 +1,6 @@
 ---
 name: Azure Rbac
-tagline: "Helps users find the right Azure RBAC role for an identity with least privilege access, then generate CLI commands and Bicep code to assign it. Also provides gu"
+tagline: "Helps users find the right Azure RBAC role for an identity with least privilege access, then generate CLI commands and Bicep code to assign it."
 url: "https://skills.sh/microsoft/azure-skills/azure-rbac"
 github: "microsoft/azure-skills"
 author: microsoft

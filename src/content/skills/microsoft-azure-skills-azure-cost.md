@@ -1,6 +1,6 @@
 ---
 name: Azure Cost
-tagline: "Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste. WHEN: \\\"Azure costs\\\", \\\"Azure spending\\\", \\\"Azur"
+tagline: "Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste."
 url: "https://skills.sh/microsoft/azure-skills/azure-cost"
 github: "microsoft/azure-skills"
 author: microsoft

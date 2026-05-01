@@ -1,6 +1,6 @@
 ---
 name: Web Design Guidelines
-tagline: "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site "
+tagline: "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site…"
 url: "https://skills.sh/vercel-labs/agent-skills/web-design-guidelines"
 github: "vercel-labs/agent-skills"
 author: "vercel-labs"

@@ -1,6 +1,6 @@
 ---
 name: Executing Plans
-tagline: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+tagline: "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
 url: "https://skills.sh/obra/superpowers/executing-plans"
 github: obra/superpowers
 author: obra
