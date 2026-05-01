@@ -1,0 +1,10 @@
+{
+  "name": "Copass Harness",
+  "tagline": "Developer SDKs for building AI agents grounded in a typed knowledge graph — adapters for Vercel AI SDK, LangChain, Mastra, MCP.",
+  "url": "https://copass.id",
+  "github": "olane-labs/copass-harness",
+  "author": "Olane Labs",
+  "tags": ["agent", "knowledge-graph", "sdk", "typescript", "python"],
+  "builtWith": ["TypeScript", "Python"],
+  "addedAt": "2026-04-30"
+}
