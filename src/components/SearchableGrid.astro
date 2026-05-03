@@ -67,6 +67,21 @@ const topTags = Object.entries(tagCounts)
   .map(([t]) => t)
   .slice(0, 18);
 
+// Hot score: rewards velocity relative to size + recency
+// Formula: (delta7d / ln(stars + 2)) * recencyBoost
+// recencyBoost: entries added in last 14 days get 2x, last 30 get 1.5x
+function computeHotScore(e: EntryRow): number {
+  const delta = e.delta7d ?? 0;
+  const stars = e.stars ?? 0;
+  if (delta <= 0 && stars <= 0) return 0;
+  const velocity = delta / Math.log(stars + 2);
+  const addedMs = new Date(e.data.addedAt).getTime();
+  const ageMs = Date.now() - addedMs;
+  const ageDays = ageMs / 86400000;
+  const recencyBoost = ageDays <= 14 ? 2 : ageDays <= 30 ? 1.5 : 1;
+  return velocity * recencyBoost;
+}
+
 // Search index payload
 const searchIndex = entries.map((e) => ({
   i: e._id,
@@ -111,9 +126,10 @@ const searchIndex = entries.map((e) => ({
         )}
 
         <div class="vyb-sort inline-flex p-0.5 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg" role="tablist">
-          <button data-sort="stars" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Stars</button>
+          <button data-sort="stars" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">All-time</button>
+          <button data-sort="hot" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Hot</button>
           <button data-sort="rising" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Rising</button>
-          <button data-sort="recent" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">Recent</button>
+          <button data-sort="recent" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">New</button>
           <button data-sort="alpha" class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition">A–Z</button>
         </div>
 
@@ -147,6 +163,7 @@ const searchIndex = entries.map((e) => ({
           data-type={e._type}
           data-stars={e.stars ?? -1}
           data-delta={e.delta7d ?? 0}
+          data-hot={computeHotScore(e).toFixed(4)}
           data-added={e.data.addedAt}
           data-name={e.data.name.toLowerCase()}
           data-tags={(e.data.tags ?? []).map((t: string) => t.toLowerCase()).join('|')}
@@ -207,7 +224,7 @@ const searchIndex = entries.map((e) => ({
     let activeType: 'all' | 'project' | 'skill' =
       (root.dataset.defaultType as any) || 'all';
     const activeTags = new Set<string>();
-    let activeSort: 'stars' | 'rising' | 'recent' | 'alpha' = 'stars';
+    let activeSort: 'stars' | 'hot' | 'rising' | 'recent' | 'alpha' = 'stars';
     let activeQuery = '';
 
     function setActive(group: string, value: string) {
@@ -230,10 +247,12 @@ const searchIndex = entries.map((e) => ({
       visible.sort((a, b) => {
         const sa = +a.dataset.stars!, sb = +b.dataset.stars!;
         const da = +a.dataset.delta!, db = +b.dataset.delta!;
+        const ha = +a.dataset.hot!, hb = +b.dataset.hot!;
         const aa = a.dataset.added!, ab = b.dataset.added!;
         const na = a.dataset.name!, nb = b.dataset.name!;
         switch (activeSort) {
           case 'stars': return sb - sa;
+          case 'hot': return hb - ha || db - da || sb - sa;
           case 'rising': return db - da || sb - sa;
           case 'recent': return ab.localeCompare(aa) || sb - sa;
           case 'alpha': return na.localeCompare(nb);

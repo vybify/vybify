@@ -45,6 +45,33 @@ const hasAnyTag = (tags: string[], wanted: string[]) => {
   return wanted.some((w) => set.has(w));
 };
 
+// Hot score: velocity relative to size, boosted by recency
+function hotScore(e: { stars: number | null; delta7d: number | null; data: { addedAt: string } }): number {
+  const delta = e.delta7d ?? 0;
+  const stars = e.stars ?? 0;
+  if (delta <= 0 && stars <= 0) return 0;
+  const velocity = delta / Math.log(stars + 2);
+  const ageDays = (Date.now() - new Date(e.data.addedAt).getTime()) / 86400000;
+  const recencyBoost = ageDays <= 14 ? 2 : ageDays <= 30 ? 1.5 : 1;
+  return velocity * recencyBoost;
+}
+
+const byHot = (a: typeof all[0], b: typeof all[0]) =>
+  hotScore(b) - hotScore(a) || (b.delta7d ?? 0) - (a.delta7d ?? 0) || (b.stars ?? -1) - (a.stars ?? -1);
+
+// Hot right now — top movers by velocity
+const hot = [...all]
+  .filter((e) => (e.delta7d ?? 0) > 0)
+  .sort(byHot)
+  .slice(0, 12);
+
+// New arrivals — added in last 30 days, sorted by stars
+const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+const newArrivals = [...all]
+  .filter((e) => e.data.addedAt >= thirtyDaysAgo)
+  .sort(byStars)
+  .slice(0, 12);
+
 // Editors & IDEs — visible IDE / editor surface
 const editors = projects
   .filter((e) => hasAnyTag(e.data.tags ?? [], ['editor', 'ide', 'vscode', 'jetbrains']))
@@ -86,6 +113,24 @@ const frameworks = projects
       <span class="tnum font-medium text-[var(--color-fg)]">{skills.length}</span> skills · refreshed daily.
     </p>
   </section>
+
+  {hot.length > 0 && (
+    <CategoryRow
+      title="Hot right now"
+      subtitle="Fastest-rising projects and skills this week"
+      entries={hot}
+      layout="single"
+    />
+  )}
+
+  {newArrivals.length > 0 && (
+    <CategoryRow
+      title="New arrivals"
+      subtitle="Recently added, already gaining traction"
+      entries={newArrivals}
+      layout="single"
+    />
+  )}
 
   {editors.length > 0 && (
     <CategoryRow
