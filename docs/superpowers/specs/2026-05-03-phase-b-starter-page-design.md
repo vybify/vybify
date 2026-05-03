@@ -18,7 +18,7 @@ A `/starter` landing page showcasing a curated "Vibe Coding Essentials" pack of 
 | Button label | "Copy Coding Essentials" | More branded than "Copy all 12 install commands" |
 | Copy format | Newline-separated commands | Resilient to individual failures; works in bash/zsh paste; readable |
 | Skills without `install` | Include a commented fallback line | User isn't left wondering; `#` comment is a terminal no-op |
-| Nav link | Not added now | `Layout.astro` is shared — Jake coordinates when to add it |
+| Nav link | Not added now | `Layout.astro` is shared — Jake coordinates when to add it; label should be "Essentials" |
 | npx meta-command | Out of scope | Stretch goal deferred to later |
 
 ## Files Changed
