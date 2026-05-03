@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
 const user = Astro.locals.user;
 
@@ -31,26 +32,73 @@ if (Astro.request.method === 'POST') {
     } else if (tagline.length > 160) {
       formError = 'Tagline must be 160 characters or fewer.';
     } else {
-      const { error } = await Astro.locals.supabase
-        .from('submissions')
-        .insert({
-          user_id: user.id,
-          type,
-          name,
-          tagline,
-          url,
-          github,
-          tags,
-          body,
-          built_with: builtWith,
-          kind,
-          install,
-        });
+      // Check for duplicates against existing content
+      const [projects, skills] = await Promise.all([
+        getCollection('projects'),
+        getCollection('skills'),
+      ]);
+      const existingUrls = new Set([...projects, ...skills].map((e) => e.data.url.toLowerCase()));
+      const existingGithub = new Set(
+        [...projects, ...skills]
+          .map((e) => e.data.github?.toLowerCase())
+          .filter(Boolean),
+      );
 
-      if (error) {
-        formError = error.message;
-      } else {
-        success = true;
+      if (existingUrls.has(url.toLowerCase())) {
+        formError = 'This URL is already listed on vybify.';
+      } else if (github && existingGithub.has(github.toLowerCase())) {
+        formError = 'This GitHub repo is already listed on vybify.';
+      }
+
+      // Check for duplicates in pending/approved submissions
+      if (!formError) {
+        const { data: urlMatch } = await Astro.locals.supabase
+          .from('submissions')
+          .select('id, status')
+          .ilike('url', url)
+          .in('status', ['pending', 'approved'])
+          .limit(1);
+
+        if (urlMatch && urlMatch.length > 0) {
+          formError = 'This URL has already been submitted.';
+        }
+      }
+
+      if (!formError && github) {
+        const { data: ghMatch } = await Astro.locals.supabase
+          .from('submissions')
+          .select('id, status')
+          .ilike('github', github)
+          .in('status', ['pending', 'approved'])
+          .limit(1);
+
+        if (ghMatch && ghMatch.length > 0) {
+          formError = 'This GitHub repo has already been submitted.';
+        }
+      }
+
+      if (!formError) {
+        const { error } = await Astro.locals.supabase
+          .from('submissions')
+          .insert({
+            user_id: user.id,
+            type,
+            name,
+            tagline,
+            url,
+            github,
+            tags,
+            body,
+            built_with: builtWith,
+            kind,
+            install,
+          });
+
+        if (error) {
+          formError = error.message;
+        } else {
+          success = true;
+        }
       }
     }
   }
