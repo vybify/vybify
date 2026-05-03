@@ -240,6 +240,49 @@ const isLoggedIn = !!user;
       if (taglineCount) taglineCount.textContent = String(taglineInput.value.length);
     });
 
+    // Form persistence across auth reload
+    const STORAGE_KEY = 'vybify-submit-draft';
+    const formFieldIds = ['name', 'tagline', 'url', 'github', 'tags', 'built_with', 'kind', 'install', 'body'];
+
+    function saveFormDraft() {
+      const draft: Record<string, string> = {};
+      for (const id of formFieldIds) {
+        const el = document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;
+        if (el) draft[id] = el.value;
+      }
+      const typeRadio = document.querySelector<HTMLInputElement>('input[name="type"]:checked');
+      if (typeRadio) draft._type = typeRadio.value;
+      const ghUrl = document.getElementById('github-url-input') as HTMLInputElement | null;
+      if (ghUrl) draft._ghUrl = ghUrl.value;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+    }
+
+    function restoreFormDraft() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      localStorage.removeItem(STORAGE_KEY);
+      try {
+        const draft = JSON.parse(raw);
+        for (const id of formFieldIds) {
+          const el = document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;
+          if (el && draft[id]) el.value = draft[id];
+        }
+        if (draft._type) {
+          const typeRadio = document.querySelector<HTMLInputElement>(`input[name="type"][value="${draft._type}"]`);
+          if (typeRadio) {
+            typeRadio.checked = true;
+            typeRadio.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+        const ghUrl = document.getElementById('github-url-input') as HTMLInputElement | null;
+        if (ghUrl && draft._ghUrl) ghUrl.value = draft._ghUrl;
+        // Update tagline counter
+        if (draft.tagline && taglineCount) taglineCount.textContent = String(draft.tagline.length);
+      } catch {}
+    }
+
+    restoreFormDraft();
+
     // Popup sign-in flow
     const popupBtn = document.getElementById('popup-signin-btn');
     const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
@@ -249,6 +292,7 @@ const isLoggedIn = !!user;
       const supabase = createSupabaseBrowserClient();
 
       popupBtn.addEventListener('click', () => {
+        saveFormDraft();
         const w = 500;
         const h = 600;
         const left = window.screenX + (window.outerWidth - w) / 2;
@@ -263,7 +307,6 @@ const isLoggedIn = !!user;
       // Listen for auth state change (fired when popup completes OAuth)
       supabase.auth.onAuthStateChange((event) => {
         if (event === 'SIGNED_IN') {
-          // Hide the banner and enable the submit button
           authBanner?.remove();
           if (submitBtn) {
             submitBtn.disabled = false;
@@ -272,15 +315,10 @@ const isLoggedIn = !!user;
         }
       });
 
-      // Also listen for postMessage from the popup (belt and suspenders)
+      // Listen for postMessage from the popup
       window.addEventListener('message', (e) => {
         if (e.origin === window.location.origin && e.data === 'auth-complete') {
-          authBanner?.remove();
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit for review';
-          }
-          // Reload to get server-side session for the POST
+          saveFormDraft();
           window.location.reload();
         }
       });
