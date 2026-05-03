@@ -82,9 +82,54 @@ const isActive = (p: string) => path === p || path.startsWith(p + '/');
           >
             Submit
           </a>
+
+          <div id="auth-slot" class="ml-1 flex items-center">
+            <a
+              href="/login"
+              data-auth-signin
+              class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)] transition"
+            >
+              Sign in
+            </a>
+            <span data-auth-signedin class="hidden items-center gap-2">
+              <span data-auth-handle class="text-sm text-[var(--color-fg-muted)] px-2"></span>
+              <form method="POST" action="/auth/signout">
+                <button
+                  type="submit"
+                  class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)] transition"
+                >
+                  Sign out
+                </button>
+              </form>
+            </span>
+          </div>
         </nav>
       </div>
     </header>
+
+    <script>
+      import { createSupabaseBrowserClient } from '../lib/supabase';
+      const supabase = createSupabaseBrowserClient();
+      const apply = (user: { email?: string | null; user_metadata?: { name?: string; full_name?: string } } | null) => {
+        const signin = document.querySelector<HTMLElement>('[data-auth-signin]');
+        const signedin = document.querySelector<HTMLElement>('[data-auth-signedin]');
+        const handle = document.querySelector<HTMLElement>('[data-auth-handle]');
+        if (!signin || !signedin || !handle) return;
+        if (user) {
+          signin.classList.add('hidden');
+          signedin.classList.remove('hidden');
+          signedin.classList.add('flex');
+          const name = user.user_metadata?.name || user.user_metadata?.full_name || user.email || 'you';
+          handle.textContent = name;
+        } else {
+          signin.classList.remove('hidden');
+          signedin.classList.add('hidden');
+          signedin.classList.remove('flex');
+        }
+      };
+      supabase.auth.getUser().then(({ data }) => apply(data.user));
+      supabase.auth.onAuthStateChange((_event, session) => apply(session?.user ?? null));
+    </script>
 
     <main class="mx-auto max-w-6xl px-4 sm:px-6 py-8">
       <slot />
