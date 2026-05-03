@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { withStars } from '../lib/github';
+
+const allSkills = await withStars(await getCollection('skills'));
+const starterSkills = allSkills
+  .filter((e) => e.data.starter)
+  .sort((a, b) => (b.stars ?? -1) - (a.stars ?? -1));
+
+const copyPayload = starterSkills
+  .map((e) =>
+    e.data.install
+      ? e.data.install
+      : `# ${e.data.name} — no install command, see https://vybify.com/skills/${e.id}`
+  )
+  .join('\n');
+---
+
+<Layout
+  title="Vibe Coding Essentials · vybify"
+  description="The skills every vibe coder should have installed. Hand-picked by the Vybify team."
+>
+  <p>starter page placeholder</p>
+</Layout>
