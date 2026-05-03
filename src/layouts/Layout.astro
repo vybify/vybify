@@ -30,6 +30,15 @@ const isActive = (p: string) => path === p || path.startsWith(p + '/');
     <meta property="og:url" content={canonical} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VB77KW60J"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8VB77KW60J');
+    </script>
   </head>
   <body>
     <header class="bg-[var(--color-card)] border-b border-[var(--color-border)] sticky top-0 z-30">
