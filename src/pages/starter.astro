@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { withStars } from '../lib/github';
+
+const allSkills = await withStars(await getCollection('skills'));
+const starterSkills = allSkills
+  .filter((e) => e.data.starter)
+  .sort((a, b) => {
+    const starDiff = (b.stars ?? -1) - (a.stars ?? -1);
+    return starDiff !== 0 ? starDiff : a.data.name.localeCompare(b.data.name);
+  });
+
+// Passed to copy button in Task 3 — built here so it's available in the template
+const copyPayload = starterSkills
+  .map((e) =>
+    e.data.install
+      ? e.data.install
+      : `# ${e.data.name} — no install command, see https://vybify.com/skills/${e.id}`
+  )
+  .join('\n');
+---
+
+<Layout
+  title="Vibe Coding Essentials · vybify"
+  description="The skills every vibe coder should have installed. Hand-picked by the Vybify team."
+>
+  <section class="mb-8">
+    <h1 class="text-2xl sm:text-3xl font-semibold text-[var(--color-fg)] mb-2">
+      Vibe Coding Essentials
+    </h1>
+    <p class="text-[var(--color-fg-muted)] mb-5">
+      The skills every vibe coder should have installed. Hand-picked by the Vybify team.
+    </p>
+    <button
+      id="copy-essentials-btn"
+      data-payload={copyPayload}
+      disabled={copyPayload.length === 0}
+      class="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white text-sm font-semibold rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <span id="copy-essentials-label">Copy Coding Essentials</span>
+    </button>
+  </section>
+
+  {starterSkills.length > 0 ? (
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+      {starterSkills.map((entry) => (
+        <Card
+          name={entry.data.name}
+          tagline={entry.data.tagline}
+          href={`/skills/${entry.id}`}
+          url={entry.data.url}
+          github={entry.data.github}
+          author={entry.data.author}
+          tags={entry.data.tags ?? []}
+          stars={entry.stars}
+          delta7d={entry.delta7d}
+          featured={entry.data.featured}
+        />
+      ))}
+    </div>
+  ) : (
+    <p class="text-[var(--color-fg-muted)]">
+      No essentials yet — check back soon.
+    </p>
+  )}
+
+  <script>
+    const btn = document.getElementById('copy-essentials-btn') as HTMLButtonElement | null;
+    const label = document.getElementById('copy-essentials-label') as HTMLElement | null;
+    if (btn && label) {
+      btn.addEventListener('click', async () => {
+        const payload = btn.dataset.payload ?? '';
+        try {
+          await navigator.clipboard.writeText(payload);
+          label.textContent = '✓ Copied!';
+          setTimeout(() => {
+            label.textContent = 'Copy Coding Essentials';
+          }, 1500);
+        } catch (err) {
+          console.error('Clipboard write failed', err);
+        }
+      });
+    }
+  </script>
+</Layout>
