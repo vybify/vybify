@@ -5,12 +5,15 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/prefetch-stars.mjs && astro build",
+    "build": "node scripts/prefetch-stars.mjs && astro build && node -e \"require('fs').writeFileSync('dist/.assetsignore', '_worker.js\\n_routes.json\\n')\"",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.13",
     "@astrojs/mdx": "^4.3.14",
+    "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.105.1",
     "@tailwindcss/vite": "^4.0.0",
     "astro": "^5.1.1",
     "fuse.js": "^7.3.0",
