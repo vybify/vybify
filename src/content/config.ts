@@ -9,6 +9,7 @@ const baseEntry = z.object({
   author: z.string().optional(),
   tags: z.array(z.string()).default([]),
   featured: z.boolean().default(false),
+  starter: z.boolean().default(false),
   addedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 
