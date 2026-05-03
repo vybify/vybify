@@ -24,6 +24,8 @@ const MAX_RETRIES = 2;
 const TOKEN = process.env.GITHUB_TOKEN;
 if (!TOKEN) {
   console.warn('[prefetch] GITHUB_TOKEN not set; rate limits will be tight.');
+} else {
+  console.log(`[prefetch] GITHUB_TOKEN is set (${TOKEN.length} chars, starts with ${TOKEN.slice(0, 4)}...)`);
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -125,8 +127,11 @@ function recordHistory(history, repo, stars) {
 }
 
 async function main() {
+  console.log(`[prefetch] cwd: ${process.cwd()}`);
+  console.log(`[prefetch] cache path: ${CACHE_PATH}`);
   const repos = await collectUniqueRepos();
   console.log(`[prefetch] ${repos.length} unique repos`);
+  if (repos.length > 0) console.log(`[prefetch] first 3: ${repos.slice(0, 3).join(', ')}`);
 
   const cache = await loadJson(CACHE_PATH, {});
   const history = await loadJson(HISTORY_PATH, {});
@@ -151,6 +156,7 @@ async function main() {
       cache[repo] = { stars, fetchedAt: now };
       recordHistory(history, repo, stars);
       fetched++;
+      if (fetched === 1) console.log(`[prefetch] first success: ${repo} → ${stars} stars`);
     } else {
       // Don't overwrite a previously-successful cached value with null
       if (!existing) cache[repo] = { stars: null, fetchedAt: now };
