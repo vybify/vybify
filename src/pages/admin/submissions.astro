@@ -1,0 +1,207 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const ADMIN_EMAILS = ['jake@drinkpsilly.com'];
+
+const user = Astro.locals.user;
+if (!user || !ADMIN_EMAILS.includes(user.email ?? '')) {
+  return Astro.redirect('/');
+}
+
+let actionMsg: string | null = null;
+let actionErr: string | null = null;
+
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData();
+  const action = String(form.get('action'));
+  const id = String(form.get('id'));
+  const reviewerNote = String(form.get('reviewer_note') ?? '').trim() || null;
+
+  if ((action === 'approve' || action === 'reject') && id) {
+    const status = action === 'approve' ? 'approved' : 'rejected';
+
+    // Use service-level update — admin bypasses RLS via direct status change
+    // Since RLS only lets owners update pending rows, we need a workaround.
+    // We'll use an RPC function, but for now let's add an admin policy.
+    const { error } = await Astro.locals.supabase
+      .from('submissions')
+      .update({ status, reviewer_note: reviewerNote })
+      .eq('id', id);
+
+    if (error) {
+      actionErr = error.message;
+    } else {
+      actionMsg = `Submission ${status}.`;
+    }
+  } else if (action === 'delete' && id) {
+    const { error } = await Astro.locals.supabase
+      .from('submissions')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      actionErr = error.message;
+    } else {
+      actionMsg = 'Submission deleted.';
+    }
+  }
+}
+
+const statusFilter = Astro.url.searchParams.get('status') || 'pending';
+
+const query = Astro.locals.supabase
+  .from('submissions')
+  .select('*, profiles(display_name, handle)')
+  .order('created_at', { ascending: false });
+
+if (statusFilter !== 'all') {
+  query.eq('status', statusFilter);
+}
+
+const { data: submissions } = await query;
+
+const statusColors: Record<string, string> = {
+  pending: 'bg-yellow-100 text-yellow-800',
+  approved: 'bg-green-100 text-green-800',
+  rejected: 'bg-red-100 text-red-800',
+};
+
+const counts = {
+  pending: submissions?.filter((s: any) => s.status === 'pending').length ?? 0,
+  all: submissions?.length ?? 0,
+};
+---
+
+<Layout title="Admin · Submissions" description="Review submissions.">
+  <a href="/" class="inline-flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition mb-6">
+    <span aria-hidden="true">&larr;</span> Back
+  </a>
+
+  <section class="max-w-3xl">
+    <h1 class="text-2xl font-semibold mb-4">Submissions</h1>
+
+    {actionMsg && <p class="text-sm text-[var(--color-positive)] mb-4">{actionMsg}</p>}
+    {actionErr && <p class="text-sm text-red-600 mb-4">{actionErr}</p>}
+
+    <!-- Status filter tabs -->
+    <div class="flex gap-1 mb-6">
+      {(['pending', 'approved', 'rejected', 'all'] as const).map((s) => (
+        <a
+          href={`/admin/submissions?status=${s}`}
+          class:list={[
+            'px-3 py-1.5 rounded-md text-sm transition',
+            statusFilter === s
+              ? 'bg-[var(--color-accent-soft)] text-[var(--color-accent)] font-medium'
+              : 'text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)]',
+          ]}
+        >
+          {s.charAt(0).toUpperCase() + s.slice(1)}
+          {s === 'pending' && counts.pending > 0 && (
+            <span class="ml-1 inline-flex items-center justify-center px-1.5 py-0.5 rounded-full text-xs bg-yellow-100 text-yellow-800">
+              {counts.pending}
+            </span>
+          )}
+        </a>
+      ))}
+    </div>
+
+    {!submissions || submissions.length === 0 ? (
+      <div class="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-8 text-center">
+        <p class="text-[var(--color-fg-muted)]">No {statusFilter === 'all' ? '' : statusFilter} submissions.</p>
+      </div>
+    ) : (
+      <div class="flex flex-col gap-4">
+        {submissions.map((s: any) => (
+          <div class="bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-5">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div class="min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                  <h2 class="font-semibold truncate">{s.name}</h2>
+                  <span class={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${statusColors[s.status] || ''}`}>
+                    {s.status}
+                  </span>
+                  <span class="text-xs text-[var(--color-fg-muted)] border border-[var(--color-border)] rounded px-1.5 py-0.5">{s.type}</span>
+                </div>
+                <p class="text-sm text-[var(--color-fg-muted)]">{s.tagline}</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-[var(--color-fg-muted)] mb-3">
+              <div><span class="font-medium text-[var(--color-fg-soft)]">URL:</span> <a href={s.url} target="_blank" class="text-[var(--color-accent)] hover:underline">{s.url}</a></div>
+              {s.github && (
+                <div><span class="font-medium text-[var(--color-fg-soft)]">GitHub:</span> <a href={`https://github.com/${s.github}`} target="_blank" class="text-[var(--color-accent)] hover:underline">{s.github}</a></div>
+              )}
+              {s.tags?.length > 0 && (
+                <div><span class="font-medium text-[var(--color-fg-soft)]">Tags:</span> {s.tags.join(', ')}</div>
+              )}
+              {s.built_with?.length > 0 && (
+                <div><span class="font-medium text-[var(--color-fg-soft)]">Built with:</span> {s.built_with.join(', ')}</div>
+              )}
+              {s.type === 'skill' && s.kind && (
+                <div><span class="font-medium text-[var(--color-fg-soft)]">Kind:</span> {s.kind}</div>
+              )}
+              {s.type === 'skill' && s.install && (
+                <div class="col-span-2"><span class="font-medium text-[var(--color-fg-soft)]">Install:</span> <code class="font-mono text-xs px-1 py-0.5 rounded bg-[var(--color-bg)]">{s.install}</code></div>
+              )}
+              <div><span class="font-medium text-[var(--color-fg-soft)]">By:</span> {s.profiles?.display_name || s.profiles?.handle || s.user_id}</div>
+              <div><span class="font-medium text-[var(--color-fg-soft)]">Date:</span> {new Date(s.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+            </div>
+
+            {s.body && (
+              <details class="mb-3">
+                <summary class="text-xs font-medium text-[var(--color-fg-muted)] cursor-pointer hover:text-[var(--color-fg)]">Description</summary>
+                <pre class="mt-2 text-xs whitespace-pre-wrap text-[var(--color-fg-soft)] bg-[var(--color-bg)] rounded-lg p-3 max-h-48 overflow-y-auto">{s.body}</pre>
+              </details>
+            )}
+
+            {s.status === 'pending' && (
+              <div class="flex items-end gap-2 pt-3 border-t border-[var(--color-border)]">
+                <form method="POST" class="flex items-end gap-2 flex-1">
+                  <input type="hidden" name="id" value={s.id} />
+                  <div class="flex-1">
+                    <label class="text-xs text-[var(--color-fg-muted)]" for={`note-${s.id}`}>Note (optional)</label>
+                    <input
+                      id={`note-${s.id}`}
+                      name="reviewer_note"
+                      type="text"
+                      placeholder="Reason for rejection..."
+                      class="mt-0.5 w-full px-2 py-1.5 rounded-md border border-[var(--color-border)] bg-white text-xs focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    name="action"
+                    value="approve"
+                    class="px-3 py-1.5 rounded-md bg-[var(--color-positive)] text-white text-xs font-medium hover:opacity-90 transition"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    type="submit"
+                    name="action"
+                    value="reject"
+                    class="px-3 py-1.5 rounded-md bg-red-500 text-white text-xs font-medium hover:opacity-90 transition"
+                  >
+                    Reject
+                  </button>
+                </form>
+                <form method="POST">
+                  <input type="hidden" name="id" value={s.id} />
+                  <button
+                    type="submit"
+                    name="action"
+                    value="delete"
+                    class="px-3 py-1.5 rounded-md border border-[var(--color-border)] text-xs text-[var(--color-fg-muted)] hover:text-red-600 hover:border-red-300 transition"
+                    onclick="return confirm('Delete this submission permanently?')"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+  </section>
+</Layout>
