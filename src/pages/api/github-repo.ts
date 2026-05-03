@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-export const GET: APIRoute = async ({ url }) => {
+export const GET: APIRoute = async ({ url, locals }) => {
   const repo = url.searchParams.get('repo');
   if (!repo || !/^[\w.-]+\/[\w.-]+$/.test(repo)) {
     return new Response(JSON.stringify({ error: 'Invalid repo format. Use owner/repo.' }), {
@@ -10,7 +10,8 @@ export const GET: APIRoute = async ({ url }) => {
   }
 
   const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
-  const token = import.meta.env.GITHUB_TOKEN;
+  const runtime = (locals as any).runtime;
+  const token = runtime?.env?.GITHUB_TOKEN ?? import.meta.env.GITHUB_TOKEN;
   if (token) headers.Authorization = `Bearer ${token}`;
 
   const res = await fetch(`https://api.github.com/repos/${repo}`, { headers });
