@@ -259,20 +259,40 @@ if (Astro.request.method === 'POST') {
         const githubInput = document.getElementById('github') as HTMLInputElement;
         const tagsInput = document.getElementById('tags') as HTMLInputElement;
         const bodyInput = document.getElementById('body') as HTMLTextAreaElement;
+        const builtWithInput = document.getElementById('built_with') as HTMLInputElement;
+        const kindSelect = document.getElementById('kind') as HTMLSelectElement;
+        const installInput = document.getElementById('install') as HTMLInputElement;
 
         if (nameInput && !nameInput.value) nameInput.value = data.name;
         if (taglineInput && !taglineInput.value) {
-          const desc = (data.description || '').slice(0, 160);
-          taglineInput.value = desc;
-          if (taglineCount) taglineCount.textContent = String(desc.length);
+          taglineInput.value = data.tagline || '';
+          if (taglineCount) taglineCount.textContent = String(taglineInput.value.length);
         }
         if (urlInput && !urlInput.value) urlInput.value = data.homepage || data.html_url;
         if (githubInput) githubInput.value = repo;
-        if (tagsInput && !tagsInput.value && data.topics.length) {
+        if (tagsInput && !tagsInput.value && data.topics?.length) {
           tagsInput.value = data.topics.join(', ');
         }
-        if (bodyInput && !bodyInput.value && data.description) {
-          bodyInput.value = data.description;
+        if (bodyInput && !bodyInput.value && data.body) {
+          bodyInput.value = data.body;
+        }
+        if (builtWithInput && !builtWithInput.value && data.builtWith?.length) {
+          builtWithInput.value = data.builtWith.join(', ');
+        }
+        if (installInput && !installInput.value && data.install) {
+          installInput.value = data.install;
+        }
+
+        // Auto-select type and kind based on repo content
+        if (data.inferredType) {
+          const typeRadio = document.querySelector<HTMLInputElement>(`input[name="type"][value="${data.inferredType}"]`);
+          if (typeRadio) {
+            typeRadio.checked = true;
+            typeRadio.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+        if (kindSelect && data.kind) {
+          kindSelect.value = data.kind;
         }
       } catch (err: any) {
         ghError.textContent = err.message || 'Failed to fetch repo info.';
