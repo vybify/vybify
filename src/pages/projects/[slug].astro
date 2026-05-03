@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
 import { withStars, formatStars, formatDelta } from '../../lib/github';
 
 export async function getStaticPaths() {
@@ -35,9 +36,11 @@ const related = [...siblings, ...otherType]
   .map((x) => x.e);
 
 const deltaStr = formatDelta(delta7d);
+const pageUrl = new URL(`/projects/${entry.id}`, Astro.site ?? 'https://vybify.com').href;
+const ogImage = new URL(`/og/projects/${entry.id}.png`, Astro.site ?? 'https://vybify.com').href;
 ---
 
-<Layout title={`${data.name} · vybify`} description={data.tagline}>
+<Layout title={`${data.name} · vybify`} description={data.tagline} ogImage={ogImage}>
   <a href="/projects" class="inline-flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition mb-6">
     <span aria-hidden="true">←</span> All projects
   </a>
@@ -126,6 +129,9 @@ const deltaStr = formatDelta(delta7d);
         </a>
       ))}
     </div>
+
+    <hr class="border-[var(--color-border)] my-6" />
+    <ShareButtons url={pageUrl} title={data.name} tagline={data.tagline} />
   </article>
 
   {hasBody && Content && (

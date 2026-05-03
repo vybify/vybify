@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
 import CopyableCommand from '../../components/CopyableCommand.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
 import { withStars, formatStars, formatDelta } from '../../lib/github';
 
 export async function getStaticPaths() {
@@ -36,6 +37,8 @@ const related = [...siblings, ...otherType]
   .map((x) => x.e);
 
 const deltaStr = formatDelta(delta7d);
+const pageUrl = new URL(`/skills/${entry.id}`, Astro.site ?? 'https://vybify.com').href;
+const ogImage = new URL(`/og/skills/${entry.id}.png`, Astro.site ?? 'https://vybify.com').href;
 
 const kindLabel: Record<string, string> = {
   'claude-code-skill': 'Claude Code skill',
@@ -46,7 +49,7 @@ const kindLabel: Record<string, string> = {
 };
 ---
 
-<Layout title={`${data.name} · vybify`} description={data.tagline}>
+<Layout title={`${data.name} · vybify`} description={data.tagline} ogImage={ogImage}>
   <a href="/skills" class="inline-flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition mb-6">
     <span aria-hidden="true">←</span> All skills
   </a>
@@ -141,6 +144,9 @@ const kindLabel: Record<string, string> = {
         </a>
       ))}
     </div>
+
+    <hr class="border-[var(--color-border)] my-6" />
+    <ShareButtons url={pageUrl} title={data.name} tagline={data.tagline} />
   </article>
 
   {hasBody && Content && (

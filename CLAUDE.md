@@ -12,7 +12,7 @@ breaking each other's work, follow these rules WITHOUT EXCEPTION.
 - Before starting new work, ALWAYS run:
     git checkout main
     git pull origin main
-    git checkout -b jake/whatever-im-doing
+    git checkout -b charlie/whatever-im-doing
 - Before pushing, ALWAYS run:
     git pull origin main --rebase
   Resolve any conflicts before pushing.
@@ -105,6 +105,8 @@ Confirm with the user before running:
 - Schema: see `src/content/config.ts`. Required: `name`, `tagline` (max
   160), `url`, `tags[]`, `addedAt` (YYYY-MM-DD). Skills also need `kind`
   and an optional `install` command.
+- Skills have a `starter: boolean` field (default `false`). Jake sets
+  `starter: true` on skills he wants in the Vibe Coding Essentials pack.
 - Markdown body (optional) renders on detail pages as the "How it was
   built" / "How to use this skill" section.
 
@@ -129,3 +131,43 @@ Confirm with the user before running:
 - End with sentence-terminal punctuation (`.` `!` `?` `…` `。`)
 - Avoid mid-word truncation — use `scripts/cleanup-taglines.mjs` if
   bulk-fixing
+
+---
+
+## Charlie's Roadmap
+
+### Phase A — Sharability sprint ✅
+- Auto-generated OG images per entry (Satori → PNG at build time)
+- Per-page meta tags: `og:image`, `twitter:card`
+- Share buttons on detail pages: Copy link · Post (X) · Bluesky · Threads · Reddit
+
+### Phase B — 1-click starter pack ✅
+- `/starter` page at `src/pages/starter.astro` — shows all skills where `starter: true`, sorted by stars
+- "Copy Coding Essentials" button copies newline-separated install commands to clipboard
+- Skills without an `install` field get a commented fallback line in the copy payload
+- **Pending Jake:** mark skills with `starter: true`; add "Essentials" nav link in `Layout.astro`
+
+### Phase C — Auth + DB foundation (Jake) — unlocks D/E/F
+- Cloudflare D1 (SQLite at the edge)
+- GitHub OAuth via Cloudflare Workers
+- Schema: `users`, `submissions`, `votes`, `events` tables
+- API endpoints: `/api/auth/*`, `/api/me`, `/api/submit`, `/api/vote`
+- Login button in header
+
+### Phase D — Submissions UI (Charlie, builds on C)
+- Auth-gated form at `/submit` replacing email/PR stub
+- Auto-fetches metadata from GitHub URL
+- Moderation queue at `/admin/queue`
+
+### Phase E — Voting (Charlie, builds on C)
+- Vote button on cards + detail pages, one vote per user
+- Trending sort in SearchableGrid (7-day vote velocity)
+
+### Phase F — Live competitions (builds on E)
+- `/competition/[slug]` pages with live leaderboard + past winners archive
+
+### Decision log
+- **Auth provider:** GitHub OAuth only at first
+- **Submission moderation:** Pre-publish review (not auto-publish)
+- **Voting:** Public counts, private voter identities
+- **DB:** Cloudflare D1 (native to stack, free, Jake owns this)

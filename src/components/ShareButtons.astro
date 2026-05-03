@@ -1,0 +1,98 @@
+---
+interface Props {
+  url: string;
+  title: string;
+  tagline: string;
+}
+
+const { url, title, tagline } = Astro.props;
+
+const shareText = encodeURIComponent(`${title} — ${tagline}`);
+const shareUrl = encodeURIComponent(url);
+
+const tweetHref = `https://x.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+const bskyHref = `https://bsky.app/intent/compose?text=${shareText}%20${shareUrl}`;
+const threadsHref = `https://www.threads.net/intent/post?text=${shareText}%20${shareUrl}`;
+const redditHref = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareText}`;
+---
+
+<div class="flex items-center gap-2 flex-wrap">
+  <span class="text-xs text-[var(--color-fg-muted)] mr-1">Share</span>
+
+  <button
+    id="copy-link-btn"
+    data-url={url}
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:border-[var(--color-border-strong)] transition cursor-pointer"
+  >
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <path d="M5.75 4.75h-1a2 2 0 0 0-2 2v4.5a2 2 0 0 0 2 2h4.5a2 2 0 0 0 2-2v-1" />
+      <rect x="6.75" y="2.75" width="6.5" height="6.5" rx="1.5" />
+    </svg>
+    <span id="copy-link-label">Copy link</span>
+  </button>
+
+  <a
+    href={tweetHref}
+    target="_blank"
+    rel="noopener"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:border-[var(--color-border-strong)] transition"
+  >
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+      <path d="M9.294 7.287 14.13 1.6h-1.149L8.77 6.54 5.534 1.6H1.6l5.08 7.393L1.6 14.4h1.149l4.44-5.161 3.546 5.16H14.4L9.294 7.287Zm-1.572 1.828-.515-.736L3.206 2.47h1.763l3.306 4.726.515.737 4.296 6.142h-1.762l-3.602-5.16Z"/>
+    </svg>
+    Post
+  </a>
+
+  <a
+    href={bskyHref}
+    target="_blank"
+    rel="noopener"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:border-[var(--color-border-strong)] transition"
+  >
+    <svg width="12" height="12" viewBox="0 0 568 501" fill="currentColor" aria-hidden="true">
+      <path d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.21C491.866-1.611 568-28.906 568 57.947c0 17.346-9.945 145.713-15.778 166.555-20.275 72.453-94.155 90.933-159.875 79.748C507.222 323.8 536.444 388.997 473.333 454.7c-119.86 122.992-172.275-30.853-185.702-70.239-2.738-8.008-4.013-11.727-4.631-11.727-.619 0-1.893 3.719-4.631 11.727-13.427 39.386-65.842 193.231-185.702 70.239-63.111-65.702-33.89-130.9 80.986-150.45-65.72 11.185-139.6-7.295-159.875-79.748C8.945 203.659-.999 75.292-.999 57.946-.999-28.906 75.135-1.61 123.121 33.664Z"/>
+    </svg>
+    Bluesky
+  </a>
+
+  <a
+    href={threadsHref}
+    target="_blank"
+    rel="noopener"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:border-[var(--color-border-strong)] transition"
+  >
+    <svg width="12" height="12" viewBox="0 0 192 192" fill="currentColor" aria-hidden="true">
+      <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.488 16.351-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.202.195 97.07 0h-.113C68.882.195 47.292 9.643 32.788 28.08 19.882 44.485 13.224 67.315 13.01 96v.04c.214 28.685 6.872 51.515 19.778 67.92 14.504 18.437 36.094 27.885 64.208 28.08h.113c24.863-.167 42.239-6.69 56.7-21.137 18.868-18.845 18.324-42.637 12.111-57.14-4.433-10.323-12.897-18.68-24.383-23.775Zm-42.34 37.68c-10.446.571-21.321-4.101-21.87-14.145-.412-7.72 5.506-16.338 23.28-17.352 2.035-.117 4.035-.175 6-.175 6.159 0 11.928.651 17.15 1.904-1.951 24.375-14.498 29.018-24.56 29.768Z"/>
+    </svg>
+    Threads
+  </a>
+
+  <a
+    href={redditHref}
+    target="_blank"
+    rel="noopener"
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:border-[var(--color-border-strong)] transition"
+  >
+    <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 0C4.478 0 0 4.478 0 10c0 5.523 4.478 10 10 10 5.523 0 10-4.477 10-10 0-5.522-4.477-10-10-10zm5.846 10.71a1.5 1.5 0 0 1 .154.67c0 2.124-2.686 3.847-5.998 3.847-3.312 0-5.998-1.723-5.998-3.847 0-.234.053-.46.154-.67a1.25 1.25 0 0 1-.406-.918 1.25 1.25 0 0 1 2.132-.882c1.05-.694 2.47-1.14 4.044-1.19l.788-3.517a.33.33 0 0 1 .394-.247l2.476.52a.874.874 0 1 1-.1.655l-2.2-.463-.697 3.108c1.537.065 2.92.51 3.948 1.197a1.25 1.25 0 0 1 2.132.882c0 .35-.144.667-.377.908l.055.947zm-8.096.878a.875.875 0 1 0 1.75 0 .875.875 0 0 0-1.75 0zm4.844.875a.875.875 0 1 0 0-1.75.875.875 0 0 0 0 1.75zm-.392 1.66c-.022.022-.548.532-1.7.532-1.174 0-1.69-.523-1.712-.544a.25.25 0 0 0-.354.354c.033.033.683.69 2.066.69 1.383 0 2.033-.657 2.066-.69a.25.25 0 0 0-.366-.342z"/>
+    </svg>
+    Reddit
+  </a>
+</div>
+
+<script>
+  const btn = document.getElementById('copy-link-btn');
+  const label = document.getElementById('copy-link-label');
+  if (btn && label) {
+    btn.addEventListener('click', async () => {
+      const url = btn.getAttribute('data-url') ?? window.location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+        label.textContent = 'Copied!';
+        setTimeout(() => { label.textContent = 'Copy link'; }, 2000);
+      } catch {
+        label.textContent = 'Copy link';
+      }
+    });
+  }
+</script>
