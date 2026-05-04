@@ -3,6 +3,7 @@ export const prerender = true;
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
+import ClaimButton from '../../components/ClaimButton.astro';
 import UpvoteScript from '../../components/UpvoteScript.astro';
 import { withStars, formatStars, formatDelta } from '../../lib/github';
 
@@ -133,7 +134,7 @@ const deltaStr = formatDelta(delta7d);
 
     <hr class="border-[var(--color-border)] my-6" />
 
-    <div class="flex flex-wrap gap-1.5">
+    <div class="flex flex-wrap items-center gap-1.5">
       {data.tags.map((tag: string) => (
         <a
           href={`/tag/${encodeURIComponent(tag.toLowerCase())}`}
@@ -143,6 +144,10 @@ const deltaStr = formatDelta(delta7d);
         </a>
       ))}
     </div>
+
+    <hr class="border-[var(--color-border)] my-6" />
+
+    <ClaimButton entryType="project" entrySlug={entry.id} githubRepo={data.github} />
   </article>
 
   {hasBody && Content && (
