@@ -10,15 +10,22 @@ const { command, label, entryType, entrySlug } = Astro.props;
 ---
 
 <div class="vyb-copy">
-  {label && <p class="label mb-1.5">{label}</p>}
-  <div class="relative">
-    <pre class="bg-[var(--color-fg)] text-white text-sm font-mono px-4 py-3 pr-14 rounded-lg overflow-x-auto" data-track-type={entryType} data-track-slug={entrySlug}><code><span class="text-white/40 select-none mr-2">$</span><span class="vyb-copy-text">{command}</span></code></pre>
+  {label && <p class="label mb-2">{label}</p>}
+  <div class="relative group/copy">
+    <pre class="bg-[var(--color-fg)] text-white text-sm font-mono pl-4 pr-[5.5rem] py-3.5 rounded-xl overflow-x-auto" data-track-type={entryType} data-track-slug={entrySlug}><code><span class="text-white/40 select-none mr-2">$</span><span class="vyb-copy-text">{command}</span></code></pre>
     <button
       type="button"
-      class="vyb-copy-btn absolute top-2 right-2 px-2.5 py-1 text-xs font-medium rounded-md bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition"
-      aria-label="Copy command"
+      class="vyb-copy-btn absolute top-1/2 -translate-y-1/2 right-2 flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-white text-[var(--color-fg)] hover:bg-white/90 active:scale-95 transition-all shadow-sm"
+      aria-label="Copy command to clipboard"
     >
-      Copy
+      <svg class="vyb-copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+      </svg>
+      <svg class="vyb-check-icon hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+      <span class="vyb-copy-label">Copy</span>
     </button>
   </div>
 </div>
@@ -29,14 +36,28 @@ const { command, label, entryType, entrySlug } = Astro.props;
     const text = wrap.querySelector<HTMLElement>('.vyb-copy-text');
     if (!btn || !text) return;
 
+    const copyIcon = btn.querySelector<SVGElement>('.vyb-copy-icon');
+    const checkIcon = btn.querySelector<SVGElement>('.vyb-check-icon');
+    const labelEl = btn.querySelector<HTMLElement>('.vyb-copy-label');
+
     btn.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(text.textContent ?? '');
-        const original = btn.textContent;
-        btn.textContent = 'Copied';
+
+        // Switch to success state
+        if (copyIcon) copyIcon.classList.add('hidden');
+        if (checkIcon) checkIcon.classList.remove('hidden');
+        if (labelEl) labelEl.textContent = 'Copied!';
+        btn.classList.add('bg-[var(--color-positive)]', 'text-white');
+        btn.classList.remove('bg-white', 'text-[var(--color-fg)]');
+
         setTimeout(() => {
-          btn.textContent = original;
-        }, 1500);
+          if (copyIcon) copyIcon.classList.remove('hidden');
+          if (checkIcon) checkIcon.classList.add('hidden');
+          if (labelEl) labelEl.textContent = 'Copy';
+          btn.classList.remove('bg-[var(--color-positive)]', 'text-white');
+          btn.classList.add('bg-white', 'text-[var(--color-fg)]');
+        }, 2000);
 
         // Track the copy event
         const pre = wrap.querySelector('pre');
