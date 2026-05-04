@@ -52,6 +52,8 @@ const matches = [...projects, ...skills]
         stars={entry.stars}
         delta7d={entry.delta7d}
         featured={entry.data.featured}
+        entryType={entry._type}
+        entrySlug={entry.id}
       />
     ))}
   </div>
