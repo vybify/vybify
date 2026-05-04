@@ -181,6 +181,8 @@ const searchIndex = entries.map((e) => ({
             delta7d={e.delta7d}
             badge={e.badge}
             featured={e.data.featured}
+            entryType={e._type}
+            entrySlug={e._id.slice(2)}
           />
         </div>
       );

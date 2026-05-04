@@ -67,9 +67,12 @@ const hot = [...all]
 
 // New arrivals — added in last 30 days, sorted by stars
 const thirtyDaysAgo = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+const byNewest = (a: typeof all[0], b: typeof all[0]) =>
+  b.data.addedAt.localeCompare(a.data.addedAt) || (b.stars ?? -1) - (a.stars ?? -1);
+
 const newArrivals = [...all]
   .filter((e) => e.data.addedAt >= thirtyDaysAgo)
-  .sort(byStars)
+  .sort(byNewest)
   .slice(0, 12);
 
 // Editors & IDEs — visible IDE / editor surface

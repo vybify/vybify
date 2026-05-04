@@ -1,0 +1,71 @@
+<!-- Shared upvote hydration script — include on any page with .vyb-upvote buttons -->
+<script>
+  const allBtns = document.querySelectorAll<HTMLButtonElement>('.vyb-upvote');
+  if (allBtns.length > 0) {
+    const entries = new Set<string>();
+    allBtns.forEach((btn) => {
+      const t = btn.dataset.entryType;
+      const s = btn.dataset.entrySlug;
+      if (t && s) entries.add(`${t}:${s}`);
+    });
+
+    fetch(`/api/upvote-counts?entries=${[...entries].join(',')}`)
+      .then((r) => r.json())
+      .then(({ counts, voted }: { counts: Record<string, number>; voted: string[] }) => {
+        const votedSet = new Set(voted);
+        allBtns.forEach((btn) => {
+          const key = `${btn.dataset.entryType}:${btn.dataset.entrySlug}`;
+          const countEl = btn.querySelector('.vyb-upvote-count');
+          if (countEl) countEl.textContent = String(counts[key] ?? 0);
+          if (votedSet.has(key)) {
+            btn.classList.add('border-[var(--color-accent)]', 'text-[var(--color-accent)]', 'bg-[var(--color-accent-soft)]');
+            btn.classList.remove('text-[var(--color-fg-muted)]', 'border-[var(--color-border)]', 'bg-[var(--color-bg)]');
+            btn.dataset.voted = 'true';
+          }
+        });
+      })
+      .catch(() => {});
+
+    allBtns.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const entryType = btn.dataset.entryType;
+        const entrySlug = btn.dataset.entrySlug;
+        if (!entryType || !entrySlug) return;
+
+        try {
+          const res = await fetch('/api/upvote', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ entry_type: entryType, entry_slug: entrySlug }),
+          });
+          if (res.status === 401) {
+            window.location.href = '/login';
+            return;
+          }
+          const { upvoted, count } = await res.json();
+          const countEl = btn.querySelector('.vyb-upvote-count');
+          if (countEl) countEl.textContent = String(count);
+
+          // Update all buttons for same entry (card + detail page might both exist)
+          document.querySelectorAll<HTMLButtonElement>(
+            `.vyb-upvote[data-entry-type="${entryType}"][data-entry-slug="${entrySlug}"]`
+          ).forEach((b) => {
+            const c = b.querySelector('.vyb-upvote-count');
+            if (c) c.textContent = String(count);
+            if (upvoted) {
+              b.classList.add('border-[var(--color-accent)]', 'text-[var(--color-accent)]', 'bg-[var(--color-accent-soft)]');
+              b.classList.remove('text-[var(--color-fg-muted)]', 'border-[var(--color-border)]', 'bg-[var(--color-bg)]');
+              b.dataset.voted = 'true';
+            } else {
+              b.classList.remove('border-[var(--color-accent)]', 'text-[var(--color-accent)]', 'bg-[var(--color-accent-soft)]');
+              b.classList.add('text-[var(--color-fg-muted)]', 'border-[var(--color-border)]', 'bg-[var(--color-bg)]');
+              b.dataset.voted = 'false';
+            }
+          });
+        } catch {}
+      });
+    });
+  }
+</script>

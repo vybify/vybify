@@ -3,6 +3,7 @@ export const prerender = true;
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
+import UpvoteScript from '../../components/UpvoteScript.astro';
 import { withStars, formatStars, formatDelta } from '../../lib/github';
 
 export async function getStaticPaths() {
@@ -97,6 +98,23 @@ const deltaStr = formatDelta(delta7d);
           )}
         </dd>
       </div>
+      <div>
+        <dt class="label mb-1">Upvotes</dt>
+        <dd>
+          <button
+            type="button"
+            class="vyb-upvote inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-sm border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-fg-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition"
+            data-entry-type="project"
+            data-entry-slug={entry.id}
+            aria-label="Upvote this project"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="vyb-upvote-icon" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7" />
+            </svg>
+            <span class="vyb-upvote-count tnum font-medium">0</span>
+          </button>
+        </dd>
+      </div>
       {data.author && (
         <div>
           <dt class="label mb-1">Author</dt>
@@ -161,9 +179,12 @@ const deltaStr = formatDelta(delta7d);
               r.data.kind === 'cursor-rule' ? 'Cursor' : undefined
             ) : undefined}
             featured={r.data.featured}
+            entryType={'kind' in r.data ? 'skill' : 'project'}
+            entrySlug={r.id}
           />
         ))}
       </div>
     </section>
   )}
+  <UpvoteScript />
 </Layout>

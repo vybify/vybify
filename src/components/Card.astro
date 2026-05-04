@@ -1,5 +1,6 @@
 ---
 import { formatStars, formatDelta } from '../lib/github';
+import UpvoteScript from './UpvoteScript.astro';
 
 interface Props {
   rank?: number;
@@ -14,9 +15,11 @@ interface Props {
   delta7d?: number | null;
   badge?: string;
   featured?: boolean;
+  entryType?: 'project' | 'skill';
+  entrySlug?: string;
 }
 
-const { name, tagline, href, author, tags, stars, delta7d, badge, featured } = Astro.props;
+const { name, tagline, href, author, tags, stars, delta7d, badge, featured, entryType, entrySlug } = Astro.props;
 const deltaLabel = formatDelta(delta7d ?? null);
 const starsStr = formatStars(stars);
 ---
@@ -72,7 +75,7 @@ const starsStr = formatStars(stars);
       </div>
     </div>
 
-    <div class="relative pointer-events-none shrink-0 text-right">
+    <div class="relative pointer-events-none shrink-0 text-right flex flex-col items-end gap-1.5">
       <div class="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-fg)] tnum">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="text-[var(--color-fg-faint)]">
           <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1L12 2z" />
@@ -80,10 +83,25 @@ const starsStr = formatStars(stars);
         <span>{starsStr}</span>
       </div>
       {deltaLabel && (
-        <div class="text-xs text-[var(--color-positive)] mt-0.5 tnum">
+        <div class="text-xs text-[var(--color-positive)] tnum">
           {deltaLabel} 7d
         </div>
+      )}
+      {entryType && entrySlug && (
+        <button
+          type="button"
+          class="vyb-upvote pointer-events-auto inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs border border-[var(--color-border)] bg-[var(--color-bg)] text-[var(--color-fg-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition"
+          data-entry-type={entryType}
+          data-entry-slug={entrySlug}
+          aria-label={`Upvote ${name}`}
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="vyb-upvote-icon" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+          <span class="vyb-upvote-count tnum">0</span>
+        </button>
       )}
     </div>
   </div>
 </article>
+<UpvoteScript />
