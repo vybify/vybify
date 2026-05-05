@@ -83,7 +83,7 @@ const isActive = (p: string) => path === p || path.startsWith(p + '/');
             Submit
           </a>
 
-          <div id="auth-slot" class="ml-1 flex items-center">
+          <div id="auth-slot" class="ml-1 flex items-center relative">
             <a
               href="/login"
               data-auth-signin
@@ -91,17 +91,36 @@ const isActive = (p: string) => path === p || path.startsWith(p + '/');
             >
               Sign in
             </a>
-            <span data-auth-signedin class="hidden items-center gap-2">
-              <span data-auth-handle class="text-sm text-[var(--color-fg-muted)] px-2"></span>
-              <form method="POST" action="/auth/signout">
-                <button
-                  type="submit"
-                  class="px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)] transition"
+            <div data-auth-signedin class="hidden relative">
+              <button
+                type="button"
+                data-auth-toggle
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)] transition"
+              >
+                <img data-auth-avatar src="" alt="" class="w-6 h-6 rounded-full hidden" />
+                <span data-auth-handle class="max-w-[120px] truncate"></span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div data-auth-dropdown class="hidden absolute right-0 top-full mt-1 w-48 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg shadow-lg py-1 z-50">
+                <a
+                  href="/my-submissions"
+                  class="block px-4 py-2 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)] transition"
                 >
-                  Sign out
-                </button>
-              </form>
-            </span>
+                  My submissions
+                </a>
+                <hr class="border-[var(--color-border)] my-1" />
+                <form method="POST" action="/auth/signout">
+                  <button
+                    type="submit"
+                    class="w-full text-left px-4 py-2 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)] transition"
+                  >
+                    Sign out
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
@@ -110,25 +129,42 @@ const isActive = (p: string) => path === p || path.startsWith(p + '/');
     <script>
       import { createSupabaseBrowserClient } from '../lib/supabase';
       const supabase = createSupabaseBrowserClient();
-      const apply = (user: { email?: string | null; user_metadata?: { name?: string; full_name?: string } } | null) => {
+      const apply = (user: { email?: string | null; user_metadata?: { name?: string; full_name?: string; avatar_url?: string; user_name?: string } } | null) => {
         const signin = document.querySelector<HTMLElement>('[data-auth-signin]');
         const signedin = document.querySelector<HTMLElement>('[data-auth-signedin]');
         const handle = document.querySelector<HTMLElement>('[data-auth-handle]');
+        const avatar = document.querySelector<HTMLImageElement>('[data-auth-avatar]');
         if (!signin || !signedin || !handle) return;
         if (user) {
           signin.classList.add('hidden');
           signedin.classList.remove('hidden');
-          signedin.classList.add('flex');
-          const name = user.user_metadata?.name || user.user_metadata?.full_name || user.email || 'you';
+          const name = user.user_metadata?.user_name || user.user_metadata?.name || user.user_metadata?.full_name || user.email || 'you';
           handle.textContent = name;
+          if (avatar && user.user_metadata?.avatar_url) {
+            avatar.src = user.user_metadata.avatar_url;
+            avatar.classList.remove('hidden');
+          }
         } else {
           signin.classList.remove('hidden');
           signedin.classList.add('hidden');
-          signedin.classList.remove('flex');
         }
       };
       supabase.auth.getUser().then(({ data }) => apply(data.user));
       supabase.auth.onAuthStateChange((_event, session) => apply(session?.user ?? null));
+
+      // Dropdown toggle
+      const toggle = document.querySelector<HTMLButtonElement>('[data-auth-toggle]');
+      const dropdown = document.querySelector<HTMLElement>('[data-auth-dropdown]');
+      if (toggle && dropdown) {
+        toggle.addEventListener('click', () => {
+          dropdown.classList.toggle('hidden');
+        });
+        document.addEventListener('click', (e) => {
+          if (!toggle.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
+            dropdown.classList.add('hidden');
+          }
+        });
+      }
     </script>
 
     <main class="mx-auto max-w-6xl px-4 sm:px-6 py-8">
