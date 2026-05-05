@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const ADMIN_EMAILS = ['jake@drinkpsilly.com'];
+const ADMIN_EMAILS = ['jake@drinkpsilly.com', 'charlie.mellman@gmail.com'];
 
 const user = Astro.locals.user;
 if (!user || !ADMIN_EMAILS.includes(user.email ?? '')) {

@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-const ADMIN_EMAILS = ['jake@drinkpsilly.com'];
+const ADMIN_EMAILS = ['jake@drinkpsilly.com', 'charlie.mellman@gmail.com'];
 const REPO = 'vybify/vybify';
 
 function slug(s: string): string {
