@@ -15,6 +15,20 @@ interface Props {
 const { name, tagline, href, author, stars, delta7d, badge, featured } = Astro.props;
 const deltaLabel = formatDelta(delta7d ?? null);
 const starsStr = formatStars(stars);
+
+const badgeColors: Record<string, string> = {
+  'Skill': 'bg-emerald-50 text-emerald-700',
+  'MCP': 'bg-purple-50 text-purple-700',
+  'Cursor': 'bg-sky-50 text-sky-700',
+  'GPT': 'bg-teal-50 text-teal-700',
+  'Agent': 'bg-orange-50 text-orange-700',
+  'IDE': 'bg-indigo-50 text-indigo-700',
+  'CLI': 'bg-slate-100 text-slate-700',
+  'Framework': 'bg-amber-50 text-amber-700',
+  'Automation': 'bg-rose-50 text-rose-700',
+  'Browser': 'bg-cyan-50 text-cyan-700',
+};
+const badgeClass = badge ? (badgeColors[badge] ?? 'bg-[var(--color-accent-soft)] text-[var(--color-accent)]') : '';
 ---
 
 <article
@@ -32,7 +46,7 @@ const starsStr = formatStars(stars);
       {name}
     </h3>
     {badge && (
-      <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium uppercase tracking-wide bg-[var(--color-accent-soft)] text-[var(--color-accent)] shrink-0">
+      <span class={`inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-medium uppercase tracking-wide shrink-0 ${badgeClass}`}>
         {badge}
       </span>
     )}
