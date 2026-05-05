@@ -14,6 +14,25 @@ const kindBadge: Record<string, string | undefined> = {
   other: undefined,
 };
 
+// Tag-based badges for projects (first match wins)
+const tagBadgeMap: [string[], string][] = [
+  [['agent', 'autonomous'], 'Agent'],
+  [['ide', 'editor', 'vscode', 'jetbrains'], 'IDE'],
+  [['cli'], 'CLI'],
+  [['framework', 'sdk', 'library'], 'Framework'],
+  [['mcp'], 'MCP'],
+  [['automation'], 'Automation'],
+  [['browser'], 'Browser'],
+];
+
+function projectBadge(tags: string[]): string | undefined {
+  const lower = new Set(tags.map((t) => t.toLowerCase()));
+  for (const [keys, label] of tagBadgeMap) {
+    if (keys.some((k) => lower.has(k))) return label;
+  }
+  return undefined;
+}
+
 const projectsRaw = await withStars(await getCollection('projects'));
 const skillsRaw = await withStars(await getCollection('skills'));
 
@@ -23,7 +42,7 @@ const projects = projectsRaw.map((e) => ({
   data: e.data,
   stars: e.stars,
   delta7d: e.delta7d,
-  badge: undefined as string | undefined,
+  badge: projectBadge(e.data.tags ?? []),
 }));
 
 const skills = skillsRaw.map((e) => ({

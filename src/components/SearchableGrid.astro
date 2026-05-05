@@ -21,6 +21,24 @@ const kindBadge: Record<string, string | undefined> = {
   other: undefined,
 };
 
+const tagBadgeMap: [string[], string][] = [
+  [['agent', 'autonomous'], 'Agent'],
+  [['ide', 'editor', 'vscode', 'jetbrains'], 'IDE'],
+  [['cli'], 'CLI'],
+  [['framework', 'sdk', 'library'], 'Framework'],
+  [['mcp'], 'MCP'],
+  [['automation'], 'Automation'],
+  [['browser'], 'Browser'],
+];
+
+function projectBadge(tags: string[]): string | undefined {
+  const lower = new Set(tags.map((t) => t.toLowerCase()));
+  for (const [keys, label] of tagBadgeMap) {
+    if (keys.some((k) => lower.has(k))) return label;
+  }
+  return undefined;
+}
+
 type EntryRow = {
   _type: 'project' | 'skill';
   _id: string;
@@ -36,6 +54,7 @@ const projects: EntryRow[] = projectsRaw.map((e) => ({
   data: e.data,
   stars: e.stars,
   delta7d: e.delta7d,
+  badge: projectBadge(e.data.tags ?? []),
 }));
 
 const skills: EntryRow[] = skillsRaw.map((e) => ({

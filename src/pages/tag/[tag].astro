@@ -22,6 +22,23 @@ const skills = (await withStars(await getCollection('skills'))).map((e) => ({ ..
 const matches = [...projects, ...skills]
   .filter((e) => e.data.tags.map((t: string) => t.toLowerCase()).includes(tag!))
   .sort((a, b) => (b.stars ?? -1) - (a.stars ?? -1));
+
+const kindBadge: Record<string, string | undefined> = {
+  'mcp-server': 'MCP', 'claude-code-skill': 'Skill', 'cursor-rule': 'Cursor', 'custom-gpt': 'GPT', other: undefined,
+};
+const tagBadgeMap: [string[], string][] = [
+  [['agent', 'autonomous'], 'Agent'], [['ide', 'editor', 'vscode', 'jetbrains'], 'IDE'],
+  [['cli'], 'CLI'], [['framework', 'sdk', 'library'], 'Framework'],
+  [['mcp'], 'MCP'], [['automation'], 'Automation'], [['browser'], 'Browser'],
+];
+function getBadge(entry: typeof matches[0]): string | undefined {
+  if (entry._type === 'skill') return kindBadge[(entry.data as any).kind];
+  const lower = new Set(entry.data.tags.map((t: string) => t.toLowerCase()));
+  for (const [keys, label] of tagBadgeMap) {
+    if (keys.some((k) => lower.has(k))) return label;
+  }
+  return undefined;
+}
 ---
 
 <Layout title={`#${tag} · vybify`}>
@@ -52,6 +69,7 @@ const matches = [...projects, ...skills]
         stars={entry.stars}
         delta7d={entry.delta7d}
         featured={entry.data.featured}
+        badge={getBadge(entry)}
         entryType={entry._type}
         entrySlug={entry.id}
       />
