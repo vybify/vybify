@@ -1,0 +1,398 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const ADMIN_EMAILS = ['jake@drinkpsilly.com', 'charlie.mellman@gmail.com'];
+const user = Astro.locals.user;
+if (!user || !ADMIN_EMAILS.includes(user.email ?? '')) {
+  return Astro.redirect('/');
+}
+---
+
+<Layout title="Ingest · vybify" description="Quick-add projects and skills by URL.">
+  <a href="/" class="inline-flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] transition mb-6">
+    <span aria-hidden="true">&larr;</span> Back
+  </a>
+
+  <section class="max-w-3xl">
+    <h1 class="text-2xl sm:text-3xl font-semibold mb-2">Quick Ingest</h1>
+    <p class="text-[var(--color-fg-muted)] mb-6">
+      Paste GitHub or PyPI URLs (one per line) to auto-fetch metadata and publish directly to the site.
+    </p>
+
+    <!-- URL input -->
+    <div class="mb-6">
+      <textarea
+        id="urls-input"
+        rows="4"
+        placeholder="https://github.com/owner/repo&#10;https://github.com/owner2/repo2&#10;https://pypi.org/project/package-name/"
+        class="w-full px-4 py-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] text-sm font-mono focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] resize-y"
+      ></textarea>
+      <div class="flex items-center gap-3 mt-3">
+        <button
+          id="fetch-btn"
+          type="button"
+          class="px-5 py-2.5 rounded-lg bg-[var(--color-fg)] text-white text-sm font-medium hover:opacity-90 transition"
+        >
+          Fetch metadata
+        </button>
+        <span id="fetch-status" class="text-sm text-[var(--color-fg-muted)]"></span>
+      </div>
+    </div>
+
+    <!-- Preview cards -->
+    <div id="preview-list" class="flex flex-col gap-4 mb-6"></div>
+
+    <!-- Publish button (hidden until entries exist) -->
+    <div id="publish-section" class="hidden">
+      <button
+        id="publish-btn"
+        type="button"
+        class="px-6 py-3 rounded-lg bg-[var(--color-accent)] text-white text-sm font-semibold hover:bg-[var(--color-accent-hover)] transition"
+      >
+        Publish all to site
+      </button>
+      <p id="publish-status" class="text-sm mt-2 text-[var(--color-fg-muted)]"></p>
+    </div>
+  </section>
+
+  <template id="entry-card-template">
+    <div class="entry-card bg-[var(--color-card)] border border-[var(--color-border)] rounded-xl p-5" data-idx="">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <select data-field="type" class="px-2 py-1 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-xs font-medium focus:outline-none">
+            <option value="project">Project</option>
+            <option value="skill">Skill</option>
+          </select>
+          <label class="flex items-center gap-1.5 text-xs text-[var(--color-fg-muted)]">
+            <input type="checkbox" data-field="featured" class="rounded" />
+            Featured
+          </label>
+        </div>
+        <button type="button" class="remove-btn text-xs text-red-500 hover:text-red-700 transition">Remove</button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+        <div>
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">Name</label>
+          <input data-field="name" type="text" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">Author</label>
+          <input data-field="author" type="text" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+        <div class="sm:col-span-2">
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">Tagline <span class="font-normal">(max 160)</span></label>
+          <input data-field="tagline" type="text" maxlength="160" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">URL</label>
+          <input data-field="url" type="text" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">GitHub</label>
+          <input data-field="github" type="text" placeholder="owner/repo" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">Tags</label>
+          <input data-field="tags" type="text" placeholder="ai, cli, tool" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+        <div class="skill-field hidden">
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">Kind</label>
+          <select data-field="kind" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none">
+            <option value="claude-code-skill">Claude Code skill</option>
+            <option value="mcp-server">MCP server</option>
+            <option value="cursor-rule">Cursor rule</option>
+            <option value="custom-gpt">Custom GPT</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="skill-field hidden">
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">Install command</label>
+          <input data-field="install" type="text" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+        <div class="project-field">
+          <label class="text-xs font-medium text-[var(--color-fg-muted)]">Built with</label>
+          <input data-field="builtWith" type="text" placeholder="Claude Code, Cursor" class="mt-0.5 w-full px-2.5 py-1.5 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]" />
+        </div>
+      </div>
+
+      <div class="mt-2 text-xs text-[var(--color-fg-muted)]" data-stars></div>
+    </div>
+  </template>
+
+  <script>
+    const urlsInput = document.getElementById('urls-input') as HTMLTextAreaElement;
+    const fetchBtn = document.getElementById('fetch-btn') as HTMLButtonElement;
+    const fetchStatus = document.getElementById('fetch-status') as HTMLElement;
+    const previewList = document.getElementById('preview-list') as HTMLElement;
+    const publishSection = document.getElementById('publish-section') as HTMLElement;
+    const publishBtn = document.getElementById('publish-btn') as HTMLButtonElement;
+    const publishStatus = document.getElementById('publish-status') as HTMLElement;
+    const template = document.getElementById('entry-card-template') as HTMLTemplateElement;
+
+    interface EntryData {
+      type: string;
+      name: string;
+      tagline: string;
+      url: string;
+      github: string;
+      author: string;
+      tags: string[];
+      kind: string;
+      install: string;
+      builtWith: string[];
+      featured: boolean;
+      body: string;
+      stars?: number;
+    }
+
+    let entries: EntryData[] = [];
+
+    function parseUrl(raw: string): { type: 'github'; repo: string } | { type: 'pypi'; pkg: string } | null {
+      const trimmed = raw.trim();
+      if (!trimmed) return null;
+      try {
+        const url = new URL(trimmed);
+        if (url.hostname === 'github.com' || url.hostname === 'www.github.com') {
+          const parts = url.pathname.split('/').filter(Boolean);
+          if (parts.length >= 2) return { type: 'github', repo: `${parts[0]}/${parts[1]}` };
+        }
+        if (url.hostname === 'pypi.org' || url.hostname === 'www.pypi.org') {
+          const parts = url.pathname.split('/').filter(Boolean);
+          if (parts.length >= 2 && parts[0] === 'project') {
+            return { type: 'pypi', pkg: parts[1].replace(/\/$/, '') };
+          }
+        }
+      } catch {}
+      // Try as owner/repo
+      if (/^[\w.-]+\/[\w.-]+$/.test(trimmed)) return { type: 'github', repo: trimmed };
+      return null;
+    }
+
+    async function fetchGitHub(repo: string): Promise<EntryData | null> {
+      try {
+        const res = await fetch(`/api/github-repo?repo=${encodeURIComponent(repo)}`);
+        if (!res.ok) return null;
+        const d = await res.json();
+        return {
+          type: d.inferredType || 'project',
+          name: d.name || repo.split('/')[1],
+          tagline: d.tagline || d.description || '',
+          url: d.homepage || d.html_url,
+          github: repo,
+          author: d.owner || repo.split('/')[0],
+          tags: (d.topics || []).slice(0, 6),
+          kind: d.kind || 'other',
+          install: d.install || '',
+          builtWith: d.builtWith || [],
+          featured: false,
+          body: d.body || '',
+        };
+      } catch {
+        return null;
+      }
+    }
+
+    async function fetchPyPI(pkg: string): Promise<EntryData | null> {
+      try {
+        const res = await fetch(`https://pypi.org/pypi/${pkg}/json`);
+        if (!res.ok) return null;
+        const d = await res.json();
+        const info = d.info;
+        let tagline = info.summary || '';
+        if (tagline.length > 160) tagline = tagline.slice(0, 157) + '...';
+        return {
+          type: 'project',
+          name: info.name || pkg,
+          tagline,
+          url: `https://pypi.org/project/${pkg}/`,
+          github: '',
+          author: info.author || '',
+          tags: (info.keywords || '').split(/[,\s]+/).filter(Boolean).slice(0, 6),
+          kind: 'other',
+          install: `pip install ${pkg}`,
+          builtWith: [],
+          featured: false,
+          body: '',
+        };
+      } catch {
+        return null;
+      }
+    }
+
+    function renderCard(entry: EntryData, idx: number) {
+      const clone = template.content.cloneNode(true) as DocumentFragment;
+      const card = clone.querySelector('.entry-card') as HTMLElement;
+      card.dataset.idx = String(idx);
+
+      const setField = (name: string, value: string) => {
+        const el = card.querySelector(`[data-field="${name}"]`) as HTMLInputElement | HTMLSelectElement;
+        if (el) el.value = value;
+      };
+
+      setField('type', entry.type);
+      setField('name', entry.name);
+      setField('tagline', entry.tagline);
+      setField('url', entry.url);
+      setField('github', entry.github);
+      setField('author', entry.author);
+      setField('tags', entry.tags.join(', '));
+      setField('kind', entry.kind);
+      setField('install', entry.install);
+      setField('builtWith', entry.builtWith.join(', '));
+
+      const featuredCb = card.querySelector('[data-field="featured"]') as HTMLInputElement;
+      if (featuredCb) featuredCb.checked = entry.featured;
+
+      // Show/hide skill vs project fields
+      const updateTypeFields = () => {
+        const typeSelect = card.querySelector('[data-field="type"]') as HTMLSelectElement;
+        const isSkill = typeSelect.value === 'skill';
+        card.querySelectorAll('.skill-field').forEach((el) => (el as HTMLElement).classList.toggle('hidden', !isSkill));
+        card.querySelectorAll('.project-field').forEach((el) => (el as HTMLElement).classList.toggle('hidden', isSkill));
+      };
+      updateTypeFields();
+      card.querySelector('[data-field="type"]')?.addEventListener('change', updateTypeFields);
+
+      // Stars display
+      const starsEl = card.querySelector('[data-stars]') as HTMLElement;
+      if (starsEl && entry.stars) {
+        starsEl.textContent = `★ ${entry.stars.toLocaleString()} stars`;
+      }
+
+      // Remove button
+      card.querySelector('.remove-btn')?.addEventListener('click', () => {
+        const i = parseInt(card.dataset.idx || '-1');
+        if (i >= 0) {
+          entries.splice(i, 1);
+          renderAll();
+        }
+      });
+
+      // Sync edits back to entries array
+      card.querySelectorAll('[data-field]').forEach((el) => {
+        el.addEventListener('change', () => syncCard(card));
+        el.addEventListener('input', () => syncCard(card));
+      });
+
+      return card;
+    }
+
+    function syncCard(card: HTMLElement) {
+      const idx = parseInt(card.dataset.idx || '-1');
+      if (idx < 0 || idx >= entries.length) return;
+      const get = (name: string) => (card.querySelector(`[data-field="${name}"]`) as HTMLInputElement | HTMLSelectElement)?.value || '';
+      entries[idx] = {
+        ...entries[idx],
+        type: get('type'),
+        name: get('name'),
+        tagline: get('tagline'),
+        url: get('url'),
+        github: get('github'),
+        author: get('author'),
+        tags: get('tags').split(',').map((t) => t.trim()).filter(Boolean),
+        kind: get('kind'),
+        install: get('install'),
+        builtWith: get('builtWith').split(',').map((t) => t.trim()).filter(Boolean),
+        featured: (card.querySelector('[data-field="featured"]') as HTMLInputElement)?.checked || false,
+      };
+    }
+
+    function renderAll() {
+      previewList.innerHTML = '';
+      entries.forEach((entry, i) => {
+        previewList.appendChild(renderCard(entry, i));
+      });
+      publishSection.classList.toggle('hidden', entries.length === 0);
+    }
+
+    // Fetch button
+    fetchBtn.addEventListener('click', async () => {
+      const lines = urlsInput.value.split('\n').map((l) => l.trim()).filter(Boolean);
+      const parsed = lines.map(parseUrl).filter(Boolean) as ({ type: 'github'; repo: string } | { type: 'pypi'; pkg: string })[];
+
+      if (parsed.length === 0) {
+        fetchStatus.textContent = 'No valid URLs found.';
+        return;
+      }
+
+      fetchBtn.disabled = true;
+      fetchBtn.textContent = 'Fetching...';
+      fetchStatus.textContent = `Fetching ${parsed.length} URL${parsed.length > 1 ? 's' : ''}...`;
+
+      let fetched = 0;
+      let failed = 0;
+
+      const results = await Promise.all(
+        parsed.map(async (p) => {
+          const result = p.type === 'github' ? await fetchGitHub(p.repo) : await fetchPyPI(p.pkg);
+          if (result) {
+            fetched++;
+          } else {
+            failed++;
+          }
+          fetchStatus.textContent = `Fetched ${fetched}/${parsed.length}${failed ? ` (${failed} failed)` : ''}`;
+          return result;
+        }),
+      );
+
+      for (const r of results) {
+        if (r) entries.push(r);
+      }
+
+      renderAll();
+      fetchBtn.disabled = false;
+      fetchBtn.textContent = 'Fetch metadata';
+      fetchStatus.textContent = `${fetched} fetched${failed ? `, ${failed} failed` : ''}.`;
+      urlsInput.value = '';
+    });
+
+    // Publish button
+    publishBtn.addEventListener('click', async () => {
+      if (entries.length === 0) return;
+
+      publishBtn.disabled = true;
+      publishBtn.textContent = 'Publishing...';
+      publishStatus.textContent = '';
+
+      try {
+        const res = await fetch('/api/ingest', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(entries),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          publishStatus.textContent = data.error || 'Publish failed.';
+          publishStatus.className = 'text-sm mt-2 text-red-600';
+          return;
+        }
+
+        const ok = data.results.filter((r: any) => r.ok).length;
+        const fail = data.results.filter((r: any) => !r.ok);
+
+        if (fail.length) {
+          const failNames = fail.map((f: any) => `${f.name}: ${f.error}`).join(', ');
+          publishStatus.textContent = `Published ${ok}/${data.results.length}. Failed: ${failNames}`;
+          publishStatus.className = 'text-sm mt-2 text-amber-600';
+        } else {
+          publishStatus.textContent = `Published ${ok} entr${ok === 1 ? 'y' : 'ies'}! Site will rebuild shortly.`;
+          publishStatus.className = 'text-sm mt-2 text-[var(--color-positive)]';
+        }
+
+        // Remove successfully published entries
+        const failedNames = new Set(fail.map((f: any) => f.name));
+        entries = entries.filter((e) => failedNames.has(e.name));
+        renderAll();
+      } catch (err: any) {
+        publishStatus.textContent = err.message || 'Network error.';
+        publishStatus.className = 'text-sm mt-2 text-red-600';
+      } finally {
+        publishBtn.disabled = false;
+        publishBtn.textContent = 'Publish all to site';
+      }
+    });
+  </script>
+</Layout>
