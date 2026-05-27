@@ -85,9 +85,21 @@ const isActive = (p: string) => path === p || path.startsWith(p + '/');
           >
             Essentials
           </a>
+          <button
+            type="button"
+            id="nav-search-btn"
+            class="ml-1 p-1.5 rounded-md text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-bg)] transition"
+            aria-label="Search"
+            title="Search (press /)"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
           <a
             href="/submit"
-            class="ml-2 px-3 py-1.5 rounded-md bg-[var(--color-accent)] text-white text-sm font-medium hover:bg-[var(--color-accent-hover)] transition"
+            class="ml-1 px-3 py-1.5 rounded-md bg-[var(--color-accent)] text-white text-sm font-medium hover:bg-[var(--color-accent-hover)] transition"
           >
             Submit
           </a>
@@ -160,6 +172,18 @@ const isActive = (p: string) => path === p || path.startsWith(p + '/');
       };
       supabase.auth.getUser().then(({ data }) => apply(data.user));
       supabase.auth.onAuthStateChange((_event, session) => apply(session?.user ?? null));
+
+      // Search button — focus search input on page, or navigate to home
+      const searchBtn = document.getElementById('nav-search-btn');
+      searchBtn?.addEventListener('click', () => {
+        const input = document.getElementById('vyb-q') as HTMLInputElement | null;
+        if (input) {
+          input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => input.focus(), 300);
+        } else {
+          window.location.href = '/?search=1';
+        }
+      });
 
       // Dropdown toggle
       const toggle = document.querySelector<HTMLButtonElement>('[data-auth-toggle]');
