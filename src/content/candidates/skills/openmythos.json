@@ -1,0 +1,16 @@
+{
+  "name": "OpenMythos",
+  "tagline": "A theoretical reconstruction of the Claude Mythos architecture, built from first principles using the available research literature.",
+  "url": "https://discord.gg/EamjgSaEQf",
+  "github": "kyegomez/OpenMythos",
+  "author": "kyegomez",
+  "tags": [
+    "ai",
+    "anthropic",
+    "attention",
+    "claude",
+    "claude-ai"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "claude-code-skill"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "openclaude",
+  "tagline": "runs anywhere. uses anything",
+  "url": "https://openclaude.gitlawb.com",
+  "github": "Gitlawb/openclaude",
+  "author": "Gitlawb",
+  "tags": [
+    "ai",
+    "ai-agent",
+    "ai-tools",
+    "cli",
+    "coding"
+  ],
+  "addedAt": "2026-06-01",
+  "builtWith": []
+}

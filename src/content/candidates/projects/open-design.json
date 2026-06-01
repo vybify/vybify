@@ -1,0 +1,16 @@
+{
+  "name": "open-design",
+  "tagline": "🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · sli",
+  "url": "https://open-design.ai",
+  "github": "nexu-io/open-design",
+  "author": "nexu-io",
+  "tags": [
+    "agent-skills",
+    "ai-agents",
+    "ai-design",
+    "byok",
+    "claude-code-for-design"
+  ],
+  "addedAt": "2026-06-01",
+  "builtWith": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Auto-claude-code-research-in-sleep",
+  "tagline": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automat",
+  "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+  "github": "wanshuiyin/Auto-claude-code-research-in-sleep",
+  "author": "wanshuiyin",
+  "tags": [
+    "ai-research",
+    "ai-tools",
+    "aris",
+    "autonomous-agent",
+    "claude"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "mcp-server"
+}

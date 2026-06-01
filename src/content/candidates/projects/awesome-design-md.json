@@ -1,0 +1,16 @@
+{
+  "name": "awesome-design-md",
+  "tagline": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+  "url": "https://github.com/VoltAgent/voltagent",
+  "github": "VoltAgent/awesome-design-md",
+  "author": "VoltAgent",
+  "tags": [
+    "awesome-list",
+    "design-md",
+    "design-system",
+    "design-tokens",
+    "figma"
+  ],
+  "addedAt": "2026-06-01",
+  "builtWith": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Understand-Anything",
+  "tagline": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude C",
+  "url": "https://understand-anything.com",
+  "github": "Lum1104/Understand-Anything",
+  "author": "Lum1104",
+  "tags": [
+    "antigravity-skills",
+    "business-knowledge",
+    "claude-code",
+    "claude-skills",
+    "codebase-analysis"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "claude-code-skill"
+}

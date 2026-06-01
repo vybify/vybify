@@ -1,0 +1,16 @@
+{
+  "name": "hermes-web-ui",
+  "tagline": "Web dashboard for Hermes Agent — multi-platform AI chat, session management, scheduled jobs, usage analytics ",
+  "url": "https://ekkolearnai.com",
+  "github": "EKKOLearnAI/hermes-web-ui",
+  "author": "EKKOLearnAI",
+  "tags": [
+    "agent",
+    "ai-agent",
+    "chat-ui",
+    "dashboard",
+    "hermes"
+  ],
+  "addedAt": "2026-06-01",
+  "builtWith": []
+}

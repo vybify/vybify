@@ -1,0 +1,16 @@
+{
+  "name": "guizang-ppt-skill",
+  "tagline": "AI-agent Skill for generating polished HTML slide decks: editorial magazine and Swiss layouts, image prompts, social covers, and a WebGL/low-power presentation ",
+  "url": "https://github.com/op7418/guizang-ppt-skill",
+  "github": "op7418/guizang-ppt-skill",
+  "author": "op7418",
+  "tags": [
+    "ai-agent",
+    "claude-code",
+    "codex",
+    "html-deck",
+    "image-generation"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "claude-code-skill"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "hyperframes",
+  "tagline": "Write HTML. Render video. Built for agents.",
+  "url": "https://github.com/heygen-com/hyperframes",
+  "github": "heygen-com/hyperframes",
+  "author": "heygen-com",
+  "tags": [
+    "ai",
+    "animation",
+    "ffmpeg",
+    "framework",
+    "gsap"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "mcp-server"
+}

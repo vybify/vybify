@@ -1,0 +1,16 @@
+{
+  "name": "Vibe-Trading",
+  "tagline": "\"Vibe-Trading: Your Personal Trading Agent\"",
+  "url": "https://vibetrading.wiki/",
+  "github": "HKUDS/Vibe-Trading",
+  "author": "HKUDS",
+  "tags": [
+    "ai-agent",
+    "algorithmic-trading",
+    "backtesting",
+    "fintech",
+    "llm"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "mcp-server"
+}

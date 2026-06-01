@@ -1,0 +1,16 @@
+{
+  "name": "caveman",
+  "tagline": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+  "url": "https://getcaveman.dev/",
+  "github": "JuliusBrussee/caveman",
+  "author": "JuliusBrussee",
+  "tags": [
+    "ai",
+    "anthropic",
+    "caveman",
+    "claude",
+    "claude-code"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "claude-code-skill"
+}

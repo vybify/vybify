@@ -1,0 +1,16 @@
+{
+  "name": "browser-harness",
+  "tagline": "Browser Harness | Self-healing harness that enables LLMs to complete any task.",
+  "url": "https://browser-harness.com",
+  "github": "browser-use/browser-harness",
+  "author": "browser-use",
+  "tags": [
+    "ai-agent",
+    "browser-agent",
+    "browser-automation",
+    "browser-use",
+    "browser-use-box"
+  ],
+  "addedAt": "2026-06-01",
+  "builtWith": []
+}

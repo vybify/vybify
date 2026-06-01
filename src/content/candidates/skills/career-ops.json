@@ -1,0 +1,16 @@
+{
+  "name": "career-ops",
+  "tagline": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
+  "url": "https://career-ops.org",
+  "github": "santifer/career-ops",
+  "author": "santifer",
+  "tags": [
+    "ai-agent",
+    "anthropic",
+    "automation",
+    "career",
+    "careerops"
+  ],
+  "addedAt": "2026-06-01",
+  "kind": "claude-code-skill"
+}
