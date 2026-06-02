@@ -370,5 +370,11 @@ const searchIndex = entries.map((e) => ({
     // Initial active state
     setActive('vyb-type', activeType);
     setActive('vyb-sort', activeSort);
+
+    // Auto-focus search if arrived via ?search=1
+    if (new URLSearchParams(window.location.search).has('search')) {
+      input?.focus();
+      history.replaceState(null, '', window.location.pathname);
+    }
   }
 </script>
