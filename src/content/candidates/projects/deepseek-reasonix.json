@@ -1,0 +1,16 @@
+{
+  "name": "DeepSeek-Reasonix",
+  "tagline": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+  "url": "https://esengine.github.io/DeepSeek-Reasonix/",
+  "github": "esengine/DeepSeek-Reasonix",
+  "author": "esengine",
+  "tags": [
+    "agent",
+    "agent-framework",
+    "ai-agent",
+    "ai-coding",
+    "cli"
+  ],
+  "addedAt": "2026-06-08",
+  "builtWith": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "OpenCLI",
+  "tagline": "Make Any Website into CLI & Use your logged-in browser by AI agent. ",
+  "url": "https://opencli.info/",
+  "github": "jackwener/OpenCLI",
+  "author": "jackwener",
+  "tags": [
+    "ai-agent",
+    "ai-agents",
+    "ai-tools",
+    "browser-automation",
+    "browser-use"
+  ],
+  "addedAt": "2026-06-08",
+  "builtWith": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "mempalace",
+  "tagline": "The best-benchmarked open-source AI memory system. And it's free.",
+  "url": "http://mempalaceofficial.com/",
+  "github": "MemPalace/mempalace",
+  "author": "MemPalace",
+  "tags": [
+    "ai",
+    "chromadb",
+    "llm",
+    "mcp",
+    "memory"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "mcp-server"
+}

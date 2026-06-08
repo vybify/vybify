@@ -1,0 +1,16 @@
+{
+  "name": "graphify",
+  "tagline": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, pa",
+  "url": "https://graphifylabs.ai/",
+  "github": "safishamsi/graphify",
+  "author": "safishamsi",
+  "tags": [
+    "antigravity",
+    "claude-code",
+    "codex",
+    "gemini",
+    "graphrag"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "claude-code-skill"
+}

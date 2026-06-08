@@ -1,0 +1,16 @@
+{
+  "name": "holaOS",
+  "tagline": "Your super agent for work: local-first, learn your working context in mins and never forget it.",
+  "url": "https://holaos.ai",
+  "github": "holaboss-ai/holaOS",
+  "author": "holaboss-ai",
+  "tags": [
+    "agent",
+    "agent-harness",
+    "agent-os",
+    "agentic",
+    "ai"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "mcp-server"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "claurst",
+  "tagline": "Agentic Coding for Builders who Ship",
+  "url": "https://claurst.kuber.studio/",
+  "github": "Kuberwastaken/claurst",
+  "author": "Kuberwastaken",
+  "tags": [
+    "claude",
+    "claude-code",
+    "claurst",
+    "cli",
+    "codex"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "claude-code-skill"
+}

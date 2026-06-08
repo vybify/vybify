@@ -1,0 +1,16 @@
+{
+  "name": "inkos",
+  "tagline": "Autonomous novel writing AI Agent — agents write, audit, and revise novels with human review gates",
+  "url": "https://github.com/Narcooo/inkos",
+  "github": "Narcooo/inkos",
+  "author": "Narcooo",
+  "tags": [
+    "agent",
+    "ai",
+    "ai-agent",
+    "ai-novel",
+    "ai-writing"
+  ],
+  "addedAt": "2026-06-08",
+  "builtWith": []
+}

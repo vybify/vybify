@@ -1,0 +1,16 @@
+{
+  "name": "ai-website-cloner-template",
+  "tagline": "Clone any website with one command using AI coding agents",
+  "url": "https://dsc.gg/jcodesmore",
+  "github": "JCodesMore/ai-website-cloner-template",
+  "author": "JCodesMore",
+  "tags": [
+    "ai",
+    "ai-agents",
+    "ai-tools",
+    "automation",
+    "boilerplate"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "claude-code-skill"
+}

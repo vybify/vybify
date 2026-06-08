@@ -1,0 +1,16 @@
+{
+  "name": "codeburn",
+  "tagline": "See where your AI coding tokens go. Interactive TUI dashboard for Claude Code, Codex, and Cursor cost observability.",
+  "url": "https://codeburn.app/",
+  "github": "getagentseal/codeburn",
+  "author": "getagentseal",
+  "tags": [
+    "ai-coding",
+    "claude-code",
+    "cli",
+    "codex",
+    "cost-tracking"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "cursor-rule"
+}

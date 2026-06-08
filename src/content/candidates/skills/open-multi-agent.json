@@ -1,0 +1,16 @@
+{
+  "name": "open-multi-agent",
+  "tagline": "From a goal to a task DAG, automatically. TypeScript-native multi-agent orchestration.",
+  "url": "https://open-multi-agent.com",
+  "github": "open-multi-agent/open-multi-agent",
+  "author": "open-multi-agent",
+  "tags": [
+    "agent-framework",
+    "ai-agents",
+    "anthropic",
+    "claude",
+    "deepseek"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "mcp-server"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ai-engineering-from-scratch",
+  "tagline": "Learn it. Build it. Ship it for others.",
+  "url": "https://aiengineeringfromscratch.com",
+  "github": "rohitg00/ai-engineering-from-scratch",
+  "author": "rohitg00",
+  "tags": [
+    "agents",
+    "ai",
+    "ai-agents",
+    "ai-engineering",
+    "computer-vision"
+  ],
+  "addedAt": "2026-06-08",
+  "kind": "mcp-server"
+}
