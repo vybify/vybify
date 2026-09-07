@@ -1,0 +1,16 @@
+{
+  "name": "codex-chatgpt-web",
+  "tagline": "Use ChatGPT Web (including Pro) as a native model in Codex — with context, tools, streaming and images, without using Codex quota.",
+  "url": "https://github.com/miuuyy/codex-chatgpt-web",
+  "github": "miuuyy/codex-chatgpt-web",
+  "author": "miuuyy",
+  "tags": [
+    "chatgpt",
+    "chatgpt-pro",
+    "codex",
+    "free-ai",
+    "mcp"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

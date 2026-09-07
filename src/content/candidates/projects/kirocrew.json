@@ -1,0 +1,16 @@
+{
+  "name": "KiroCrew",
+  "tagline": "A persistent workspace for development work that self-improves and continues beyond one session.",
+  "url": "https://kiro.dev/crew/",
+  "github": "kirodotdev/KiroCrew",
+  "author": "kirodotdev",
+  "tags": [
+    "agent",
+    "agentic-ai",
+    "agents",
+    "ai-agent",
+    "ai-agents"
+  ],
+  "addedAt": "2026-09-07",
+  "builtWith": []
+}

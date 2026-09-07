@@ -1,0 +1,16 @@
+{
+  "name": "OpenBot",
+  "tagline": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Brin",
+  "url": "https://www.copilotkit.ai/openbot",
+  "github": "CopilotKit/OpenBot",
+  "author": "CopilotKit",
+  "tags": [
+    "ag-ui",
+    "agent-governance",
+    "ai-agents",
+    "browser-automation",
+    "copilotkit"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

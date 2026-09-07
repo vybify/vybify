@@ -1,0 +1,16 @@
+{
+  "name": "Fuxi",
+  "tagline": "FuXi is a fast, self-contained AI coding agent that lives in your terminal — edit code, run commands, and drive tools, with cost-aware routing across LLM provid",
+  "url": "https://www.fuxicode.com",
+  "github": "fuxicodex/Fuxi",
+  "author": "fuxicodex",
+  "tags": [
+    "agent",
+    "ai",
+    "ai-agent",
+    "ai-coding",
+    "autonomous-agent"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Graft",
+  "tagline": "Turbocharge Claude Code, Cursor, Codex, Gemini & every coding agent: faster, cheaper, with contextual understanding specific to your codebase.",
+  "url": "https://graft.nanonets.ai",
+  "github": "trailhq/Graft",
+  "author": "trailhq",
+  "tags": [
+    "ai-agents",
+    "anthropic",
+    "claude-code",
+    "cli",
+    "code-graph"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

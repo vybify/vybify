@@ -1,0 +1,16 @@
+{
+  "name": "open-connector",
+  "tagline": "Open-source auth gateway connecting 1400+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.",
+  "url": "https://oomol.com",
+  "github": "oomol-lab/open-connector",
+  "author": "oomol-lab",
+  "tags": [
+    "agent-tools",
+    "ai-agents",
+    "api-gateway",
+    "automation",
+    "cli"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

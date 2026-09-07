@@ -1,0 +1,16 @@
+{
+  "name": "img2threejs",
+  "tagline": "Rebuild the object in a reference image as a code-only, procedural, quality-gated, animation-ready Three.js model. Token-efficient image-to-3D.",
+  "url": "https://img2threejs.io",
+  "github": "img2threejs/img2threejs",
+  "author": "img2threejs",
+  "tags": [
+    "3d",
+    "ai-agents",
+    "claude-code",
+    "computer-graphics",
+    "generative"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "claude-code-skill"
+}

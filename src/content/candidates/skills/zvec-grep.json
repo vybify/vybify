@@ -1,0 +1,16 @@
+{
+  "name": "zvec-grep",
+  "tagline": "Local-first search across your workspace, built for humans and AI agents.",
+  "url": "https://github.com/zvec-ai/zvec-grep",
+  "github": "zvec-ai/zvec-grep",
+  "author": "zvec-ai",
+  "tags": [
+    "ai-agents",
+    "bm25",
+    "cli",
+    "code-search",
+    "full-text-search"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

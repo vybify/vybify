@@ -1,0 +1,16 @@
+{
+  "name": "ponytail",
+  "tagline": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+  "url": "https://ponytail.dev",
+  "github": "DietrichGebert/ponytail",
+  "author": "DietrichGebert",
+  "tags": [
+    "agent-skills",
+    "ai-agents",
+    "claude",
+    "claude-code",
+    "claude-code-plugin"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "cursor-rule"
+}

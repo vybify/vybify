@@ -1,0 +1,16 @@
+{
+  "name": "open-science",
+  "tagline": "Open Science by AIPOCH is an open-source, local-first, model-agnostic AI research workbench for macOS, Windows, and Linux, with scientific agents, Python/R note",
+  "url": "https://aipoch.com/open-science",
+  "github": "aipoch/open-science",
+  "author": "aipoch",
+  "tags": [
+    "ai-for-science",
+    "ai-research",
+    "ai-workbench",
+    "bioinformatics",
+    "claude-science-alternative"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

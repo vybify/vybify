@@ -1,0 +1,16 @@
+{
+  "name": "openscience",
+  "tagline": "The open-source AI workbench for scientific research",
+  "url": "https://openscience.sh",
+  "github": "synthetic-sciences/openscience",
+  "author": "synthetic-sciences",
+  "tags": [
+    "agent",
+    "ai",
+    "ai-agent",
+    "ai-scientist",
+    "bioinformatics"
+  ],
+  "addedAt": "2026-09-07",
+  "builtWith": []
+}

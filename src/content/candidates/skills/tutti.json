@@ -1,0 +1,16 @@
+{
+  "name": "tutti",
+  "tagline": "Where people and agents build in tune.",
+  "url": "https://tutti.sh/",
+  "github": "tutti-os/tutti",
+  "author": "tutti-os",
+  "tags": [
+    "agent-collaboration",
+    "agent-orchestration",
+    "agent-workspace",
+    "agentic-ai",
+    "agentic-workflow"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "mcp-server"
+}

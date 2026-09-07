@@ -1,0 +1,16 @@
+{
+  "name": "opencodex",
+  "tagline": "Universal provider proxy for OpenAI Codex & Claude Code — use any LLM (Claude, Gemini, Grok, DeepSeek, Ollama…) with Codex CLI, App, SDK, and Claude Code",
+  "url": "https://opencodex.me/",
+  "github": "lidge-jun/opencodex",
+  "author": "lidge-jun",
+  "tags": [
+    "ai-gateway",
+    "ai-tools",
+    "anthropic",
+    "chatgpt",
+    "claude"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "claude-code-skill"
+}

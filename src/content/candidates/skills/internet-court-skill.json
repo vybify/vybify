@@ -1,0 +1,16 @@
+{
+  "name": "internet-court-skill",
+  "tagline": "The trust layer for agent-to-agent commerce — natural-language mandates, ERC-7710 delegated permissions, x402 payments, escrow, and dispute resolution as one op",
+  "url": "https://github.com/internet-court/internet-court-skill",
+  "github": "internet-court/internet-court-skill",
+  "author": "internet-court",
+  "tags": [
+    "a2a",
+    "adjudication",
+    "agent-payments",
+    "agent-skills",
+    "agentic-commerce"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "claude-code-skill"
+}

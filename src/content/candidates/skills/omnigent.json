@@ -1,0 +1,16 @@
+{
+  "name": "omnigent",
+  "tagline": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses without rewriting",
+  "url": "https://omnigent.ai",
+  "github": "omnigent-ai/omnigent",
+  "author": "omnigent-ai",
+  "tags": [
+    "agent-framework",
+    "agent-governance",
+    "agent-orchestration",
+    "agents",
+    "ai"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "claude-code-skill"
+}

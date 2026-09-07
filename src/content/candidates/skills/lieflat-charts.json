@@ -1,0 +1,16 @@
+{
+  "name": "lieflat-charts",
+  "tagline": "Data visualization Skill for AI Agents, turning data into polished, interactive HTML charts. 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表。",
+  "url": "https://github.com/larashero3-dotcom/lieflat-charts",
+  "github": "larashero3-dotcom/lieflat-charts",
+  "author": "larashero3-dotcom",
+  "tags": [
+    "agent-skills",
+    "charts",
+    "claude-code",
+    "codex",
+    "data-visualization"
+  ],
+  "addedAt": "2026-09-07",
+  "kind": "claude-code-skill"
+}
