@@ -1,0 +1,16 @@
+{
+  "name": "Concat",
+  "tagline": "The truly free, and open-source cross-platform CapCut replacement (supports MCPs).",
+  "url": "https://concatenate.pages.dev",
+  "github": "jub0t/Concat",
+  "author": "jub0t",
+  "tags": [
+    "ai",
+    "artificial-intelligence",
+    "auto-captions",
+    "capcut-alternative",
+    "content-creator"
+  ],
+  "addedAt": "2026-09-28",
+  "kind": "mcp-server"
+}

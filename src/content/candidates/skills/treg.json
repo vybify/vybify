@@ -1,0 +1,16 @@
+{
+  "name": "treg",
+  "tagline": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
+  "url": "https://treg.to",
+  "github": "superdesigndev/treg",
+  "author": "superdesigndev",
+  "tags": [
+    "agents",
+    "api-keys",
+    "cli",
+    "credentials",
+    "developer-tools"
+  ],
+  "addedAt": "2026-09-28",
+  "kind": "mcp-server"
+}

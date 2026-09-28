@@ -1,0 +1,16 @@
+{
+  "name": "Octop",
+  "tagline": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
+  "url": "https://octop.cloud",
+  "github": "TencentCloud/Octop",
+  "author": "TencentCloud",
+  "tags": [
+    "agent",
+    "agentic-ai",
+    "ai",
+    "ai-agent",
+    "ai-agents"
+  ],
+  "addedAt": "2026-09-28",
+  "builtWith": []
+}

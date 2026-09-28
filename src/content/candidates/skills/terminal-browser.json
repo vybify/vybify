@@ -1,0 +1,16 @@
+{
+  "name": "terminal-browser",
+  "tagline": "A browser inside your terminal",
+  "url": "https://terminal-browser.com",
+  "github": "zenbu-labs/terminal-browser",
+  "author": "zenbu-labs",
+  "tags": [
+    "browser",
+    "claude-code",
+    "claude-code-plugin",
+    "claude-skills",
+    "cli"
+  ],
+  "addedAt": "2026-09-28",
+  "kind": "claude-code-skill"
+}

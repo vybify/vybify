@@ -1,0 +1,16 @@
+{
+  "name": "goutoujunshi",
+  "tagline": "一个先接住情绪、再分析关系并给出可执行策略的 Codex 恋爱军师，内置心理、法律、社会、人文、哲学、婚姻家庭与性学知识库，支持多元关系。",
+  "url": "https://github.com/shengjidaguai-china/goutoujunshi",
+  "github": "shengjidaguai-china/goutoujunshi",
+  "author": "shengjidaguai-china",
+  "tags": [
+    "ai-agent",
+    "chinese",
+    "codex",
+    "codex-skill",
+    "lgbtq"
+  ],
+  "addedAt": "2026-09-28",
+  "builtWith": []
+}

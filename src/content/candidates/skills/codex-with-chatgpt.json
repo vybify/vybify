@@ -1,0 +1,16 @@
+{
+  "name": "codex-with-chatgpt",
+  "tagline": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
+  "url": "https://github.com/XiaoDuoYa/codex-with-chatgpt",
+  "github": "XiaoDuoYa/codex-with-chatgpt",
+  "author": "XiaoDuoYa",
+  "tags": [
+    "ai-agents",
+    "chatgpt",
+    "codex",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "addedAt": "2026-09-28",
+  "kind": "mcp-server"
+}
