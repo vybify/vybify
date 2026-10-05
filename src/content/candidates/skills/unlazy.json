@@ -1,0 +1,16 @@
+{
+  "name": "unlazy",
+  "tagline": "Anti-laziness skill for AI agents. Core: the Depth Tree method, which splits a task N layers deep and gives every leaf the full time budget of the whole task, s",
+  "url": "https://github.com/Leonxlnx/unlazy",
+  "github": "Leonxlnx/unlazy",
+  "author": "Leonxlnx",
+  "tags": [
+    "ai-agents",
+    "claude",
+    "claude-code",
+    "llm",
+    "productivity"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "claude-code-skill"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "dsh-TUI",
+  "tagline": "DSH's officially top-recommended TUI plugin — high performance, low overhead, cute pixel whale, smooth mouse interaction. One-command install via npm. / DSH 官方首",
+  "url": "https://dshtui.com/",
+  "github": "ccch1mneyyy/dsh-TUI",
+  "author": "ccch1mneyyy",
+  "tags": [
+    "claude-code",
+    "coding-agent",
+    "deepseek",
+    "deepseek-harness",
+    "dsh-plugin"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "claude-code-skill"
+}

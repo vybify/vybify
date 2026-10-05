@@ -1,0 +1,16 @@
+{
+  "name": "AIHOT",
+  "tagline": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
+  "url": "https://aihot.news",
+  "github": "KKKKhazix/AIHOT",
+  "author": "KKKKhazix",
+  "tags": [
+    "ai",
+    "chinese",
+    "content-curation",
+    "daily-digest",
+    "docker-compose"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "mcp-server"
+}

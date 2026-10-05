@@ -1,0 +1,16 @@
+{
+  "name": "universal-modder",
+  "tagline": "Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/au",
+  "url": "https://github.com/rehan-remade/universal-modder",
+  "github": "rehan-remade/universal-modder",
+  "author": "rehan-remade",
+  "tags": [
+    "age-of-empires",
+    "claude-code",
+    "claude-code-plugin",
+    "fal",
+    "game-assets"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "mcp-server"
+}

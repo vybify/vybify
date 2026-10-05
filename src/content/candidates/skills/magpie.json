@@ -1,0 +1,16 @@
+{
+  "name": "magpie",
+  "tagline": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+  "url": "https://usemagpie.ai",
+  "github": "yetone/magpie",
+  "author": "yetone",
+  "tags": [
+    "claude-code",
+    "codex",
+    "deepseek",
+    "gemini-cli",
+    "llm"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "claude-code-skill"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "OpenMausBot",
+  "tagline": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+  "url": "https://www.openmausbot.com/",
+  "github": "milind-soni/OpenMausBot",
+  "author": "milind-soni",
+  "tags": [
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "computer-use",
+    "docker"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "claude-code-skill"
+}

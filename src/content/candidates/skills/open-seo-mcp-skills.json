@@ -1,0 +1,16 @@
+{
+  "name": "open-seo-mcp-skills",
+  "tagline": "Free SEO MCP server + open-source SEO and GEO skills for Claude: keyword research, rank tracking, audits, backlinks, AI visibility on your real GSC/GA4/ads data",
+  "url": "https://www.get-ryze.ai/how-to-connect-claude-to-google-meta-ads-mcp",
+  "github": "Ryze-AI-Adgent/open-seo-mcp-skills",
+  "author": "Ryze-AI-Adgent",
+  "tags": [
+    "ai-seo",
+    "ai-visibility",
+    "backlinks",
+    "claude",
+    "claude-code"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "mcp-server"
+}

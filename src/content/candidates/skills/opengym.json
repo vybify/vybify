@@ -1,0 +1,16 @@
+{
+  "name": "openGym",
+  "tagline": "Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import ",
+  "url": "https://opengym.duarte-santos.ch",
+  "github": "DuarteSantos8/openGym",
+  "author": "DuarteSantos8",
+  "tags": [
+    "bodyweight",
+    "docker",
+    "fitness",
+    "fitness-tracker",
+    "gym"
+  ],
+  "addedAt": "2026-10-05",
+  "kind": "mcp-server"
+}
