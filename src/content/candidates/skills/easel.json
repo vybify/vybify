@@ -1,0 +1,16 @@
+{
+  "name": "Easel",
+  "tagline": "An open-source AI agent for social media — discover trends, create content, publish everywhere, and learn what works across Xiaohongshu, Douyin, Zhihu, Bilibili",
+  "url": "https://zju-real.github.io/Easel/",
+  "github": "ZJU-REAL/Easel",
+  "author": "ZJU-REAL",
+  "tags": [
+    "agent",
+    "agent-skill",
+    "content-automation",
+    "content-creation",
+    "content-generation"
+  ],
+  "addedAt": "2026-10-26",
+  "kind": "mcp-server"
+}

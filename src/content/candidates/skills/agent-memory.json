@@ -1,0 +1,16 @@
+{
+  "name": "agent-memory",
+  "tagline": "Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independent sleep-time Manage layer. Claude Code ",
+  "url": "https://github.com/tigerless-labs/agent-memory",
+  "github": "tigerless-labs/agent-memory",
+  "author": "tigerless-labs",
+  "tags": [
+    "agent-memory",
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "llm"
+  ],
+  "addedAt": "2026-10-26",
+  "kind": "mcp-server"
+}

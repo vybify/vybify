@@ -1,0 +1,16 @@
+{
+  "name": "shaders",
+  "tagline": "WebGPU components for React, Vue, Svelte, Solid, JS & Framer",
+  "url": "https://shaders.com",
+  "github": "shader-effects-inc/shaders",
+  "author": "shader-effects-inc",
+  "tags": [
+    "cli",
+    "javascript",
+    "mcp",
+    "react",
+    "shaders"
+  ],
+  "addedAt": "2026-10-26",
+  "kind": "mcp-server"
+}

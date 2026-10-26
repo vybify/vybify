@@ -1,0 +1,16 @@
+{
+  "name": "answer-me-with-html",
+  "tagline": "Answer me with HTML — an agent skill that answers hard questions with a one-page HTML you can actually read. 让 AI Agent 用一页 HTML 回答复杂问题。",
+  "url": "https://answer-me-with-html.com/",
+  "github": "QingYunA/answer-me-with-html",
+  "author": "QingYunA",
+  "tags": [
+    "agent-skill",
+    "ai-agent",
+    "claude-code",
+    "claude-code-skill",
+    "claude-skill"
+  ],
+  "addedAt": "2026-10-26",
+  "builtWith": []
+}

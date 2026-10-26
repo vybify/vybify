@@ -1,0 +1,16 @@
+{
+  "name": "esp32-iphone-agent",
+  "tagline": "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
+  "url": "https://handsy.tech?ref=github",
+  "github": "onehumanbeing/esp32-iphone-agent",
+  "author": "onehumanbeing",
+  "tags": [
+    "ai-agent",
+    "airplay",
+    "automation",
+    "computer-use",
+    "esp32"
+  ],
+  "addedAt": "2026-10-26",
+  "builtWith": []
+}

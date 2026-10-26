@@ -1,0 +1,16 @@
+{
+  "name": "coucou",
+  "tagline": "A tiny friend in your Mac's notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. A",
+  "url": "https://louis-cfm.github.io/coucou/",
+  "github": "Louis-CFM/coucou",
+  "author": "Louis-CFM",
+  "tags": [
+    "ai-agents",
+    "anthropic",
+    "antigravity",
+    "claude",
+    "claude-code"
+  ],
+  "addedAt": "2026-10-26",
+  "kind": "cursor-rule"
+}

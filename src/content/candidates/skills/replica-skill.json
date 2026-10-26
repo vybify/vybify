@@ -1,0 +1,16 @@
+{
+  "name": "replica-skill",
+  "tagline": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+  "url": "https://opusjake.ai",
+  "github": "Jakeschincariol/replica-skill",
+  "author": "Jakeschincariol",
+  "tags": [
+    "agent",
+    "agent-skills",
+    "app-clone",
+    "claude",
+    "claude-code"
+  ],
+  "addedAt": "2026-10-26",
+  "kind": "claude-code-skill"
+}

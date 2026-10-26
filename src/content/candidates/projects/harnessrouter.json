@@ -1,0 +1,16 @@
+{
+  "name": "harnessrouter",
+  "tagline": "HarnessRouter Community Edition: the self-hosted, Apache-2.0 edition of the unified interface for agent harnesses. Run Codex, Claude Code, Hermes, PI, DSH, and ",
+  "url": "https://harnessrouter.ai/",
+  "github": "HarnessRouter/harnessrouter",
+  "author": "HarnessRouter",
+  "tags": [
+    "agent-api",
+    "agent-framework",
+    "agent-harness",
+    "ai-agents",
+    "ai-infrastructure"
+  ],
+  "addedAt": "2026-10-26",
+  "builtWith": []
+}

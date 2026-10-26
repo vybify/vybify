@@ -1,0 +1,16 @@
+{
+  "name": "cleanyourtv",
+  "tagline": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
+  "url": "https://cleanyour.tv",
+  "github": "Gathin23/cleanyourtv",
+  "author": "Gathin23",
+  "tags": [
+    "adb",
+    "adblock",
+    "android-tv",
+    "android-tv-launcher",
+    "apple-tv"
+  ],
+  "addedAt": "2026-10-26",
+  "kind": "claude-code-skill"
+}

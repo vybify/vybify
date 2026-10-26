@@ -1,0 +1,16 @@
+{
+  "name": "lemo-opuscar",
+  "tagline": "A toolbox of film styles made in code for Claude Code: 59 ready to use, and your own. Each style is a style prompt plus a demo film made entirely in code by Cla",
+  "url": "https://lemomo-ai.github.io/lemo-opuscar/",
+  "github": "lemomo-ai/lemo-opuscar",
+  "author": "lemomo-ai",
+  "tags": [
+    "agent-skills",
+    "ai-agents",
+    "ai-short-film",
+    "ai-video",
+    "animation"
+  ],
+  "addedAt": "2026-10-26",
+  "kind": "claude-code-skill"
+}
