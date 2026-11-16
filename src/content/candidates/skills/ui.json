@@ -1,0 +1,16 @@
+{
+  "name": "ui",
+  "tagline": "A library of behaviors for agents to build the next generation of user interfaces.",
+  "url": "https://ui-sdk.dev",
+  "github": "vercel-labs/ui",
+  "author": "vercel-labs",
+  "tags": [
+    "accessibility",
+    "agent",
+    "agents",
+    "ai",
+    "aria"
+  ],
+  "addedAt": "2026-11-16",
+  "kind": "mcp-server"
+}

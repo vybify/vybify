@@ -1,0 +1,16 @@
+{
+  "name": "TokenEconomizer",
+  "tagline": "Experience-Driven Black-Box Cost Control for Coding Agents",
+  "url": "https://github.com/microsoft/TokenEconomizer",
+  "github": "microsoft/TokenEconomizer",
+  "author": "microsoft",
+  "tags": [
+    "agentic-ai",
+    "agentic-coding",
+    "ai-coding",
+    "ai-coding-assistant",
+    "anthropic"
+  ],
+  "addedAt": "2026-11-16",
+  "builtWith": []
+}

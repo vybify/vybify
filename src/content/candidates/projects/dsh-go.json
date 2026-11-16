@@ -1,0 +1,16 @@
+{
+  "name": "dsh-Go",
+  "tagline": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
+  "url": "https://github.com/ccch1mneyyy/dsh-Go",
+  "github": "ccch1mneyyy/dsh-Go",
+  "author": "ccch1mneyyy",
+  "tags": [
+    "ai-agent",
+    "android",
+    "android-app",
+    "coding-agent",
+    "deepseek"
+  ],
+  "addedAt": "2026-11-16",
+  "builtWith": []
+}

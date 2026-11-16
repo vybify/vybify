@@ -1,0 +1,16 @@
+{
+  "name": "elephant-goldfish-model",
+  "tagline": "Open-source plugin for designing and reviewing software with agents",
+  "url": "https://egm.dev",
+  "github": "google/elephant-goldfish-model",
+  "author": "google",
+  "tags": [
+    "agent-skills",
+    "ai-agents",
+    "antigravity",
+    "claude-code",
+    "claude-code-plugin"
+  ],
+  "addedAt": "2026-11-16",
+  "kind": "claude-code-skill"
+}

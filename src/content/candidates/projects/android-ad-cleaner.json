@@ -1,0 +1,16 @@
+{
+  "name": "android-ad-cleaner",
+  "tagline": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+  "url": "https://github.com/rddmwmddr/android-ad-cleaner",
+  "github": "rddmwmddr/android-ad-cleaner",
+  "author": "rddmwmddr",
+  "tags": [
+    "adb",
+    "ai-agent",
+    "android",
+    "coloros",
+    "debloat"
+  ],
+  "addedAt": "2026-11-16",
+  "builtWith": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Mika",
+  "tagline": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
+  "url": "https://mikaphone.com",
+  "github": "wangzan101/Mika",
+  "author": "wangzan101",
+  "tags": [
+    "accessibility",
+    "ai-agent",
+    "android",
+    "automation",
+    "jetpack-compose"
+  ],
+  "addedAt": "2026-11-16",
+  "builtWith": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ffmpeg-skill",
+  "tagline": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr",
+  "url": "https://www.npmjs.com/package/ffmpeg-skill",
+  "github": "kajisho5/ffmpeg-skill",
+  "author": "kajisho5",
+  "tags": [
+    "agent-skills",
+    "ai-agents",
+    "audio-processing",
+    "captions",
+    "claude-code"
+  ],
+  "addedAt": "2026-11-16",
+  "kind": "mcp-server"
+}

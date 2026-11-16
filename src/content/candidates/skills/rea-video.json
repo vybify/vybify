@@ -1,0 +1,16 @@
+{
+  "name": "rea-video",
+  "tagline": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. Breakdowns in the open VIDEO.md format. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代",
+  "url": "https://www.reavideo.ai/",
+  "github": "JuneYaooo/rea-video",
+  "author": "JuneYaooo",
+  "tags": [
+    "agent-skills",
+    "ai-video",
+    "aigc-detection",
+    "claude-code",
+    "codex"
+  ],
+  "addedAt": "2026-11-16",
+  "kind": "claude-code-skill"
+}

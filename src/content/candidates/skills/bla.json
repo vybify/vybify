@@ -1,0 +1,16 @@
+{
+  "name": "bla",
+  "tagline": "🛡️ BLA (bla-agents / Blind LLM Agents) — Open-source Blue Defense MCP server & CLI protecting JS/TS, Electron ASAR, WASM, Python, Native Binaries, SQLite, GGUF",
+  "url": "https://bla.tools",
+  "github": "qybaihe/bla",
+  "author": "qybaihe",
+  "tags": [
+    "adversarial-ai",
+    "ai-security",
+    "android-security",
+    "binary-protection",
+    "claude-code"
+  ],
+  "addedAt": "2026-11-16",
+  "kind": "mcp-server"
+}
